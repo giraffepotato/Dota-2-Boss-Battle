@@ -1,0 +1,127 @@
+"npc_dazzle_boss"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "MinimapIcon"               "minimap_dazzle"
+    "Model"                     "models/heroes/dazzle/dazzle.vmdl"      // Model.
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  "Hero_Dazzle"                                                  // Name of sound set.
+    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
+    "IdleSoundLoop"             "Hero_Dazzle.IdleLoop"
+    "Level"                     "40"
+    "ModelScale"                "2.4"
+    "ConsideredHero"            "1"
+    "HasInventory" "1"
+
+    "precache"
+    {
+        "model" "models/heroes/storm_spirit/dazzle.vmdl"
+    }
+    
+    "UseNeutralCreepBehavior"   "0"
+
+    // Armor
+    //-------------------------------------------------------------------------------------------------------------
+    "ArmorPhysical"             "50"                             // Physical protection.
+    "MagicalResistance"         "50"
+
+    // Abilities
+    //----------------------------------------------------------------
+    "AbilityLayout"     "5"
+    "Ability1"                  "shadow_wave_datadriven"          // Ability 1.
+    "Ability2"                  "poison_touch_datadriven"          // Ability 2.
+    "Ability3"                  "dazzle_summon_spike"          // Ability 3.
+    "Ability4"                  ""          // Ability 4.
+    "Ability5"                  ""          // Ability 5.
+    "Ability6"                  ""          // Ability 6 - Extra.
+    "Ability7"                  ""          // Ability 7 - Extra.
+    "Ability8"                  ""          // Ability 8 - Extra.
+
+    // Attack
+    //-------------------------------------------------------------------------------------------------------------
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageMin"           "250"                                    // Damage range min.
+    "AttackDamageMax"           "300"                                    // Damage range max.
+    "AttackRate"                "1.75"                                   // Speed of attack.
+    "AttackAnimationPoint"      "0.55"                                  // Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"    "300"                                   // Range within a target can be acquired.
+    "AttackRange"               "900"                                   // Range within a target can be attacked.
+    "ProjectileModel"           "particles/units/heroes/hero_dazzle/dazzle_base_attack.vpcf"      // Particle system model for projectile.
+    "ProjectileSpeed"           "1750"                                  // Speed of projectile.
+
+    // Bounty
+    //----------------------------------------------------------------
+    "BountyXP"                  "1000"     // Experience earn.
+    "BountyGoldMin"             "1000"     // Gold earned min.
+    "BountyGoldMax"             "2000"     // Gold earned max.
+
+    // Bounds
+    //----------------------------------------------------------------
+    "RingRadius"                "70"
+    "HealthBarOffset"           "490"
+
+
+    // Movement
+    //-------------------------------------------------------------------------------------------------------------
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"             "385"
+    "MovementTurnRate"          "0.6"
+
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"              "40000"      // Base health.
+    "StatusHealthRegen"         "10.0"           // Health regeneration rate.
+    "StatusMana"                "10000"      // Base mana.
+    "StatusManaRegen"           "0"       // Mana regeneration rate.
+
+    // Vision
+    //-------------------------------------------------------------------------------------------------------------
+    "VisionDaytimeRange"        "1800"      // Range of vision during day light.
+    "VisionNighttimeRange"      "1800"                                   // Range of vision at night time.
+
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"                  "DOTA_TEAM_NEUTRALS"                         // Team name.
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+    //"CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+    
+    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
+    "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_dazzle.vsndevts"
+
+    "AutoAttacksByDefault"          "1"
+
+    "vscripts"                    "scripts/vscripts/dazzle_ai.lua"
+
+    "Creature"
+    {
+        "CanRespawn"                "0"
+        
+        "EquippedItems"
+        {     
+            "VladimirsOffering"      {    "Item"    "item_vladimir"           }
+            "GuardianGreaves"        {    "Item"    "item_guardian_greaves"   }
+            "AssaultCuirass"         {    "Item"    "item_assault"            }
+        }
+        "AttachWearables"
+        {
+            "Wearable1"     {   "ItemDef"       "7937"      }
+            "Wearable2"     {   "ItemDef"       "7501"      }
+            "Wearable3"     {   "ItemDef"       "7502"      }
+            "Wearable4"     {   "ItemDef"       "7503"      }
+            "Wearable4"     {   "ItemDef"       "7504"      }
+        }
+        "DefaultState"       "Aggresive"
+        "States"
+        {
+            "Aggresive"
+            {
+                "Name"          "Aggressive"
+                "Aggression"    "100.0"
+                "Avoidance"     "0.0"
+                "Support"       "0.0"
+                "RoamDistance"  "1000.0"
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+"dazzle_summon_spike"
+{
+    // General  
+    // ----------------------------------------------------------------------------------------
+    "BaseClass"              "ability_datadriven"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityTextureName"     "elder_titan_ancestral_spirit"
+
+    "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"               "1"
+
+    "AbilityCastPoint"       "0.2"
+    "AbilityCastAnimation"   "ACT_DOTA_DISABLED"
+    "AnimationPlaybackRate"  "0.75"
+    "AnimationIgnoresModelScale" "0"
+    "AbilityDuration"        "120"
+
+    // Stats
+    //----------------------------------------------------------------------------------------
+    "AbilityManaCost"         "100"
+    "AbilityCooldown"         "7.5"
+
+    "precache"
+    {
+        "particle"  "particles/units/heroes/hero_nyx_assassin/nyx_assassin_burrow.vpcf"
+        "soundfile" "sounds/weapons/hero/nyx/burrow_out_water.vsnd"
+        "particle"  "particles/items_fx/aegis_respawn_aegis_starfall.vpcf"
+    }
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"        "FIELD_FLOAT"
+            "duration"        "120.0"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "FireSound"
+        {
+            "EffectName"    "Hero_NyxAssassin.Burrow.Out.River"
+            "Target"         "CASTER"
+        }
+        "FireEffect"
+        {
+            "EffectName"        "particles/units/heroes/hero_nyx_assassin/nyx_assassin_burrow.vpcf"
+            "EffectAttachType"  "follow_origin"
+            "Target"            "CASTER"
+        }
+        "FireEffect"
+        {
+            "EffectName"        "particles/items_fx/aegis_respawn_aegis_starfall.vpcf"
+            "EffectAttachType"  "follow_origin"
+            "Target"            "CASTER"
+        }
+        "RunScript"
+        {
+          "ScriptFile"  "scripts/vscripts/dazzle_summon_spike.lua"
+          "Function"    "summon_spike"
+          "Target"      "CASTER"
+        }
+    }
+}

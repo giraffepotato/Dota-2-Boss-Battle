@@ -1,0 +1,125 @@
+"borrowed_time_datadriven"
+{
+  // General
+  //-------------------------------------------------------------------------------------------------------------
+  "BaseClass"       "ability_datadriven"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+  "AbilityType"         "DOTA_ABILITY_TYPE_BASIC"
+  "FightRecapLevel"       "2"
+  "AbilityTextureName"      "abaddon_borrowed_time"
+  "MaxLevel"              "1"
+  "RequiredLevel"           "0"
+  "LevelsBetweenUpgrades" "1"
+  // Casting
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityCastPoint"        "0.452 0.452 0.452 0.452"
+
+  // Time   
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityCooldown"       "10.0"
+
+  // Cost
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityManaCost"       "0 0 0"
+
+  // Special
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "hp_threshold"        "1600"
+    }
+    "02"
+    {
+      "var_type"          "FIELD_FLOAT"
+      "duration"          "10"
+    }
+    "03"
+    {
+      "var_type"          "FIELD_FLOAT"
+      "duration_scepter"      "5.0 6.0 7.0"
+    }
+    "04"
+    {
+      "var_type"          "FIELD_FLOAT"
+      "redirect"          "0.35"
+    }
+    "05"
+    {
+      "var_type"          "FIELD_FLOAT"
+      "redirect_range_tooltip_scepter"    "900"
+    }
+  }
+
+  "precache"
+  { 
+    //"soundfile" "soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+    "particle"  "particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf"
+    "particle"  "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
+  }
+
+  "OnSpellStart"
+  {
+    "ApplyModifier"
+    {
+      "Target"    "CASTER"
+      "ModifierName"  "modifier_borrowed_time"
+      "Duration"    "%duration"
+    }
+    
+    "FireSound"
+    {
+      "Target"    "CASTER"
+      "EffectName"  "Hero_Abaddon.BorrowedTime" 
+    }
+
+    "RunScript"
+    {
+      "ScriptFile"  "heroes/hero_abaddon/borrowed_time.lua"
+      "Function"    "BorrowedTimePurge"
+    }
+    
+  }
+
+  "Modifiers"
+  {
+    "modifier_borrowed_time_passive"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+
+      "OnTakeDamage"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "heroes/hero_abaddon/borrowed_time.lua"
+          "Function"    "BorrowedTimeActivate"
+        }
+      }
+    }
+
+    "modifier_borrowed_time"
+    {
+      "IsBuff"      "1"
+
+      "EffectName"    "particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf"
+      "EffectAttachType"  "follow_origin"
+
+      "StatusEffectName"    "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
+      "StatusEffectPriority"  "15"
+      
+      "OnTakeDamage"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "heroes/hero_abaddon/borrowed_time.lua"
+          "Function"    "BorrowedTimeHeal"
+          "DamageTaken" "%attack_damage"
+        }
+      }
+
+    }
+  }
+}

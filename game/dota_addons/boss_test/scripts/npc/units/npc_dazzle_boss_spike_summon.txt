@@ -1,0 +1,67 @@
+"npc_dazzle_boss_spike_summon"
+{
+        // General
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/props_rock/stalagmite_01.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+        "HealthBarOffset"       "140"
+        "HasInventory"          "0"
+       
+        // Abilities
+        //----------------------------------------------------------------
+        "AbilityLayout"         "1"
+        "Ability1"              "armor_aura"
+       
+        // Armor
+        //----------------------------------------------------------------
+        "ArmorPhysical"         "2"
+        "MagicalResistance"     "99"
+
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"    "DOTA_UNIT_CAP_NO_ATTACK"
+       
+        // Bounty
+        //----------------------------------------------------------------
+        "BountyGoldMin"         "50.0"
+        "BountyGoldMax"         "125.0"
+       
+        // Bounds
+        //----------------------------------------------------------------
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+       
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "0"
+        "MovementTurnRate"      "0.6"
+       
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"          "2000"
+        "StatusHealthRegen"     "5.0"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+       
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+       
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+       
+        // Creature Data
+        //----------------------------------------------------------------
+        "Creature"
+        {
+                "DisableClumpingBehavior"       "1"
+        }
+}

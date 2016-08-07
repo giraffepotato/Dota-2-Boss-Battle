@@ -1,0 +1,52 @@
+"enrage_huskar"
+{
+    // General  
+    // ----------------------------------------------------------------------------------------
+    "BaseClass"              "ability_datadriven"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityTextureName"     "huskar_berserkers_blood"
+
+    "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"               "1"
+    "RequiredLevel"          "0"
+    "LevelsBetweenUpgrades"  "1"
+    "precache"
+    {
+      "particle"  "particles/units/heroes/hero_bloodseeker/bloodseeker_bloodritual_impact.vpcf"
+    }
+    "AbilityCastPoint"       "0.0"
+    "AbilityCastAnimation"   "ACT_DOTA_FLAIL"
+    "AnimationPlaybackRate"  "0.55"
+    "AnimationIgnoresModelScale" "1"
+
+    // Stats
+    //----------------------------------------------------------------------------------------
+    "AbilityManaCost"         "900"
+    "AbilityCooldown"         "150"
+    "AbilityDuration"         "10.0"
+
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "grave_duration"      "8.5"
+      }
+    }
+    
+    "OnSpellStart"
+    {
+      "FireEffect"
+      {
+        "EffectName"        "particles/units/heroes/hero_bloodseeker/bloodseeker_bloodritual_impact.vpcf"
+        "EffectAttachType"  "follow_origin"
+        "Target"            "CASTER"
+      }
+      "RunScript"
+      {
+        "ScriptFile"  "scripts/vscripts/enrage_huskar.lua"
+        "Function"    "summon_huskar"
+      }
+    }
+    
+}
