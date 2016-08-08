@@ -5,18 +5,19 @@
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/props_rock/stalagmite_01.vmdl"
         "ModelScale"            "0.8"
-        "Level"                 "1"
-        "HealthBarOffset"       "140"
+        "Level"                 "2"
+        "HealthBarOffset"       "340"
         "HasInventory"          "0"
        
         // Abilities
         //----------------------------------------------------------------
-        "AbilityLayout"         "1"
+        "AbilityLayout"         "2"
         "Ability1"              "armor_aura"
+            "Ability2"              "delete_spike"
        
         // Armor
         //----------------------------------------------------------------
-        "ArmorPhysical"         "2"
+        "ArmorPhysical"         "-10"
         "MagicalResistance"     "99"
 
         // Attack
@@ -35,14 +36,14 @@
        
         // Movement
         //----------------------------------------------------------------
-        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
-        "MovementSpeed"         "0"
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_NONE"
+        "MovementSpeed"         "0.0"
         "MovementTurnRate"      "0.6"
        
         // Status
         //----------------------------------------------------------------
-        "StatusHealth"          "2000"
-        "StatusHealthRegen"     "5.0"
+        "StatusHealth"          "1800"
+        "StatusHealthRegen"     "2.0"
         "StatusMana"            "0"
         "StatusManaRegen"       "0"
        

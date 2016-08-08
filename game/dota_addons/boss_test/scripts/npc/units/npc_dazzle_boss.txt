@@ -15,14 +15,14 @@
 
     "precache"
     {
-        "model" "models/heroes/storm_spirit/dazzle.vmdl"
+        "model" "models/heroes/dazzle/dazzle.vmdl"
     }
     
     "UseNeutralCreepBehavior"   "0"
 
     // Armor
     //-------------------------------------------------------------------------------------------------------------
-    "ArmorPhysical"             "50"                             // Physical protection.
+    "ArmorPhysical"             "60"                             // Physical protection.
     "MagicalResistance"         "50"
 
     // Abilities
@@ -31,8 +31,8 @@
     "Ability1"                  "shadow_wave_datadriven"          // Ability 1.
     "Ability2"                  "poison_touch_datadriven"          // Ability 2.
     "Ability3"                  "dazzle_summon_spike"          // Ability 3.
-    "Ability4"                  ""          // Ability 4.
-    "Ability5"                  ""          // Ability 5.
+    "Ability4"                  "dazzle_weave"          // Ability 4.
+    "Ability5"                  "enrage_huskar"          // Ability 5.
     "Ability6"                  ""          // Ability 6 - Extra.
     "Ability7"                  ""          // Ability 7 - Extra.
     "Ability8"                  ""          // Ability 8 - Extra.
@@ -40,11 +40,11 @@
     // Attack
     //-------------------------------------------------------------------------------------------------------------
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
-    "AttackDamageMin"           "250"                                    // Damage range min.
-    "AttackDamageMax"           "300"                                    // Damage range max.
-    "AttackRate"                "1.75"                                   // Speed of attack.
+    "AttackDamageMin"           "50"                                    // Damage range min.
+    "AttackDamageMax"           "100"                                    // Damage range max.
+    "AttackRate"                "1.85"                                   // Speed of attack.
     "AttackAnimationPoint"      "0.55"                                  // Normalized time in animation cycle to attack.
-    "AttackAcquisitionRange"    "300"                                   // Range within a target can be acquired.
+    "AttackAcquisitionRange"    "900"                                   // Range within a target can be acquired.
     "AttackRange"               "900"                                   // Range within a target can be attacked.
     "ProjectileModel"           "particles/units/heroes/hero_dazzle/dazzle_base_attack.vpcf"      // Particle system model for projectile.
     "ProjectileSpeed"           "1750"                                  // Speed of projectile.
@@ -69,10 +69,10 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"              "40000"      // Base health.
-    "StatusHealthRegen"         "10.0"           // Health regeneration rate.
-    "StatusMana"                "10000"      // Base mana.
-    "StatusManaRegen"           "0"       // Mana regeneration rate.
+    "StatusHealth"              "55000"      // Base health.
+    "StatusHealthRegen"         "15.0"           // Health regeneration rate.
+    "StatusMana"                "25000"      // Base mana.
+    "StatusManaRegen"           "40.0"       // Mana regeneration rate.
 
     // Vision
     //-------------------------------------------------------------------------------------------------------------
@@ -99,9 +99,10 @@
         
         "EquippedItems"
         {     
-            "VladimirsOffering"      {    "Item"    "item_vladimir"           }
+            "VladmirsOffering"       {    "Item"    "item_vladmir"            }
             "GuardianGreaves"        {    "Item"    "item_guardian_greaves"   }
             "AssaultCuirass"         {    "Item"    "item_assault"            }
+                "LinkensSphere"          {    "Item"    "item_sphere"             }
         }
         "AttachWearables"
         {
@@ -109,7 +110,7 @@
             "Wearable2"     {   "ItemDef"       "7501"      }
             "Wearable3"     {   "ItemDef"       "7502"      }
             "Wearable4"     {   "ItemDef"       "7503"      }
-            "Wearable4"     {   "ItemDef"       "7504"      }
+            "Wearable5"     {   "ItemDef"       "7504"      }
         }
         "DefaultState"       "Aggresive"
         "States"
