@@ -1,0 +1,132 @@
+"npc_drow_ranger_boss"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "MinimapIcon"               "minimap_drow_ranger"
+        "Model"                     "models/heroes/drow/drow.vmdl"      // Model.
+        "BaseClass"                 "npc_dota_creature"
+        "SoundSet"                  "Hero_DrowRanger"                                                  // Name of sound set.
+        "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts"
+        "IdleSoundLoop"             "Hero_DrowRanger.IdleLoop"
+        "Level"                     "40"
+        "ModelScale"                "3.0"
+        "ConsideredHero"            "1"
+        "HasInventory" "1"
+    
+        "precache"
+        {
+            "model" "models/heroes/drow/drow.vmdl"
+        }
+        
+        "UseNeutralCreepBehavior"   "0"
+    
+        // Armor
+        //-------------------------------------------------------------------------------------------------------------
+        "ArmorPhysical"             "30"                             // Physical protection.
+        "MagicalResistance"         "50"
+    
+        // Abilities
+        //----------------------------------------------------------------
+        "AbilityLayout"     "6"
+        "Ability1"                  "sniper_headshot"          // Ability 1.
+        "Ability2"                  "boss_revive_drow"          // Ability 2.
+        "Ability3"                  "nevermore_dark_lord"          // Ability 3.
+        "Ability4"                  "tidehunter_kraken_shell"          // Ability 4.
+        "Ability5"                  "viper_nethertoxin"          // Ability 5.
+        "Ability6"                  "troll_warlord_fervor"          // Ability 6 - Extra.
+        //"Ability7"                  ""          // Ability 7 - Extra.
+        //"Ability8"                  ""          // Ability 8 - Extra.
+    
+        // Attack
+        //-------------------------------------------------------------------------------------------------------------
+        "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+        "AttackDamageMin"           "500"                                    // Damage range min.
+        "AttackDamageMax"           "800"                                    // Damage range max.
+        "AttackRate"                "0.75"                                   // Speed of attack.
+        "AttackAnimationPoint"      "0.80"                                  // Normalized time in animation cycle to attack.
+        "AttackAcquisitionRange"    "900"                                   // Range within a target can be acquired.
+        "AttackRange"               "1000"                                   // Range within a target can be attacked.
+        "ProjectileModel"           "particles/units/heroes/Hero_Drow/drow_base_attack.vpcf"      // Particle system model for projectile.
+        "ProjectileSpeed"           "1250"                                  // Speed of projectile.
+    
+        // Bounty
+        //----------------------------------------------------------------
+        "BountyXP"                  "40000"     // Experience earn.
+        "BountyGoldMin"             "1000"     // Gold earned min.
+        "BountyGoldMax"             "2000"     // Gold earned max.
+    
+        // Bounds
+        //----------------------------------------------------------------
+        "RingRadius"                "70"
+        "HealthBarOffset"           "490"
+    
+    
+        // Movement
+        //-------------------------------------------------------------------------------------------------------------
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"             "595"
+        "MovementTurnRate"          "1.6"
+    
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"              "25000"      // Base health.
+        "StatusHealthRegen"         "15.0"           // Health regeneration rate.
+        "StatusMana"                "15000"      // Base mana.
+        "StatusManaRegen"           "30.0"       // Mana regeneration rate.
+    
+        // Vision
+        //-------------------------------------------------------------------------------------------------------------
+        "VisionDaytimeRange"        "2000"      // Range of vision during day light.
+        "VisionNighttimeRange"      "20000"                                   // Range of vision at night time.
+    
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"                  "DOTA_TEAM_NEUTRALS"                         // Team name.
+        "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+        //"CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+        
+        "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts"
+        "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_drowranger.vsndevts"
+    
+        "AutoAttacksByDefault"          "1"
+    
+        "vscripts"                    "scripts/vscripts/drow_ai.lua"
+    
+        "Creature"
+        {
+            "CanRespawn"                "0"
+            
+            "EquippedItems"
+            {     
+                "Butterfly"           {    "Item"    "item_butterfly"          }
+                "AssaultCuirass"      {    "Item"    "item_assault"            }
+                "VladmirsOffering"    {    "Item"    "item_vladmir"            }
+                "DiffusalBlade2"      {    "Item"    "item_diffusal_blade_2"   }
+                "MonkeyKingBar"       {    "Item"    "item_monkey_king_bar"    }
+                "EyeOfSkadi"          {    "Item"    "item_skadi"              }
+            }
+            "AttachWearables"
+            {
+                "Wearable1"     {   "ItemDef"       "7052"      }
+                "Wearable2"     {   "ItemDef"       "7053"      }
+                "Wearable3"     {   "ItemDef"       "7055"      }
+                "Wearable4"     {   "ItemDef"       "7056"      }
+                "Wearable5"     {   "ItemDef"       "7057"      }
+                "Wearable6"     {   "ItemDef"       "6785"      }
+                "Wearable7"     {   "ItemDef"       "4365"      }
+            }
+            "DefaultState"       "Aggresive"
+            "States"
+            {
+                "Aggresive"
+                {
+                    "Name"          "Aggressive"
+                    "Aggression"    "100.0"
+                    "Avoidance"     "0.0"
+                    "Support"       "0.0"
+                    "RoamDistance"  "1000.0"
+                }
+            }
+        }
+    }

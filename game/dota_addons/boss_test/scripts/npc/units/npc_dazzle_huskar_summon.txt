@@ -1,0 +1,96 @@
+"npc_dazzle_huskar_summon"
+    {
+            // General
+            //----------------------------------------------------------------
+            "BaseClass"             "npc_dota_creature"
+            "Model"                 "models/heroes/huskar/huskar.vmdl"
+            "ModelScale"            "2.8"
+            "Level"                 "20"
+            "HealthBarOffset"       "640"
+            "HasInventory"          "1"
+            "ConsideredHero"        "1"
+           
+            // Abilities
+            //----------------------------------------------------------------
+            "AbilityLayout"         "4"
+            "Ability1"              "huskar_burning_spear"
+            "Ability2"              "dazzle_shallow_grave"
+            "Ability3"              "huskar_berserkers_blood"
+            "Ability4"              "brewmaster_earth_spell_immunity"
+            //"Ability5"              "skeleton_king_reincarnation"
+            "vscripts"              "scripts/vscripts/summoned_huskar.lua"
+           
+            // Armor
+            //----------------------------------------------------------------
+            "ArmorPhysical"         "25"
+            "MagicalResistance"     "99"
+    
+            // Attack
+            //----------------------------------------------------------------
+            "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
+            "AttackDamageMin"           "2250"                                    // Damage range min.
+            "AttackDamageMax"           "3300"                                    // Damage range max.
+            "AttackRate"                "1.85"                                   // Speed of attack.
+            "AttackAnimationPoint"      "0.05"                                  // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"    "600"                                   // Range within a target can be acquired.
+            "AttackRange"               "600"                                   // Range within a target can be attacked.
+            "ProjectileModel"           "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"      // Particle system model for projectile.
+            "ProjectileSpeed"           "1750"
+           
+            // Bounty
+            //----------------------------------------------------------------
+            "BountyGoldMin"         "1500.0"
+            "BountyGoldMax"         "2500.0"
+           
+            // Bounds
+            //----------------------------------------------------------------
+            "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+            "RingRadius"            "70"
+           
+            // Movement
+            //----------------------------------------------------------------
+            "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"         "440.0"
+            "MovementTurnRate"      "0.6"
+           
+            // Status
+            //----------------------------------------------------------------
+            "StatusHealth"          "20000"
+            "StatusHealthRegen"     "5.0"
+            "StatusMana"            "1500"
+            "StatusManaRegen"       "0"
+           
+            // Vision
+            //----------------------------------------------------------------
+            "VisionDaytimeRange"    "1400"
+            "VisionNighttimeRange"  "800"
+           
+            // Team
+            //----------------------------------------------------------------
+            "TeamName"              "DOTA_TEAM_NEUTRALS"
+            "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+            "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+            "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+           
+            // Creature Data
+            //----------------------------------------------------------------
+            "Creature"
+            {
+                    "EquippedItems"
+                    {     
+                        "Satanic"         {    "Item"    "item_satanic"         }
+                        "MonkeyKingBar"   {    "Item"    "item_monkey_king_bar" }
+                        "MoonShard"       {    "Item"    "item_moon_shard"      }
+
+                    }
+                    "DisableClumpingBehavior"       "1"
+                    "AttachWearables"
+                    {
+                        "Wearable1"                 {   "ItemDef"     "8188"  }
+                        "Wearable2"                 {   "ItemDef"     "5811"  }
+                        "Wearable3"                 {   "ItemDef"     "4299"  }
+                        "Wearable4"                 {   "ItemDef"     "4749"  }
+                        "Wearable5"                 {   "ItemDef"     "4907"  }
+                    }
+            }
+    }

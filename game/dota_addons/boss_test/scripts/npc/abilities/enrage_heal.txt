@@ -22,7 +22,7 @@
     // Stats
     //----------------------------------------------------------------------------------------
     "AbilityManaCost"         "900"
-    "AbilityCooldown"         "150"
+    "AbilityCooldown"         "105"
     "AbilityDuration"         "10.0"
 
     "AbilitySpecial"

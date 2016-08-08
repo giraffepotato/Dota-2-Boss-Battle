@@ -4,7 +4,7 @@
   //-------------------------------------------------------------------------------------------------------------
   "BaseClass"           "ability_datadriven"
   "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-  "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+  "AbilityUnitDamageType"     "DAMAGE_TYPE_PURE" 
   "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_YES"
   "FightRecapLevel"       "1"
   "AbilityTextureName"      "storm_spirit_static_remnant"
@@ -12,16 +12,16 @@
   
   // Casting
   //-------------------------------------------------------------------------------------------------------------
-  "AbilityCastPoint"        "0 0 0 0"
+  "AbilityCastPoint"        "0.35"
 
   // Time   
   //-------------------------------------------------------------------------------------------------------------
-  "AbilityCooldown"       "25"
-  "AbilityDuration"       "30 30 30 30"
+  "AbilityCooldown"       "10"
+  "AbilityDuration"       "15"
 
   // Cost
   //-------------------------------------------------------------------------------------------------------------
-  "AbilityManaCost"       "70"
+  "AbilityManaCost"       "1270"
 
   // Special
   //-------------------------------------------------------------------------------------------------------------
@@ -30,17 +30,17 @@
     "01"
     {
       "var_type"      "FIELD_INTEGER"
-      "static_remnant_radius"   "335"   
+      "static_remnant_radius"   "135"   
     }
     "02"
     {
       "var_type"      "FIELD_INTEGER"
-      "static_remnant_damage_radius"  "460"
+      "static_remnant_damage_radius"  "160"
     }
     "03"
     {
       "var_type"      "FIELD_FLOAT"
-      "static_remnant_delay"    "1.0"
+      "static_remnant_delay"    "0.1"
     }
     "04"
     {

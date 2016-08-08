@@ -4,21 +4,21 @@
     // ----------------------------------------------------------------------------------------
     "BaseClass"              "ability_datadriven"
     "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-    "AbilityTextureName"     "elder_titan_ancestral_spirit"
+    "AbilityTextureName"     "lion_impale"
 
     "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
     "MaxLevel"               "1"
 
     "AbilityCastPoint"       "0.2"
-    "AbilityCastAnimation"   "ACT_DOTA_DISABLED"
+    "AbilityCastAnimation"   "ACT_DOTA_IDLE"
     "AnimationPlaybackRate"  "0.75"
     "AnimationIgnoresModelScale" "0"
     "AbilityDuration"        "120"
 
     // Stats
     //----------------------------------------------------------------------------------------
-    "AbilityManaCost"         "100"
-    "AbilityCooldown"         "7.5"
+    "AbilityManaCost"         "220"
+    "AbilityCooldown"         "20.0"
 
     "precache"
     {
@@ -55,11 +55,27 @@
             "EffectAttachType"  "follow_origin"
             "Target"            "CASTER"
         }
-        "RunScript"
+      "SpawnUnit"
+      {
+        "UnitName"    "npc_dazzle_boss_spike_summon"
+        "Target"     "CASTER"
+        "Duration"    "%duration"
+        "UnitCount"    "3"
+        "UnitLimit"    "35"
+        "GrantsGold"  "1"
+        "GrantsXP"    "1"
+        "SpawnRadius"  "450"
+        "OnSpawn"
         {
-          "ScriptFile"  "scripts/vscripts/dazzle_summon_spike.lua"
-          "Function"    "summon_spike"
-          "Target"      "CASTER"
+          "ApplyModifier"
+          {
+            "ModifierName"  "modifier_phased"
+            "Target"    "TARGET"
+            "Duration"    "0.03"
+          }
+      
+          //[ACTIONS]
         }
+      }
     }
 }

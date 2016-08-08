@@ -40,14 +40,14 @@
     // Attack
     //-------------------------------------------------------------------------------------------------------------
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
-    "AttackDamageMin"           "0"                                    // Damage range min.
-    "AttackDamageMax"           "0"                                    // Damage range max.
-    "AttackRate"                "1.45"                                   // Speed of attack.
-    "AttackAnimationPoint"      "0.55"                                  // Normalized time in animation cycle to attack.
-    "AttackAcquisitionRange"    "300"                                   // Range within a target can be acquired.
-    "AttackRange"               "700"                                   // Range within a target can be attacked.
+    "AttackDamageMin"           "1000"                                    // Damage range min.
+    "AttackDamageMax"           "1500"                                    // Damage range max.
+    "AttackRate"                "1.05"                                   // Speed of attack.
+    "AttackAnimationPoint"      "0.35"                                  // Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"    "700"                                   // Range within a target can be acquired.
+    "AttackRange"               "1700"                                   // Range within a target can be attacked.
     "ProjectileModel"           "particles/units/heroes/hero_stormspirit/stormspirit_base_attack.vpcf"      // Particle system model for projectile.
-    "ProjectileSpeed"           "750"                                  // Speed of projectile.
+    "ProjectileSpeed"           "1750"                                  // Speed of projectile.
 
     // Bounty
     //----------------------------------------------------------------
@@ -69,7 +69,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"              "40000"      // Base health.
+    "StatusHealth"              "55000"      // Base health.
     "StatusHealthRegen"         "1.0"           // Health regeneration rate.
     "StatusMana"                "4000"      // Base mana.
     "StatusManaRegen"           "0"       // Mana regeneration rate.

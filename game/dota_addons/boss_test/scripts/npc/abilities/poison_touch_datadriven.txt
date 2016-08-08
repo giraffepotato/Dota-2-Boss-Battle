@@ -56,17 +56,17 @@
     "02"
     { 
       "var_type"      "FIELD_INTEGER"
-      "slow_1"      "-133"
+      "slow_1"      "-33"
     }
     "03"
     { 
       "var_type"      "FIELD_INTEGER"
-      "slow_2"      "-166"
+      "slow_2"      "-66"
     }
     "04"
     { 
       "var_type"      "FIELD_INTEGER"
-      "slow_3"      "-200"
+      "slow_3"      "-100"
     }
     "05"
     { 
@@ -213,8 +213,8 @@
 
     "modifier_poison_touch_slow_1_datadriven"
     {
-      "IsHidden"    "1"
-
+      "IsHidden"    "0"
+      "IsDebuff"      "1"
       "StatusEffectName"    "particles/status_fx/status_effect_poison_dazzle.vpcf"     
       "StatusEffectPriority"  "10"
 
@@ -236,7 +236,8 @@
 
     "modifier_poison_touch_slow_2_datadriven"
     {
-      "IsHidden"    "1"
+      "IsHidden"    "0"
+      "IsDebuff"      "1"
 
       "OnDestroy"
       {
@@ -262,8 +263,8 @@
 
     "modifier_poison_touch_slow_3_datadriven"
     {
-      "IsHidden"    "1"
-
+      "IsHidden"    "0"
+      "IsDebuff"      "1"
       "Properties"
       {
         "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_3" 

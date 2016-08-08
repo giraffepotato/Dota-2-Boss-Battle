@@ -29,7 +29,7 @@
     "01"
     {
       "var_type"          "FIELD_INTEGER"
-      "hp_threshold"        "1600"
+      "hp_threshold"        "10000"
     }
     "02"
     {
@@ -67,12 +67,6 @@
       "Target"    "CASTER"
       "ModifierName"  "modifier_borrowed_time"
       "Duration"    "%duration"
-    }
-    
-    "FireSound"
-    {
-      "Target"    "CASTER"
-      "EffectName"  "Hero_Abaddon.BorrowedTime" 
     }
 
     "RunScript"

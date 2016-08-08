@@ -13,6 +13,14 @@
     "precache"
     {
       "particle"  "particles/units/heroes/hero_bloodseeker/bloodseeker_bloodritual_impact.vpcf"
+      "particle"  "particles/units/heroes/hero_bloodseeker/gore_wound_arterial_spray_3.vpcf"
+      "particle"  "particles/units/heroes/hero_centaur/centaur_double_edge_bloodspray_src.vpcf"
+      "particle"  "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_blood02.vpcf"
+      "particle"  "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf"
+      "particle"  "particles/units/heroes/hero_ogre_magi/ogre_magi_bloodlust_cast_circle_flash.vpcf"
+      "particle"  "particles/units/heroes/hero_riki/riki_backstab_hit_blood.vpcf"
+      "soundfile" "sounds/weapons/hero/ursa/ursa_enrage.vsnd"
+      "soundfile" "sounds/weapons/hero/bloodseeker/rupture.vsnd"
     }
     "AbilityCastPoint"       "0.0"
     "AbilityCastAnimation"   "ACT_DOTA_FLAIL"
@@ -21,21 +29,57 @@
 
     // Stats
     //----------------------------------------------------------------------------------------
-    "AbilityManaCost"         "900"
+    "AbilityManaCost"         "400"
     "AbilityCooldown"         "150"
-    "AbilityDuration"         "10.0"
-
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"      "FIELD_INTEGER"
-        "grave_duration"      "8.5"
-      }
-    }
     
     "OnSpellStart"
     {
+      "FireEffect"
+      {
+        "EffectName"        "particles/units/heroes/hero_bloodseeker/gore_wound_arterial_spray_3.vpcf"
+        "EffectAttachType"  "follow_origin"
+        "Target"            "CASTER"
+      }
+      "FireEffect"
+      {
+        "EffectName"        "particles/units/heroes/hero_centaur/centaur_double_edge_bloodspray_src.vpcf"
+        "EffectAttachType"  "follow_origin"
+        "Target"            "CASTER"
+      }
+      "FireEffect"
+      {
+        "EffectName"        "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_blood02.vpcf"
+        "EffectAttachType"  "follow_origin"
+        "Target"            "CASTER"
+      }
+      "FireEffect"
+      {
+        "EffectName"        "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf"
+        "EffectAttachType"  "follow_origin"
+        "Target"            "CASTER"
+      }
+      "FireEffect"
+      {
+        "EffectName"        "particles/units/heroes/hero_ogre_magi/ogre_magi_bloodlust_cast_circle_flash.vpcf"
+        "EffectAttachType"  "follow_origin"
+        "Target"            "CASTER"
+      }
+      "FireEffect"
+      {
+        "EffectName"        "particles/units/heroes/hero_riki/riki_backstab_hit_blood.vpcf"
+        "EffectAttachType"  "follow_origin"
+        "Target"            "CASTER"
+      }
+      "FireSound"
+      {
+        "EffectName"  "Hero_Ursa.Enrage"
+        "Target"     "CASTER"
+      }
+      "FireSound"
+      {
+        "EffectName"  "Hero_Bloodseeker.Rupture"
+        "Target"     "CASTER"
+      }
       "FireEffect"
       {
         "EffectName"        "particles/units/heroes/hero_bloodseeker/bloodseeker_bloodritual_impact.vpcf"

@@ -18,6 +18,8 @@
     "AbilityCastAnimation"   "ACT_DOTA_FLAIL"
     "AnimationPlaybackRate"  "0.75"
     "AnimationIgnoresModelScale" "0"
+    "AbilityUnitDamageType"  "DAMAGE_TYPE_PURE"
+    "SpellImmunityType"      "SPELL_IMMUNITY_ENEMIES_YES"
 
     // Stats
     //----------------------------------------------------------------------------------------
@@ -40,6 +42,7 @@
               "Target"    "TARGET"
               "Type"      "DAMAGE_TYPE_PURE"
               "Damage"    "%AbilityDamage"
+              "Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
             }
     }
 }
