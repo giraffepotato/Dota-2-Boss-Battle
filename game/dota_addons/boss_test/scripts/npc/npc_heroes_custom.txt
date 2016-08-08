@@ -14,7 +14,7 @@
 	    "Ability7"        "doom_empty1"
 	    "Ability8"        "rubick_empty1"
 	    "Ability9"        "invoker_empty1"
-	    "Ability10"       "invoker_empty2"
+	    "Ability10"       "invoker_empty1"
 	    "Ability11"       "attribute_bonus"
 	    "Ability12"       ""
 	    "Ability13"       ""

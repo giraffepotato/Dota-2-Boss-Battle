@@ -11,7 +11,7 @@ function arcane_bolt_init( keys )
 		caster.arcane_bolt_list_tail = tmp
 	end
 end
-
+--test
 --[[
 	Author: kritth
 	Date: 09.01.2015
