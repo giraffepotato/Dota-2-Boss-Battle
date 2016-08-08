@@ -1,493 +1,6 @@
 "DOTAUnits"
 {
-    "npc_rexxar_boss"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "MinimapIcon"               "minimap_beastmaster"
-        "Model"                     "models/heroes/beastmaster/beastmaster.vmdl"      // Model.
-        "BaseClass"                 "npc_dota_creature"
-        "SoundSet"                  "Hero_Beastmaster"                                                  // Name of sound set.
-        "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
-        "IdleSoundLoop"             "Hero_Beastmaster.IdleLoop"
-        "Level"                     "40"
-        "ModelScale"                "3.0"
-        "ConsideredHero"            "1"
-        "HasInventory" "1"
-    
-        "precache"
-        {
-            "model" "models/heroes/beastmaster/beastmaster.vmdl"
-        }
-        
-        "UseNeutralCreepBehavior"   "0"
-    
-        // Armor
-        //-------------------------------------------------------------------------------------------------------------
-        "ArmorPhysical"             "30"                             // Physical protection.
-        "MagicalResistance"         "50"
-    
-        // Abilities
-        //----------------------------------------------------------------
-        "AbilityLayout"     "6"
-        "Ability1"                  "tentacle_mess"          // Ability 1.
-        "Ability2"                  "beetle_swarm"          // Ability 2.
-        "Ability3"                  "bird_flare"          // Ability 3.
-        "Ability4"                  "create_wolves"          // Ability 4.
-        "Ability5"                  "viper_nethertoxin"          // Ability 5.
-        "Ability6"                  "troll_warlord_fervor"          // Ability 6 - Extra.
-        //"Ability7"                  ""          // Ability 7 - Extra.
-        //"Ability8"                  ""          // Ability 8 - Extra.
-    
-        // Attack
-        //-------------------------------------------------------------------------------------------------------------
-        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"           "500"                                    // Damage range min.
-        "AttackDamageMax"           "800"                                    // Damage range max.
-        "AttackRate"                "1.55"                                   // Speed of attack.
-        "AttackAnimationPoint"      "0.65"                                  // Normalized time in animation cycle to attack.
-        "AttackAcquisitionRange"    "300"                                   // Range within a target can be acquired.
-        "AttackRange"               "150"                                   // Range within a target can be attacked.
-        //"ProjectileModel"           "particles/units/heroes/Hero_Drow/drow_base_attack.vpcf"      // Particle system model for projectile.
-        //"ProjectileSpeed"           "1250"                                  // Speed of projectile.
-        
-        // Bounty
-        //----------------------------------------------------------------
-        "BountyXP"                  "40000"     // Experience earn.
-        "BountyGoldMin"             "1000"     // Gold earned min.
-        "BountyGoldMax"             "2000"     // Gold earned max.
-    
-        // Bounds
-        //----------------------------------------------------------------
-        "RingRadius"                "70"
-        "HealthBarOffset"           "490"
-    
-    
-        // Movement
-        //-------------------------------------------------------------------------------------------------------------
-        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
-        "MovementSpeed"             "405"
-        "MovementTurnRate"          "1.5"
-    
-        // Status
-        //----------------------------------------------------------------
-        "StatusHealth"              "35000"      // Base health.
-        "StatusHealthRegen"         "5.0"           // Health regeneration rate.
-        "StatusMana"                "15000"      // Base mana.
-        "StatusManaRegen"           "10.0"       // Mana regeneration rate.
-    
-        // Vision
-        //-------------------------------------------------------------------------------------------------------------
-        "VisionDaytimeRange"        "2000"      // Range of vision during day light.
-        "VisionNighttimeRange"      "2000"                                   // Range of vision at night time.
-    
-        // Team
-        //----------------------------------------------------------------
-        "TeamName"                  "DOTA_TEAM_NEUTRALS"                         // Team name.
-        "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-        //"CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
-        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-        
-        "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
-        "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_beastmaster.vsndevts"
-    
-        "AutoAttacksByDefault"          "1"
-    
-        //"vscripts"                    "scripts/vscripts/drow_ai.lua"
-    
-        "Creature"
-        {
-            "CanRespawn"                "0"
-            
-            "EquippedItems"
-            {     
-                "Radiance"           {    "Item"    "item_radiance"           }
-                "CrimsonGuard"       {    "Item"    "item_crimson_guard"      }
-                "VladmirsOffering"   {    "Item"    "item_vladmir"            }
-                "DrumOfEndurance"    {    "Item"    "item_ancient_janggo"     }
-            }
-            "AttachWearables"
-            {
-                "Wearable1"     {   "ItemDef"       "4648"      }
-                "Wearable2"     {   "ItemDef"       "8344"      }
-                "Wearable3"     {   "ItemDef"       "8345"      }
-                "Wearable4"     {   "ItemDef"       "4887"      }
-                "Wearable5"     {   "ItemDef"       "4885"      }
-            }
-            "DefaultState"       "Aggresive"
-            "States"
-            {
-                "Aggresive"
-                {
-                    "Name"          "Aggressive"
-                    "Aggression"    "100.0"
-                    "Avoidance"     "0.0"
-                    "Support"       "0.0"
-                    "RoamDistance"  "1000.0"
-                }
-            }
-        }
-    }
-    "npc_drow_ranger_boss"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "MinimapIcon"               "minimap_drow_ranger"
-        "Model"                     "models/heroes/drow/drow.vmdl"      // Model.
-        "BaseClass"                 "npc_dota_creature"
-        "SoundSet"                  "Hero_DrowRanger"                                                  // Name of sound set.
-        "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts"
-        "IdleSoundLoop"             "Hero_DrowRanger.IdleLoop"
-        "Level"                     "40"
-        "ModelScale"                "3.0"
-        "ConsideredHero"            "1"
-        "HasInventory" "1"
-    
-        "precache"
-        {
-            "model" "models/heroes/drow/drow.vmdl"
-        }
-        
-        "UseNeutralCreepBehavior"   "0"
-    
-        // Armor
-        //-------------------------------------------------------------------------------------------------------------
-        "ArmorPhysical"             "30"                             // Physical protection.
-        "MagicalResistance"         "50"
-    
-        // Abilities
-        //----------------------------------------------------------------
-        "AbilityLayout"     "6"
-        "Ability1"                  "sniper_headshot"          // Ability 1.
-        "Ability2"                  "boss_revive_drow"          // Ability 2.
-        "Ability3"                  "nevermore_dark_lord"          // Ability 3.
-        "Ability4"                  "tidehunter_kraken_shell"          // Ability 4.
-        "Ability5"                  "viper_nethertoxin"          // Ability 5.
-        "Ability6"                  "troll_warlord_fervor"          // Ability 6 - Extra.
-        //"Ability7"                  ""          // Ability 7 - Extra.
-        //"Ability8"                  ""          // Ability 8 - Extra.
-    
-        // Attack
-        //-------------------------------------------------------------------------------------------------------------
-        "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
-        "AttackDamageMin"           "500"                                    // Damage range min.
-        "AttackDamageMax"           "800"                                    // Damage range max.
-        "AttackRate"                "0.75"                                   // Speed of attack.
-        "AttackAnimationPoint"      "0.80"                                  // Normalized time in animation cycle to attack.
-        "AttackAcquisitionRange"    "900"                                   // Range within a target can be acquired.
-        "AttackRange"               "1000"                                   // Range within a target can be attacked.
-        "ProjectileModel"           "particles/units/heroes/Hero_Drow/drow_base_attack.vpcf"      // Particle system model for projectile.
-        "ProjectileSpeed"           "1250"                                  // Speed of projectile.
-    
-        // Bounty
-        //----------------------------------------------------------------
-        "BountyXP"                  "40000"     // Experience earn.
-        "BountyGoldMin"             "1000"     // Gold earned min.
-        "BountyGoldMax"             "2000"     // Gold earned max.
-    
-        // Bounds
-        //----------------------------------------------------------------
-        "RingRadius"                "70"
-        "HealthBarOffset"           "490"
-    
-    
-        // Movement
-        //-------------------------------------------------------------------------------------------------------------
-        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
-        "MovementSpeed"             "595"
-        "MovementTurnRate"          "1.6"
-    
-        // Status
-        //----------------------------------------------------------------
-        "StatusHealth"              "25000"      // Base health.
-        "StatusHealthRegen"         "15.0"           // Health regeneration rate.
-        "StatusMana"                "15000"      // Base mana.
-        "StatusManaRegen"           "30.0"       // Mana regeneration rate.
-    
-        // Vision
-        //-------------------------------------------------------------------------------------------------------------
-        "VisionDaytimeRange"        "2000"      // Range of vision during day light.
-        "VisionNighttimeRange"      "20000"                                   // Range of vision at night time.
-    
-        // Team
-        //----------------------------------------------------------------
-        "TeamName"                  "DOTA_TEAM_NEUTRALS"                         // Team name.
-        "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-        //"CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
-        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-        
-        "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts"
-        "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_drowranger.vsndevts"
-    
-        "AutoAttacksByDefault"          "1"
-    
-        "vscripts"                    "scripts/vscripts/drow_ai.lua"
-    
-        "Creature"
-        {
-            "CanRespawn"                "0"
-            
-            "EquippedItems"
-            {     
-                "Butterfly"           {    "Item"    "item_butterfly"          }
-                "AssaultCuirass"      {    "Item"    "item_assault"            }
-                "VladmirsOffering"    {    "Item"    "item_vladmir"            }
-                "DiffusalBlade2"      {    "Item"    "item_diffusal_blade_2"   }
-                "MonkeyKingBar"       {    "Item"    "item_monkey_king_bar"    }
-                "EyeOfSkadi"          {    "Item"    "item_skadi"              }
-            }
-            "AttachWearables"
-            {
-                "Wearable1"     {   "ItemDef"       "7052"      }
-                "Wearable2"     {   "ItemDef"       "7053"      }
-                "Wearable3"     {   "ItemDef"       "7055"      }
-                "Wearable4"     {   "ItemDef"       "7056"      }
-                "Wearable5"     {   "ItemDef"       "7057"      }
-                "Wearable6"     {   "ItemDef"       "6785"      }
-                "Wearable7"     {   "ItemDef"       "4365"      }
-            }
-            "DefaultState"       "Aggresive"
-            "States"
-            {
-                "Aggresive"
-                {
-                    "Name"          "Aggressive"
-                    "Aggression"    "100.0"
-                    "Avoidance"     "0.0"
-                    "Support"       "0.0"
-                    "RoamDistance"  "1000.0"
-                }
-            }
-        }
-    }
-    "npc_clinkz_boss"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "MinimapIcon"               "minimap_clinkz"
-        "Model"                     "models/heroes/clinkz/clinkz.vmdl"      // Model.
-        "BaseClass"                 "npc_dota_creature"
-        "SoundSet"                  "Hero_Clinkz"                                                  // Name of sound set.
-        "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
-        "IdleSoundLoop"             "Hero_Clinkz.IdleLoop"
-        "Level"                     "40"
-        "ModelScale"                "3.0"
-        "ConsideredHero"            "1"
-        "HasInventory" "1"
-    
-        "precache"
-        {
-            "model" "models/heroes/clinkz/clinkz.vmdl"
-        }
-        
-        "UseNeutralCreepBehavior"   "0"
-    
-        // Armor
-        //-------------------------------------------------------------------------------------------------------------
-        "ArmorPhysical"             "40"                             // Physical protection.
-        "MagicalResistance"         "40"
-    
-        // Abilities
-        //----------------------------------------------------------------
-        "AbilityLayout"     "6"
-        "Ability1"                  "slark_essence_shift"          // Ability 1.
-        "Ability2"                  "boss_revive_clinkz"          // Ability 2.
-        "Ability3"                  "weaver_geminate_attack"          // Ability 3.
-        "Ability4"                  "warlock_golem_flaming_fists"          // Ability 4.
-        "Ability5"                  "chaos_knight_chaos_strike"          // Ability 5.
-        "Ability6"                  "tidehunter_kraken_shell"          // Ability 6 - Extra.
-        "Ability7"                  ""          // Ability 7 - Extra.
-        "Ability8"                  ""          // Ability 8 - Extra.
-    
-        // Attack
-        //-------------------------------------------------------------------------------------------------------------
-        "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
-        "AttackDamageMin"           "700"                                    // Damage range min.
-        "AttackDamageMax"           "1700"                                    // Damage range max.
-        "AttackRate"                "1.35"                                   // Speed of attack.
-        "AttackAnimationPoint"      "0.15"                                  // Normalized time in animation cycle to attack.
-        "AttackAcquisitionRange"    "900"                                   // Range within a target can be acquired.
-        "AttackRange"               "1600"                                   // Range within a target can be attacked.
-        "ProjectileModel"           "particles/units/heroes/hero_clinkz/clinkz_base_attack.vpcf"      // Particle system model for projectile.
-        "ProjectileSpeed"           "1750"                                  // Speed of projectile.
-    
-        // Bounty
-        //----------------------------------------------------------------
-        "BountyXP"                  "40000"     // Experience earn.
-        "BountyGoldMin"             "1000"     // Gold earned min.
-        "BountyGoldMax"             "2000"     // Gold earned max.
-    
-        // Bounds
-        //----------------------------------------------------------------
-        "RingRadius"                "70"
-        "HealthBarOffset"           "490"
-    
-    
-        // Movement
-        //-------------------------------------------------------------------------------------------------------------
-        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
-        "MovementSpeed"             "595"
-        "MovementTurnRate"          "1.6"
-    
-        // Status
-        //----------------------------------------------------------------
-        "StatusHealth"              "25000"      // Base health.
-        "StatusHealthRegen"         "15.0"           // Health regeneration rate.
-        "StatusMana"                "35000"      // Base mana.
-        "StatusManaRegen"           "30.0"       // Mana regeneration rate.
-    
-        // Vision
-        //-------------------------------------------------------------------------------------------------------------
-        "VisionDaytimeRange"        "2000"      // Range of vision during day light.
-        "VisionNighttimeRange"      "20000"                                   // Range of vision at night time.
-    
-        // Team
-        //----------------------------------------------------------------
-        "TeamName"                  "DOTA_TEAM_NEUTRALS"                         // Team name.
-        "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-        //"CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
-        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-        
-        "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
-        "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_clinkz.vsndevts"
-    
-        "AutoAttacksByDefault"          "1"
-    
-        "vscripts"                    "scripts/vscripts/clinkz_ai.lua"
-    
-        "Creature"
-        {
-            "CanRespawn"                "0"
-            
-            "EquippedItems"
-            {     
-                "Satanic"           {    "Item"    "item_satanic"            }
-                "Daedalus"          {    "Item"    "item_greater_crit"       }
-                "AssaultCuirass"    {    "Item"    "item_assault"            }
-                "LinkensSphere"     {    "Item"    "item_sphere"             }
-                "MonkeyKingBar"     {    "Item"    "item_monkey_king_bar"    }
-                "EyeOfSkadi"        {    "Item"    "item_skadi"              }
-            }
-            "AttachWearables"
-            {
-                "Wearable1"     {   "ItemDef"       "5178"      }
-                "Wearable2"     {   "ItemDef"       "8290"      }
-                "Wearable3"     {   "ItemDef"       "8292"      }
-                "Wearable4"     {   "ItemDef"       "8293"      }
-                "Wearable5"     {   "ItemDef"       "8294"      }
-                "Wearable6"     {   "ItemDef"       "523"       }
-            }
-            "DefaultState"       "Aggresive"
-            "States"
-            {
-                "Aggresive"
-                {
-                    "Name"          "Aggressive"
-                    "Aggression"    "100.0"
-                    "Avoidance"     "0.0"
-                    "Support"       "0.0"
-                    "RoamDistance"  "1000.0"
-                }
-            }
-        }
-    }
-    "npc_dazzle_huskar_summon"
-    {
-            // General
-            //----------------------------------------------------------------
-            "BaseClass"             "npc_dota_creature"
-            "Model"                 "models/heroes/huskar/huskar.vmdl"
-            "ModelScale"            "2.8"
-            "Level"                 "20"
-            "HealthBarOffset"       "640"
-            "HasInventory"          "1"
-            "ConsideredHero"        "1"
-           
-            // Abilities
-            //----------------------------------------------------------------
-            "AbilityLayout"         "4"
-            "Ability1"              "huskar_burning_spear"
-            "Ability2"              "dazzle_shallow_grave"
-            "Ability3"              "huskar_berserkers_blood"
-            "Ability4"              "brewmaster_earth_spell_immunity"
-            //"Ability5"              "skeleton_king_reincarnation"
-            "vscripts"              "scripts/vscripts/summoned_huskar.lua"
-           
-            // Armor
-            //----------------------------------------------------------------
-            "ArmorPhysical"         "25"
-            "MagicalResistance"     "99"
-    
-            // Attack
-            //----------------------------------------------------------------
-            "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
-            "AttackDamageMin"           "2250"                                    // Damage range min.
-            "AttackDamageMax"           "3300"                                    // Damage range max.
-            "AttackRate"                "1.85"                                   // Speed of attack.
-            "AttackAnimationPoint"      "0.05"                                  // Normalized time in animation cycle to attack.
-            "AttackAcquisitionRange"    "600"                                   // Range within a target can be acquired.
-            "AttackRange"               "600"                                   // Range within a target can be attacked.
-            "ProjectileModel"           "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"      // Particle system model for projectile.
-            "ProjectileSpeed"           "1750"
-           
-            // Bounty
-            //----------------------------------------------------------------
-            "BountyGoldMin"         "1500.0"
-            "BountyGoldMax"         "2500.0"
-           
-            // Bounds
-            //----------------------------------------------------------------
-            "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
-            "RingRadius"            "70"
-           
-            // Movement
-            //----------------------------------------------------------------
-            "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
-            "MovementSpeed"         "440.0"
-            "MovementTurnRate"      "0.6"
-           
-            // Status
-            //----------------------------------------------------------------
-            "StatusHealth"          "20000"
-            "StatusHealthRegen"     "5.0"
-            "StatusMana"            "1500"
-            "StatusManaRegen"       "0"
-           
-            // Vision
-            //----------------------------------------------------------------
-            "VisionDaytimeRange"    "1400"
-            "VisionNighttimeRange"  "800"
-           
-            // Team
-            //----------------------------------------------------------------
-            "TeamName"              "DOTA_TEAM_NEUTRALS"
-            "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
-            "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
-            "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-           
-            // Creature Data
-            //----------------------------------------------------------------
-            "Creature"
-            {
-                    "EquippedItems"
-                    {     
-                        "Satanic"         {    "Item"    "item_satanic"         }
-                        "MonkeyKingBar"   {    "Item"    "item_monkey_king_bar" }
-                        "MoonShard"       {    "Item"    "item_moon_shard"      }
-
-                    }
-                    "DisableClumpingBehavior"       "1"
-                    "AttachWearables"
-                    {
-                        "Wearable1"                 {   "ItemDef"     "8188"  }
-                        "Wearable2"                 {   "ItemDef"     "5811"  }
-                        "Wearable3"                 {   "ItemDef"     "4299"  }
-                        "Wearable4"                 {   "ItemDef"     "4749"  }
-                        "Wearable5"                 {   "ItemDef"     "4907"  }
-                    }
-            }
-    }
-    "npc_dazzle_boss"
+	"npc_dazzle_boss"
 	{
 	    // General
 	    //-------------------------------------------------------------------------------------------------------------
@@ -504,14 +17,14 @@
 	
 	    "precache"
 	    {
-	        "model" "models/heroes/dazzle/dazzle.vmdl"
+	        "model" "models/heroes/storm_spirit/dazzle.vmdl"
 	    }
 	    
 	    "UseNeutralCreepBehavior"   "0"
 	
 	    // Armor
 	    //-------------------------------------------------------------------------------------------------------------
-	    "ArmorPhysical"             "60"                             // Physical protection.
+	    "ArmorPhysical"             "50"                             // Physical protection.
 	    "MagicalResistance"         "50"
 	
 	    // Abilities
@@ -520,8 +33,8 @@
 	    "Ability1"                  "shadow_wave_datadriven"          // Ability 1.
 	    "Ability2"                  "poison_touch_datadriven"          // Ability 2.
 	    "Ability3"                  "dazzle_summon_spike"          // Ability 3.
-	    "Ability4"                  "dazzle_weave"          // Ability 4.
-	    "Ability5"                  "enrage_huskar"          // Ability 5.
+	    "Ability4"                  ""          // Ability 4.
+	    "Ability5"                  ""          // Ability 5.
 	    "Ability6"                  ""          // Ability 6 - Extra.
 	    "Ability7"                  ""          // Ability 7 - Extra.
 	    "Ability8"                  ""          // Ability 8 - Extra.
@@ -529,11 +42,11 @@
 	    // Attack
 	    //-------------------------------------------------------------------------------------------------------------
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
-	    "AttackDamageMin"           "50"                                    // Damage range min.
-	    "AttackDamageMax"           "100"                                    // Damage range max.
-	    "AttackRate"                "1.85"                                   // Speed of attack.
+	    "AttackDamageMin"           "250"                                    // Damage range min.
+	    "AttackDamageMax"           "300"                                    // Damage range max.
+	    "AttackRate"                "1.75"                                   // Speed of attack.
 	    "AttackAnimationPoint"      "0.55"                                  // Normalized time in animation cycle to attack.
-	    "AttackAcquisitionRange"    "900"                                   // Range within a target can be acquired.
+	    "AttackAcquisitionRange"    "300"                                   // Range within a target can be acquired.
 	    "AttackRange"               "900"                                   // Range within a target can be attacked.
 	    "ProjectileModel"           "particles/units/heroes/hero_dazzle/dazzle_base_attack.vpcf"      // Particle system model for projectile.
 	    "ProjectileSpeed"           "1750"                                  // Speed of projectile.
@@ -558,10 +71,10 @@
 	
 	    // Status
 	    //----------------------------------------------------------------
-	    "StatusHealth"              "55000"      // Base health.
-	    "StatusHealthRegen"         "15.0"           // Health regeneration rate.
-	    "StatusMana"                "25000"      // Base mana.
-	    "StatusManaRegen"           "40.0"       // Mana regeneration rate.
+	    "StatusHealth"              "40000"      // Base health.
+	    "StatusHealthRegen"         "10.0"           // Health regeneration rate.
+	    "StatusMana"                "10000"      // Base mana.
+	    "StatusManaRegen"           "0"       // Mana regeneration rate.
 	
 	    // Vision
 	    //-------------------------------------------------------------------------------------------------------------
@@ -588,10 +101,9 @@
 	        
 	        "EquippedItems"
 	        {     
-	            "VladmirsOffering"       {    "Item"    "item_vladmir"            }
+	            "VladimirsOffering"      {    "Item"    "item_vladimir"           }
 	            "GuardianGreaves"        {    "Item"    "item_guardian_greaves"   }
 	            "AssaultCuirass"         {    "Item"    "item_assault"            }
-                "LinkensSphere"          {    "Item"    "item_sphere"             }
 	        }
 	        "AttachWearables"
 	        {
@@ -599,7 +111,7 @@
 	            "Wearable2"     {   "ItemDef"       "7501"      }
 	            "Wearable3"     {   "ItemDef"       "7502"      }
 	            "Wearable4"     {   "ItemDef"       "7503"      }
-	            "Wearable5"     {   "ItemDef"       "7504"      }
+	            "Wearable4"     {   "ItemDef"       "7504"      }
 	        }
 	        "DefaultState"       "Aggresive"
 	        "States"
@@ -622,19 +134,18 @@
 	        "BaseClass"             "npc_dota_creature"
 	        "Model"                 "models/props_rock/stalagmite_01.vmdl"
 	        "ModelScale"            "0.8"
-	        "Level"                 "2"
-	        "HealthBarOffset"       "340"
+	        "Level"                 "1"
+	        "HealthBarOffset"       "140"
 	        "HasInventory"          "0"
 	       
 	        // Abilities
 	        //----------------------------------------------------------------
-	        "AbilityLayout"         "2"
+	        "AbilityLayout"         "1"
 	        "Ability1"              "armor_aura"
-            "Ability2"              "delete_spike"
 	       
 	        // Armor
 	        //----------------------------------------------------------------
-	        "ArmorPhysical"         "-10"
+	        "ArmorPhysical"         "2"
 	        "MagicalResistance"     "99"
 	
 	        // Attack
@@ -653,14 +164,14 @@
 	       
 	        // Movement
 	        //----------------------------------------------------------------
-	        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_NONE"
-	        "MovementSpeed"         "0.0"
+	        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+	        "MovementSpeed"         "0"
 	        "MovementTurnRate"      "0.6"
 	       
 	        // Status
 	        //----------------------------------------------------------------
-	        "StatusHealth"          "1800"
-	        "StatusHealthRegen"     "2.0"
+	        "StatusHealth"          "2000"
+	        "StatusHealthRegen"     "5.0"
 	        "StatusMana"            "0"
 	        "StatusManaRegen"       "0"
 	       
@@ -815,14 +326,14 @@
 	    // Attack
 	    //-------------------------------------------------------------------------------------------------------------
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
-	    "AttackDamageMin"           "1000"                                    // Damage range min.
-	    "AttackDamageMax"           "1500"                                    // Damage range max.
-	    "AttackRate"                "1.05"                                   // Speed of attack.
-	    "AttackAnimationPoint"      "0.35"                                  // Normalized time in animation cycle to attack.
-	    "AttackAcquisitionRange"    "700"                                   // Range within a target can be acquired.
-	    "AttackRange"               "1700"                                   // Range within a target can be attacked.
+	    "AttackDamageMin"           "0"                                    // Damage range min.
+	    "AttackDamageMax"           "0"                                    // Damage range max.
+	    "AttackRate"                "1.45"                                   // Speed of attack.
+	    "AttackAnimationPoint"      "0.55"                                  // Normalized time in animation cycle to attack.
+	    "AttackAcquisitionRange"    "300"                                   // Range within a target can be acquired.
+	    "AttackRange"               "700"                                   // Range within a target can be attacked.
 	    "ProjectileModel"           "particles/units/heroes/hero_stormspirit/stormspirit_base_attack.vpcf"      // Particle system model for projectile.
-	    "ProjectileSpeed"           "1750"                                  // Speed of projectile.
+	    "ProjectileSpeed"           "750"                                  // Speed of projectile.
 	
 	    // Bounty
 	    //----------------------------------------------------------------
@@ -844,7 +355,7 @@
 	
 	    // Status
 	    //----------------------------------------------------------------
-	    "StatusHealth"              "55000"      // Base health.
+	    "StatusHealth"              "40000"      // Base health.
 	    "StatusHealthRegen"         "1.0"           // Health regeneration rate.
 	    "StatusMana"                "4000"      // Base mana.
 	    "StatusManaRegen"           "0"       // Mana regeneration rate.
