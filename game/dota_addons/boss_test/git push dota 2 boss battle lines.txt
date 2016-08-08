@@ -1,2 +1,9 @@
-git remote add origin git@github.com:klyye/dota-2-boss-battle.git 
-git push -u origin master
+Right Click -> GIT BASH in C:\Program Files (x86)\Steam\steamapps\common\dota 2 beta
+cd down game or content into dota_addons
+git add boss_test
+git commit -m "insert message here"
+git git push
+
+IGNORE THIS I DONT KNOW WHY I PUT THIS BUT IT MIGHT BE IMPORTANT
+//git remote add origin git@github.com:klyye/dota-2-boss-battle.git 
+//git push -u origin master
