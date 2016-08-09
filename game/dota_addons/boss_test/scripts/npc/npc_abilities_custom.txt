@@ -785,8 +785,8 @@
 	    "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
 	    "MaxLevel"               "1"
 	
-	    "AbilityCastPoint"       "0.2"
-	    "AbilityCastAnimation"   "ACT_DOTA_IDLE"
+	    "AbilityCastPoint"       "2.2"
+	    "AbilityCastAnimation"   "ACT_DOTA_TELEPORT"
 	    "AnimationPlaybackRate"  "0.75"
 	    "AnimationIgnoresModelScale" "0"
 	    "AbilityDuration"        "120"
@@ -794,7 +794,7 @@
 	    // Stats
 	    //----------------------------------------------------------------------------------------
 	    "AbilityManaCost"         "220"
-	    "AbilityCooldown"         "20.0"
+	    "AbilityCooldown"         "15.0"
 	
 	    "precache"
 	    {
@@ -836,7 +836,7 @@
 	        "UnitName"    "npc_dazzle_boss_spike_summon"
 	        "Target"     "CASTER"
 	        "Duration"    "%duration"
-	        "UnitCount"    "3"
+	        "UnitCount"    "4"
 	        "UnitLimit"    "35"
 	        "GrantsGold"  "1"
 	        "GrantsXP"    "1"
@@ -1716,7 +1716,7 @@
 	    "03"
 	    {
 	      "var_type"      "FIELD_FLOAT"
-	      "static_remnant_delay"    "0.1"
+	      "static_remnant_delay"    "1.0"
 	    }
 	    "04"
 	    {

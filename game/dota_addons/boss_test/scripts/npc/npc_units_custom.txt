@@ -1084,12 +1084,12 @@
 	    // Attack
 	    //-------------------------------------------------------------------------------------------------------------
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
-	    "AttackDamageMin"           "1000"                                    // Damage range min.
-	    "AttackDamageMax"           "1500"                                    // Damage range max.
+	    "AttackDamageMin"           "100"                                    // Damage range min.
+	    "AttackDamageMax"           "500"                                    // Damage range max.
 	    "AttackRate"                "1.00"                                   // Speed of attack.
 	    "AttackAnimationPoint"      "0.05"                                  // Normalized time in animation cycle to attack.
 	    "AttackAcquisitionRange"    "700"                                   // Range within a target can be acquired.
-	    "AttackRange"               "1700"                                   // Range within a target can be attacked.
+	    "AttackRange"               "1000"                                   // Range within a target can be attacked.
 	    "ProjectileModel"           "particles/units/heroes/hero_stormspirit/stormspirit_base_attack.vpcf"      // Particle system model for projectile.
 	    "ProjectileSpeed"           "1950"                                  // Speed of projectile.
 	
