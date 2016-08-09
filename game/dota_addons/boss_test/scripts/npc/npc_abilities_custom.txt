@@ -2155,14 +2155,14 @@
 	    "BaseClass"                 "ability_datadriven"
 	    "AbilityTextureName"      "lich_dark_ritual"
 	    "MaxLevel"             "1"
-	    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_POINT_TARGET"
+	    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	    "AbilityType"           "DOTA_ABILITY_TYPE_BASIC"
 	    "AbilityCastPoint"       "0.0"
-	    "AbilityCastAnimation"   "ACT_DOTA_ATTACK"
+	    "AbilityCastAnimation"   "ACT_DOTA_CAST_ABILITY_4"
 	    "AnimationPlaybackRate"  "1"
 	    "AnimationIgnoresModelScale" "1"
-	    "AbilityManaCost"       "322"
-	    "AbilityCooldown"       "25.0"
+	    "AbilityManaCost"       "200"
+	    "AbilityCooldown"       "20.0"
 	
 	    "AbilitySpecial"
 	    {
@@ -2174,7 +2174,7 @@
 	      "02"
 	      {
 	        "var_type"      "FIELD_FLOAT"
-	        "duration"    "220.0"
+	        "duration"    "25.0"
 	      }
 	    }
 	
@@ -2187,9 +2187,9 @@
 	        "Duration"    "%duration"
 	        "UnitCount"    "10"
 	        "UnitLimit"    "20"
-	        "GrantsGold"  "0"
-	        "GrantsXP"    "0"
-	        "SpawnRadius"  "9200"
+	        "GrantsGold"  "1"
+	        "GrantsXP"    "1"
+	        "SpawnRadius"  "1000"
 	        "OnSpawn"
 	        {
 	          "ApplyModifier"
@@ -2204,6 +2204,55 @@
 	      }
 	    }
 	  }
+    "rexxar_spawn_big_trees"
+    {
+      "BaseClass"                 "ability_datadriven"
+      "AbilityTextureName"      "treant_eyes_in_the_forest"
+      "MaxLevel"             "1"
+      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+      "AbilityType"           "DOTA_ABILITY_TYPE_BASIC"
+      "AbilityCastPoint"       "0.0"
+      "AbilityCastAnimation"   "ACT_DOTA_ATTACK"
+      "AnimationPlaybackRate"  "1"
+      "AnimationIgnoresModelScale" "1"
+      "AbilityManaCost"       "100"
+      "AbilityCooldown"       "50.0"
+  
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"      "FIELD_FLOAT"
+          "duration"    "55.0"
+        }
+      }
+  
+      "OnSpellStart"
+      {
+        "SpawnUnit"
+        {
+          "UnitName"    "npc_rexxar_tree_summon"
+          "Target"     "CASTER"
+          "Duration"    "%duration"
+          "UnitCount"    "2"
+          "UnitLimit"    "2"
+          "GrantsGold"  "1"
+          "GrantsXP"    "1"
+          "SpawnRadius"  "150"
+          "OnSpawn"
+          {
+            "ApplyModifier"
+            {
+              "ModifierName"  "modifier_phased"
+              "Target"    "TARGET"
+              "Duration"    "0.05"
+            }
+        
+            //[ACTIONS]
+          }
+        }
+      }
+    }
 	"unlimited_mobility"
 	{
 	  // General
