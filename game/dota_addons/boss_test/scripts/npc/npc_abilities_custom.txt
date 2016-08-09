@@ -149,6 +149,8 @@
 	  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 	  "AbilityUnitDamageType"     "DAMAGE_TYPE_PHYSICAL"  
 	  "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_YES"
+    "AbilityCastPoint"        "2.0"
+    "AbilityCastAnimation"    "ACT_DOTA_FLAIL"
 	  "FightRecapLevel"       "2"
 	  "AbilityTextureName"      "weaver_the_swarm"
 	  
@@ -615,7 +617,7 @@
 	    "MaxLevel"               "1"
 	
 	    "AbilityCastPoint"       "2.0"
-	    "AbilityCastAnimation"   "ACT_DOTA_TELEPORT"
+	    "AbilityCastAnimation"   "ACT_DOTA_VICTORY"
 	    //"AnimationPlaybackRate"  "1"
 	    "AnimationIgnoresModelScale" "1"
 	
@@ -671,7 +673,7 @@
 	    "MaxLevel"               "1"
 	
 	    "AbilityCastPoint"       "2.0"
-	    "AbilityCastAnimation"   "ACT_DOTA_TELEPORT"
+	    "AbilityCastAnimation"   "ACT_DOTA_VICTORY"
 	    //"AnimationPlaybackRate"  "1"
 	    "AnimationIgnoresModelScale" "1"
 	
@@ -1031,7 +1033,8 @@
 	    "BaseClass"              "ability_datadriven"
 	    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	    "AbilityTextureName"     "huskar_berserkers_blood"
-	
+	    "AbilityCastPoint"       "2.5"
+      "AbilityCastAnimation"   "ACT_DOTA_TELEPORT"
 	    "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
 	    "MaxLevel"               "1"
 	    "RequiredLevel"          "0"
@@ -1678,14 +1681,14 @@
 	  "BaseClass"           "ability_datadriven"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "AbilityUnitDamageType"     "DAMAGE_TYPE_PURE" 
-	  "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_YES"
+	  "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
 	  "FightRecapLevel"       "1"
 	  "AbilityTextureName"      "storm_spirit_static_remnant"
 	  "MaxLevel"              "1"
 	  
 	  // Casting
 	  //-------------------------------------------------------------------------------------------------------------
-	  "AbilityCastPoint"        "0.35"
+	  "AbilityCastPoint"        "1.35"
 	
 	  // Time   
 	  //-------------------------------------------------------------------------------------------------------------
@@ -1718,7 +1721,7 @@
 	    "04"
 	    {
 	      "var_type"      "FIELD_INTEGER"
-	      "static_remnant_damage"     "440"
+	      "static_remnant_damage"     "640"
 	    }
 	  }
 	  
@@ -1984,7 +1987,7 @@
 	    "MaxLevel"             "1"
 	    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	    "AbilityType"           "DOTA_ABILITY_TYPE_BASIC"
-	    "AbilityCastPoint"       "0.0"
+	    "AbilityCastPoint"       "1.5"
 	    "AbilityCastAnimation"   "ACT_DOTA_CAST_ABILITY_4"
 	    "AnimationPlaybackRate"  "1"
 	    "AnimationIgnoresModelScale" "1"
@@ -2038,7 +2041,7 @@
       "MaxLevel"             "1"
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
       "AbilityType"           "DOTA_ABILITY_TYPE_BASIC"
-      "AbilityCastPoint"       "0.0"
+      "AbilityCastPoint"       "2.0"
       "AbilityCastAnimation"   "ACT_DOTA_ATTACK"
       "AnimationPlaybackRate"  "1"
       "AnimationIgnoresModelScale" "1"
@@ -2065,7 +2068,7 @@
           "UnitLimit"    "2"
           "GrantsGold"  "1"
           "GrantsXP"    "1"
-          "SpawnRadius"  "150"
+          "SpawnRadius"  "450"
           "OnSpawn"
           {
             "ApplyModifier"

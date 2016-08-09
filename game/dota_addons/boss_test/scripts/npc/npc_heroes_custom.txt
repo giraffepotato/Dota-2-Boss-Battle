@@ -1,6 +1,6 @@
 "DOTAHeroes"
 {
-	//"npc_hero_invincible test_dummy"
+	//"npc_hero_invincible_test_dummy"
 	  {
 	    "AbilityLayout"     "6"
 	    //"override_hero"     "npc_dota_hero_abaddon"
@@ -10,7 +10,7 @@
 	    "Ability3"        "deal_damage_ability" 
 	    "Ability4"        "unlimited_mobility"
 	    "Ability5"        "unit_spawn_test"
-	    "Ability6"        "rexxar_spawn_big_trees"
+	    "Ability6"        "tentacle_mess"
 	    "Ability7"        ""
 	    "Ability8"        ""
 	    "Ability9"        ""
