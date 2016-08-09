@@ -833,7 +833,7 @@
 	        }
 	      "SpawnUnit"
 	      {
-	        "UnitName"    "npc_test_dazzle_spike_summon"
+	        "UnitName"    "npc_dazzle_boss_spike_summon"
 	        "Target"     "CASTER"
 	        "Duration"    "%duration"
 	        "UnitCount"    "3"

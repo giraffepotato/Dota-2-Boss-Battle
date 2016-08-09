@@ -8,44 +8,53 @@ function Spawn(entityKeyValues)
 	print("Starting AI for "..thisEntity:GetUnitName().." "..thisEntity:GetEntityIndex())
 	
 	Timers:CreateTimer(function()
+		print("dazzle timer started")
 local index = thisEntity:GetEntityIndex()
 local healthRemaining = thisEntity:GetHealth() / thisEntity:GetMaxHealth()
 	if ABILITY_summon_spike_spell:IsFullyCastable() then
+		print("spike castable")
 		local units = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, thisEntity:GetAbsOrigin(), nil, 1200, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false )
 		if units ~= nil then
 			--returns 2 when 1 unit near?? wtf
 			if #units >= 2 then
 				thisEntity:CastAbilityNoTarget(ABILITY_summon_spike_spell, index)
+				print("spike casted")
 			end
 		end
 	end	 
 	
 	if ABILITY_shadow_wave_spell:IsFullyCastable() then
+		print("wave castable")
 		local units = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, thisEntity:GetAbsOrigin(), nil, 2200, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false )
 		if units ~= nil then
 			if #units >= 2 then
 				local target = units[1]
 				thisEntity:CastAbilityOnTarget(target, ABILITY_shadow_wave_spell, index)
+				print("wave casted")
 			end
 		end
 	end	 
 
 	if ABILITY_weave_spell:IsFullyCastable() then
+		print("weave castable")
 		local units = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, thisEntity:GetAbsOrigin(), nil, 700, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false )
 		if units ~= nil then
 			if #units >= 1 then
 				local target = units[1]
 				thisEntity:CastAbilityOnPosition(target:GetAbsOrigin(), ABILITY_weave_spell, index)
+				print("weave casted")
 			end
 		end
 	end	 
 
 	if ABILITY_poison_touch_spell:IsFullyCastable() then
+		print("poison touch castable")
 		local units = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, thisEntity:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false )
 		if units ~= nil then
 			if #units >= 1 then
 				local target = units[1]
 				thisEntity:CastAbilityOnTarget(target, ABILITY_poison_touch_spell, index)
+			print("poison touch casted")
 			end
 		end
 	end	
