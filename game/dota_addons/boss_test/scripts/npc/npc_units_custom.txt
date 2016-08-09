@@ -69,7 +69,7 @@
             //----------------------------------------------------------------
             "StatusHealth"              "10000"      // Base health.
             "StatusHealthRegen"         "550.0"           // Health regeneration rate.
-            "StatusMana"                "1400"      // Base mana.
+            "StatusMana"                "677"      // Base mana.
             "StatusManaRegen"           "0"       // Mana regeneration rate.
         
             // Vision
@@ -890,7 +890,7 @@
 	        "Ability2"                  "beetle_swarm"          // Ability 2.
 	        "Ability3"                  "bird_flare"          // Ability 3.
 	        "Ability4"                  "unit_spawn_test"          // Ability 4.
-	        "Ability5"                  "viper_nethertoxin"          // Ability 5.
+	        "Ability5"                  "rexxar_spawn_big_trees"          // Ability 5.
 	        "Ability6"                  "troll_warlord_fervor"          // Ability 6 - Extra.
 	        //"Ability7"                  ""          // Ability 7 - Extra.
 	        //"Ability8"                  ""          // Ability 8 - Extra.
@@ -949,7 +949,7 @@
 	    
 	        "AutoAttacksByDefault"          "1"
 	    
-	        //"vscripts"                    "scripts/vscripts/drow_ai.lua"
+	        "vscripts"                    "scripts/vscripts/rexxar_ai.lua"
 	    
 	        "Creature"
 	        {
