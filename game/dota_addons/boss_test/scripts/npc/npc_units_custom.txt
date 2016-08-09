@@ -58,7 +58,7 @@
         "VisionDaytimeRange"    "28000"                  // Range of vision at night time.
         "VisionNighttimeRange"    "28000"                  // Range of vision at night time.
       }
-}
+
     "npc_rexxar_tree_summon"
         {
             // General
