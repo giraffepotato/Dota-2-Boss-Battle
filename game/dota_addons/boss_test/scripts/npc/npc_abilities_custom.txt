@@ -149,14 +149,13 @@
 	  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 	  "AbilityUnitDamageType"     "DAMAGE_TYPE_PHYSICAL"  
 	  "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_YES"
-    "AbilityCastPoint"        "2.0"
+    "AbilityCastPoint"        "0.0"
     "AbilityCastAnimation"    "ACT_DOTA_FLAIL"
 	  "FightRecapLevel"       "2"
 	  "AbilityTextureName"      "weaver_the_swarm"
 	  
 	  // Casting
 	  //-------------------------------------------------------------------------------------------------------------
-	  "AbilityCastPoint"        "2.5"
 	
 	  // Time   
 	  //-------------------------------------------------------------------------------------------------------------
@@ -390,7 +389,7 @@
 	  // Casting
 	  //-------------------------------------------------------------------------------------------------------------
 	  "AbilityCastRange"        "1000"
-	  "AbilityCastPoint"        "0.1 0.1 0.1 0.1"
+	  "AbilityCastPoint"        "00"
 	  
 	  // Time   
 	  //-------------------------------------------------------------------------------------------------------------
@@ -1822,7 +1821,7 @@
 	    "01"
 	    {
 	      "var_type"        "FIELD_INTEGER"
-	      "mana_cost_per_second"  "20"
+	      "mana_cost_per_second"  "0"
 	    }
 	    
 	    "02"
@@ -1987,7 +1986,7 @@
 	    "MaxLevel"             "1"
 	    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	    "AbilityType"           "DOTA_ABILITY_TYPE_BASIC"
-	    "AbilityCastPoint"       "1.5"
+	    "AbilityCastPoint"       "0.5"
 	    "AbilityCastAnimation"   "ACT_DOTA_CAST_ABILITY_4"
 	    "AnimationPlaybackRate"  "1"
 	    "AnimationIgnoresModelScale" "1"
@@ -2041,7 +2040,7 @@
       "MaxLevel"             "1"
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
       "AbilityType"           "DOTA_ABILITY_TYPE_BASIC"
-      "AbilityCastPoint"       "2.0"
+      "AbilityCastPoint"       "1.0"
       "AbilityCastAnimation"   "ACT_DOTA_ATTACK"
       "AnimationPlaybackRate"  "1"
       "AnimationIgnoresModelScale" "1"
