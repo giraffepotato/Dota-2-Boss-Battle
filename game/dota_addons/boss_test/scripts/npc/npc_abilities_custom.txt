@@ -139,7 +139,111 @@
 	    "BaseClass"           "ability_datadriven"
 	    "AbilityTextureName"            "rubick_empty1"
 	  }
-	"beetle_swarm"
+	"bat_blast"
+{
+  // General
+  //-------------------------------------------------------------------------------------------------------------
+  "BaseClass"       "ability_datadriven"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+  "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+  "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
+  "FightRecapLevel"       "1"
+  "AbilityTextureName"      "death_prophet_carrion_swarm"
+
+  // Casting
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityCastRange"        "600"
+  "AbilityCastPoint"        "0.5 0.5 0.5 0.5"
+
+  // Time   
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityCooldown"       "8.0 7.0 6.0 5.0"
+
+  // Damage.
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityDamage"         "75 150 225 300"
+
+  // Cost
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityManaCost"       "105 120 140 165"   
+
+  // Special
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "start_radius"        "110 110 110 110"
+    }
+    "02"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "end_radius"        "300 300 300 300"
+    }
+    "03"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "range"           "810 810 810 810"
+    }
+    "04"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "speed"           "1100 1100 1100 1100"
+    }
+  }
+
+  "precache"
+  {
+    "particle"  "particles/units/heroes/hero_death_prophet/death_prophet_carrion_swarm.vpcf"  //Can't attach the bats
+    "particle"  "particles/econ/items/death_prophet/death_prophet_acherontia/death_prophet_acher_swarm.vpcf"
+    "soundfile" "soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts"
+  }
+
+  "OnSpellStart"
+  {
+    "LinearProjectile"
+    {
+        "Target"      "POINT"
+        "EffectName"      "particles/econ/items/death_prophet/death_prophet_acherontia/death_prophet_acher_swarm.vpcf"
+        "MoveSpeed"       "%speed"
+        "StartRadius"     "%start_radius"
+        "EndRadius"       "%end_radius"
+        "StartPosition"   "attach_attack1"
+        "FixedDistance"   "%range"
+        "TargetTeams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "TargetTypes"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "HasFrontalCone"  "1"
+        "ProvidesVision"  "0"
+    }
+
+    "FireSound"
+    {
+      "EffectName"  "Hero_DeathProphet.CarrionSwarm"
+      "Target"    "CASTER"
+    }
+  }
+
+  "OnProjectileHitUnit"
+  {
+    "DeleteOnHit" "0"
+    "FireSound"
+        {
+          "EffectName"      "Hero_DeathProphet.CarrionSwarm.Damage"
+            "Target"      "TARGET"
+        }
+
+        "Damage"
+        {
+          "Target"     "TARGET"
+          "Type"       "DAMAGE_TYPE_MAGICAL"
+          "Damage"     "%AbilityDamage"
+        }
+  }
+}
+  "beetle_swarm"
 	{
 	  // General
 	  //-------------------------------------------------------------------------------------------------------------
@@ -902,131 +1006,129 @@
 	    }
 	}
 	"dodge_circle"
-	{
-	  // General
-	  //-------------------------------------------------------------------------------------------------------------
-	  "BaseClass"       "ability_datadriven"
-	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-	  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
-	  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	  "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
-	  "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
-	  "FightRecapLevel"       "1"
-	  "AbilityTextureName"      "leshrac_split_earth"
-	  "MaxLevel"              "1"
-	
-	  "precache"
-	  {
-	    "soundfile"         "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
-	    "particle"      "particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
-	    "particle"      "particles/generic_gameplay/generic_stunned.vpcf"
-	  }
-	
-	  // Casting
-	  //-------------------------------------------------------------------------------------------------------------
-	  "AbilityCastRange"        "750"
-	  "AbilityCastPoint"        "1.0"
-	  "AnimationIgnoresModelScale"  "0"
-	  "AnimationPlaybackRate"   "0.5"
-	  "AOERadius"           "%radius"
-	  
-	  // Time   
-	  //-------------------------------------------------------------------------------------------------------------
-	  "AbilityCooldown"       "9"
-	
-	  // Cost
-	  //-------------------------------------------------------------------------------------------------------------
-	  "AbilityManaCost"       "160"
-	  
-	  // Damage.
-	  //-------------------------------------------------------------------------------------------------------------
-	  "AbilityDamage"         "2300"
-	  "AbilityDuration"       "4"
-	  
-	  // Special
-	  //-------------------------------------------------------------------------------------------------------------
-	  "AbilitySpecial"
-	  {
-	    "01"
-	    {
-	      "var_type"      "FIELD_FLOAT"
-	      "delay"       ".55"
-	    }
-	    
-	    "02"
-	    {
-	      "var_type"      "FIELD_INTEGER"
-	      "radius"      "1200"
-	    }
-	    
-	    "03"
-	    {
-	      "var_type"      "FIELD_INTEGER"
-	      "duration"      "2"
-	    }
-	  }
-	
-	  "OnSpellStart"
-	  {
-	    "DelayedAction"
-	    {
-	      "Delay"     "%delay"
-	      "Action"    
-	      {
-	        "FireEffect"
-	        {
-	          "EffectName"        "particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
-	          "EffectAttachType"  "start_at_customorigin"
-	          "TargetPoint"       "POINT"
-	
-	          "ControlPoints"
-	          {
-	            "01"    "%radius %radius %radius"
-	          }
-	        }
-	
-	        "FireSound"
-	        {
-	          "EffectName"  "Hero_Leshrac.Split_Earth"
-	          "Target"    "CASTER"
-	        }
-	
-	        "DestroyTrees"
-	        {
-	          "Target"    "POINT"
-	          "Radius"    "%radius"
-	        }
-	
-	        "ActOnTargets"
-	        {
-	          "Target"
-	          {
-	            "Center"    "TARGET"
-	            "Radius"  "%radius"
-	            "Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
-	            "Types"   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	          }
-	        
-	          "Action"
-	          {
-	            "Damage"
-	            {
-	              "Target"    "TARGET"
-	              "Type"      "DAMAGE_TYPE_MAGICAL"
-	              "Damage"    "%AbilityDamage"
-	            }
-	
-	            "Stun"
-	            {
-	              "Target"   "TARGET"
-	              "Duration"   "%duration"
-	            }
-	          }
-	        }
-	      }
-	    }   
-	  }
-	}
+{
+  // General
+  //-------------------------------------------------------------------------------------------------------------
+  "BaseClass"       "ability_datadriven"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+  "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+  "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
+  "FightRecapLevel"       "1"
+  "AbilityTextureName"      "leshrac_split_earth"
+  "MaxLevel"              "1"
+
+  "precache"
+  {
+    "soundfile"         "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
+    "particle"      "particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
+    "particle"      "particles/generic_gameplay/generic_stunned.vpcf"
+  }
+
+  // Casting
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityCastRange"        "750"
+  "AbilityCastPoint"        "0.7"
+  "AOERadius"           "%radius"
+  
+  // Time   
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityCooldown"       "9"
+
+  // Cost
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityManaCost"       "100"
+  
+  // Damage.
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityDamage"         "2300"
+  "AbilityDuration"       "2"
+  
+  // Special
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"      "FIELD_FLOAT"
+      "delay"       "0.35"
+    }
+    
+    "02"
+    {
+      "var_type"      "FIELD_INTEGER"
+      "radius"      "925"
+    }
+    
+    "03"
+    {
+      "var_type"      "FIELD_INTEGER"
+      "duration"      "2"
+    }
+  }
+
+  "OnSpellStart"
+  {
+    "DelayedAction"
+    {
+      "Delay"     "%delay"
+      "Action"    
+      {
+        "FireEffect"
+        {
+          "EffectName"        "particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
+          "EffectAttachType"  "start_at_customorigin"
+          "TargetPoint"       "POINT"
+
+          "ControlPoints"
+          {
+            "01"    "%radius"
+          }
+        }
+
+        "FireSound"
+        {
+          "EffectName"  "Hero_Leshrac.Split_Earth"
+          "Target"    "CASTER"
+        }
+
+        "DestroyTrees"
+        {
+          "Target"    "POINT"
+          "Radius"    "%radius"
+        }
+
+        "ActOnTargets"
+        {
+          "Target"
+          {
+            "Center"    "POINT"
+            "Radius"  "%radius"
+            "Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+            "Types"   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+          }
+        
+          "Action"
+          {
+            "Damage"
+            {
+              "Target"    "TARGET"
+              "Type"      "DAMAGE_TYPE_MAGICAL"
+              "Damage"    "%AbilityDamage"
+            }
+
+            "Stun"
+            {
+              "Target"   "TARGET"
+              "Duration"   "%duration"
+            }
+          }
+        }
+      }
+    }   
+  }
+}
 	//-------------------
 	// Dummy stuff
 	//-------------------
