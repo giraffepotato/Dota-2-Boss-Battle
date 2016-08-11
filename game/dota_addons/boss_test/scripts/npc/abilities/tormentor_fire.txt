@@ -1,0 +1,107 @@
+"tormentor_fire"
+{
+  // General
+  //-------------------------------------------------------------------------------------------------------------
+  "BaseClass"       "ability_datadriven"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+  "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+  "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
+  "FightRecapLevel"       "1"
+  "MaxLevel"              "1"
+  "AbilityTextureName"      "lina_dragon_slave"
+
+  // Precache
+  //-------------------------------------------------------------------------------------------------------------
+  "precache"
+  {
+    "soundfile"     "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+    "particle"      "particles/units/heroes/hero_queenofpain/queen_sonic_wave.vpcf"
+  }
+  
+  // Casting
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityCastRange"        "800"
+  "AbilityCastPoint"        "2.0"
+  "AbilityCastAnimation"    "ACT_DOTA_FLAIL"
+  "AnimationPlaybackRate"   "0.33"
+  "AnimationIgnoresModelScale"  "1"
+
+  // Time   
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityCooldown"       "10"
+  "AbilityDuration"       "0.6875"
+
+  // Damage.
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityDamage"         "3900"
+
+  // Cost
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityManaCost"       "90"
+
+  // Special
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "dragon_slave_speed"    "900"
+    }
+    
+    "02"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "dragon_slave_width_initial"  "100"
+    }
+    "03"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "dragon_slave_width_end"    "450"
+    }
+    
+    "04"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "dragon_slave_distance"     "975"
+    }
+  }
+
+  "OnSpellStart"
+  {
+    "LinearProjectile"
+    {
+      "Target"      "POINT"
+        "EffectName"  "particles/units/heroes/hero_queenofpain/queen_sonic_wave.vpcf"
+        "MoveSpeed"   "%dragon_slave_speed"
+        "StartRadius"   "%dragon_slave_width_initial"
+        "StartPosition" "attach_origin"
+        "EndRadius"     "%dragon_slave_width_end"
+        "FixedDistance" "%dragon_slave_distance"
+        "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+        "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
+        "HasFrontalCone"    "1"
+        "ProvidesVision" "1"
+    }
+
+    "FireSound"
+    {
+      "EffectName"  "Hero_Clinkz.Death"
+      "Target"    "CASTER"
+    }
+  }
+
+  "OnProjectileHitUnit"
+  {
+    "DeleteOnHit" "0"
+    "Damage"
+    {
+      "Target"  "TARGET"
+      "Type"    "DAMAGE_TYPE_MAGICAL"
+      "Damage"  "%AbilityDamage"
+    }
+  }
+}

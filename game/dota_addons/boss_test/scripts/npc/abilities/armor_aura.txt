@@ -1,0 +1,79 @@
+"armor_aura"
+{
+    // General  
+    // ----------------------------------------------------------------------------------------
+    "BaseClass"              "ability_datadriven"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+    "AbilityTextureName"     "sven_warcry"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"               "1"
+
+    // Stats
+    //----------------------------------------------------------------------------------------
+
+    "precache"
+    {
+        "particle"  "particles/units/heroes/hero_lich/lich_frost_armor_model.vpcf"
+    }
+
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"        "FIELD_FLOAT"
+            "armor_per_sec"        "3.7"
+        }
+        "02"
+        {
+            "var_type"        "FIELD_INTEGER"
+            "radius"          "1500"
+        }
+        "03"
+        {
+            "var_type"        "FIELD_INTEGER"
+            "tick_interval"   "4.25"
+        }
+    }
+    "Modifiers"
+  {
+    "modifier_inner_beast"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+  
+      "Aura"            "modifier_armor_aura_buff"
+      "Aura_Radius"     "%radius"
+      "Aura_Teams"      "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+      "Aura_Types"      "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC" //mechanical?
+      "Aura_Flags"    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ALLIES" //Needed?
+    }
+
+    "modifier_armor_aura_buff"
+    {
+      "IsHidden"        "0"
+      "IsBuff"          "1"
+      "IsPurgable"    "0"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      //Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_per_sec"
+      }
+      "EffectName"    "particles/units/heroes/hero_lich/lich_frost_armor_model.vpcf"
+      "EffectAttachType"    "follow_overhead"
+      "ThinkInterval"  "4.25"
+      "OnIntervalThink"
+            {
+              "RunScript"
+              {
+                "ScriptFile"  "scripts/vscripts/dazzle_summon_armor.lua"
+                "Function"    "stack_armor"
+                "modifier"    "modifier_armor_aura_buff"
+              }
+            }      
+    }
+  }
+
+}

@@ -1,110 +1,6 @@
 "DOTAAbilities"
 {
-	"tormentor_fire"
-{
-  // General
-  //-------------------------------------------------------------------------------------------------------------
-  "BaseClass"       "ability_datadriven"
-  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
-  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
-  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-  "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
-  "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
-  "FightRecapLevel"       "1"
-  "MaxLevel"              "1"
-  "AbilityTextureName"      "lina_dragon_slave"
-
-  // Precache
-  //-------------------------------------------------------------------------------------------------------------
-  "precache"
-  {
-    "soundfile"     "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
-    "particle"      "particles/units/heroes/hero_rubick/rubick_fade_bolt.vpcf"
-  }
-  
-  // Casting
-  //-------------------------------------------------------------------------------------------------------------
-  "AbilityCastRange"        "800"
-  "AbilityCastPoint"        "0.45"
-
-  // Time   
-  //-------------------------------------------------------------------------------------------------------------
-  "AbilityCooldown"       "2.0"
-  "AbilityDuration"       "0.6875"
-
-  // Damage.
-  //-------------------------------------------------------------------------------------------------------------
-  "AbilityDamage"         "280"
-
-  // Cost
-  //-------------------------------------------------------------------------------------------------------------
-  "AbilityManaCost"       "90"
-
-  // Special
-  //-------------------------------------------------------------------------------------------------------------
-  "AbilitySpecial"
-  {
-    "01"
-    {
-      "var_type"          "FIELD_INTEGER"
-      "dragon_slave_speed"    "500"
-    }
-    
-    "02"
-    {
-      "var_type"          "FIELD_INTEGER"
-      "dragon_slave_width_initial"  "175"
-    }
-    "03"
-    {
-      "var_type"          "FIELD_INTEGER"
-      "dragon_slave_width_end"    "400"
-    }
-    
-    "04"
-    {
-      "var_type"          "FIELD_INTEGER"
-      "dragon_slave_distance"     "1575"
-    }
-  }
-
-  "OnSpellStart"
-  {
-    "LinearProjectile"
-    {
-      "Target"      "POINT"
-        "EffectName"  "particles/units/heroes/hero_rubick/rubick_fade_bolt.vpcf"
-        "MoveSpeed"   "%dragon_slave_speed"
-        "StartRadius"   "%dragon_slave_width_initial"
-        "StartPosition" "attach_origin"
-        "EndRadius"     "%dragon_slave_width_end"
-        "FixedDistance" "%dragon_slave_distance"
-        "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
-        "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-        "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
-        "HasFrontalCone"    "1"
-        "ProvidesVision" "1"
-    }
-
-    "FireSound"
-    {
-      "EffectName"  "Hero_Clinkz.Death"
-      "Target"    "CASTER"
-    }
-  }
-
-  "OnProjectileHitUnit"
-  {
-    "DeleteOnHit" "0"
-    "Damage"
-    {
-      "Target"  "TARGET"
-      "Type"    "DAMAGE_TYPE_MAGICAL"
-      "Damage"  "%AbilityDamage"
-    }
-  }
-}
-  "armor_aura"
+	"armor_aura"
 	{
 	    // General  
 	    // ----------------------------------------------------------------------------------------
@@ -253,8 +149,8 @@
 	  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 	  "AbilityUnitDamageType"     "DAMAGE_TYPE_PHYSICAL"  
 	  "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_YES"
-    "AbilityCastPoint"        "0.0"
-    "AbilityCastAnimation"    "ACT_DOTA_FLAIL"
+	    "AbilityCastPoint"        "0.0"
+	    "AbilityCastAnimation"    "ACT_DOTA_FLAIL"
 	  "FightRecapLevel"       "2"
 	  "AbilityTextureName"      "weaver_the_swarm"
 	  
@@ -876,7 +772,6 @@
 	    //-------------------------------------------------------------------------------------------------------------
 	    "AbilityManaCost"       "0 0 0 0"
 	  }
-	
 	"dazzle_summon_spike"
 	{
 	    // General  
@@ -1005,6 +900,132 @@
 	              "Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 	            }
 	    }
+	}
+	"dodge_circle"
+	{
+	  // General
+	  //-------------------------------------------------------------------------------------------------------------
+	  "BaseClass"       "ability_datadriven"
+	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	  "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+	  "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
+	  "FightRecapLevel"       "1"
+	  "AbilityTextureName"      "leshrac_split_earth"
+	  "MaxLevel"              "1"
+	
+	  "precache"
+	  {
+	    "soundfile"         "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
+	    "particle"      "particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
+	    "particle"      "particles/generic_gameplay/generic_stunned.vpcf"
+	  }
+	
+	  // Casting
+	  //-------------------------------------------------------------------------------------------------------------
+	  "AbilityCastRange"        "750"
+	  "AbilityCastPoint"        "1.0"
+	  "AnimationIgnoresModelScale"  "0"
+	  "AnimationPlaybackRate"   "0.5"
+	  "AOERadius"           "%radius"
+	  
+	  // Time   
+	  //-------------------------------------------------------------------------------------------------------------
+	  "AbilityCooldown"       "9"
+	
+	  // Cost
+	  //-------------------------------------------------------------------------------------------------------------
+	  "AbilityManaCost"       "160"
+	  
+	  // Damage.
+	  //-------------------------------------------------------------------------------------------------------------
+	  "AbilityDamage"         "2300"
+	  "AbilityDuration"       "4"
+	  
+	  // Special
+	  //-------------------------------------------------------------------------------------------------------------
+	  "AbilitySpecial"
+	  {
+	    "01"
+	    {
+	      "var_type"      "FIELD_FLOAT"
+	      "delay"       ".55"
+	    }
+	    
+	    "02"
+	    {
+	      "var_type"      "FIELD_INTEGER"
+	      "radius"      "1200"
+	    }
+	    
+	    "03"
+	    {
+	      "var_type"      "FIELD_INTEGER"
+	      "duration"      "2"
+	    }
+	  }
+	
+	  "OnSpellStart"
+	  {
+	    "DelayedAction"
+	    {
+	      "Delay"     "%delay"
+	      "Action"    
+	      {
+	        "FireEffect"
+	        {
+	          "EffectName"        "particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
+	          "EffectAttachType"  "start_at_customorigin"
+	          "TargetPoint"       "POINT"
+	
+	          "ControlPoints"
+	          {
+	            "01"    "%radius %radius %radius"
+	          }
+	        }
+	
+	        "FireSound"
+	        {
+	          "EffectName"  "Hero_Leshrac.Split_Earth"
+	          "Target"    "CASTER"
+	        }
+	
+	        "DestroyTrees"
+	        {
+	          "Target"    "POINT"
+	          "Radius"    "%radius"
+	        }
+	
+	        "ActOnTargets"
+	        {
+	          "Target"
+	          {
+	            "Center"    "TARGET"
+	            "Radius"  "%radius"
+	            "Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	            "Types"   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	          }
+	        
+	          "Action"
+	          {
+	            "Damage"
+	            {
+	              "Target"    "TARGET"
+	              "Type"      "DAMAGE_TYPE_MAGICAL"
+	              "Damage"    "%AbilityDamage"
+	            }
+	
+	            "Stun"
+	            {
+	              "Target"   "TARGET"
+	              "Duration"   "%duration"
+	            }
+	          }
+	        }
+	      }
+	    }   
+	  }
 	}
 	//-------------------
 	// Dummy stuff
@@ -1137,7 +1158,7 @@
 	    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	    "AbilityTextureName"     "huskar_berserkers_blood"
 	    "AbilityCastPoint"       "2.5"
-      "AbilityCastAnimation"   "ACT_DOTA_TELEPORT"
+	      "AbilityCastAnimation"   "ACT_DOTA_TELEPORT"
 	    "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
 	    "MaxLevel"               "1"
 	    "RequiredLevel"          "0"
@@ -1226,7 +1247,6 @@
 	    }
 	    
 	}
-	
 	"find_units_test_ability"
 	  {
 	    "BaseClass"     "ability_datadriven"
@@ -1524,6 +1544,55 @@
 	    }
 	  }
 	}
+	"rexxar_spawn_big_trees"
+	    {
+	      "BaseClass"                 "ability_datadriven"
+	      "AbilityTextureName"      "treant_eyes_in_the_forest"
+	      "MaxLevel"             "1"
+	      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	      "AbilityType"           "DOTA_ABILITY_TYPE_BASIC"
+	      "AbilityCastPoint"       "1.0"
+	      "AbilityCastAnimation"   "ACT_DOTA_ATTACK"
+	      "AnimationPlaybackRate"  "1"
+	      "AnimationIgnoresModelScale" "1"
+	      "AbilityManaCost"       "100"
+	      "AbilityCooldown"       "50.0"
+	  
+	      "AbilitySpecial"
+	      {
+	        "01"
+	        {
+	          "var_type"      "FIELD_FLOAT"
+	          "duration"    "55.0"
+	        }
+	      }
+	  
+	      "OnSpellStart"
+	      {
+	        "SpawnUnit"
+	        {
+	          "UnitName"    "npc_rexxar_tree_summon"
+	          "Target"     "CASTER"
+	          "Duration"    "%duration"
+	          "UnitCount"    "2"
+	          "UnitLimit"    "2"
+	          "GrantsGold"  "1"
+	          "GrantsXP"    "1"
+	          "SpawnRadius"  "450"
+	          "OnSpawn"
+	          {
+	            "ApplyModifier"
+	            {
+	              "ModifierName"  "modifier_phased"
+	              "Target"    "TARGET"
+	              "Duration"    "0.05"
+	            }
+	        
+	            //[ACTIONS]
+	          }
+	        }
+	      }
+	    }
 	"shadow_wave_datadriven"
 	{
 	  // General
@@ -2083,6 +2152,113 @@
 	    }
 	  }
 	}
+	"tormentor_fire"
+	{
+	  // General
+	  //-------------------------------------------------------------------------------------------------------------
+	  "BaseClass"       "ability_datadriven"
+	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+	  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	  "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+	  "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
+	  "FightRecapLevel"       "1"
+	  "MaxLevel"              "1"
+	  "AbilityTextureName"      "lina_dragon_slave"
+	
+	  // Precache
+	  //-------------------------------------------------------------------------------------------------------------
+	  "precache"
+	  {
+	    "soundfile"     "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+	    "particle"      "particles/units/heroes/hero_queenofpain/queen_sonic_wave.vpcf"
+	  }
+	  
+	  // Casting
+	  //-------------------------------------------------------------------------------------------------------------
+	  "AbilityCastRange"        "800"
+	  "AbilityCastPoint"        "2.0"
+	  "AbilityCastAnimation"    "ACT_DOTA_FLAIL"
+	  "AnimationPlaybackRate"   "0.33"
+	  "AnimationIgnoresModelScale"  "1"
+	
+	  // Time   
+	  //-------------------------------------------------------------------------------------------------------------
+	  "AbilityCooldown"       "10"
+	  "AbilityDuration"       "0.6875"
+	
+	  // Damage.
+	  //-------------------------------------------------------------------------------------------------------------
+	  "AbilityDamage"         "3900"
+	
+	  // Cost
+	  //-------------------------------------------------------------------------------------------------------------
+	  "AbilityManaCost"       "90"
+	
+	  // Special
+	  //-------------------------------------------------------------------------------------------------------------
+	  "AbilitySpecial"
+	  {
+	    "01"
+	    {
+	      "var_type"          "FIELD_INTEGER"
+	      "dragon_slave_speed"    "900"
+	    }
+	    
+	    "02"
+	    {
+	      "var_type"          "FIELD_INTEGER"
+	      "dragon_slave_width_initial"  "100"
+	    }
+	    "03"
+	    {
+	      "var_type"          "FIELD_INTEGER"
+	      "dragon_slave_width_end"    "450"
+	    }
+	    
+	    "04"
+	    {
+	      "var_type"          "FIELD_INTEGER"
+	      "dragon_slave_distance"     "975"
+	    }
+	  }
+	
+	  "OnSpellStart"
+	  {
+	    "LinearProjectile"
+	    {
+	      "Target"      "POINT"
+	        "EffectName"  "particles/units/heroes/hero_queenofpain/queen_sonic_wave.vpcf"
+	        "MoveSpeed"   "%dragon_slave_speed"
+	        "StartRadius"   "%dragon_slave_width_initial"
+	        "StartPosition" "attach_origin"
+	        "EndRadius"     "%dragon_slave_width_end"
+	        "FixedDistance" "%dragon_slave_distance"
+	        "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	        "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	        "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
+	        "HasFrontalCone"    "1"
+	        "ProvidesVision" "1"
+	    }
+	
+	    "FireSound"
+	    {
+	      "EffectName"  "Hero_Clinkz.Death"
+	      "Target"    "CASTER"
+	    }
+	  }
+	
+	  "OnProjectileHitUnit"
+	  {
+	    "DeleteOnHit" "0"
+	    "Damage"
+	    {
+	      "Target"  "TARGET"
+	      "Type"    "DAMAGE_TYPE_MAGICAL"
+	      "Damage"  "%AbilityDamage"
+	    }
+	  }
+	}
 	"unit_spawn_test"
 	  {
 	    "BaseClass"                 "ability_datadriven"
@@ -2137,55 +2313,6 @@
 	      }
 	    }
 	  }
-    "rexxar_spawn_big_trees"
-    {
-      "BaseClass"                 "ability_datadriven"
-      "AbilityTextureName"      "treant_eyes_in_the_forest"
-      "MaxLevel"             "1"
-      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-      "AbilityType"           "DOTA_ABILITY_TYPE_BASIC"
-      "AbilityCastPoint"       "1.0"
-      "AbilityCastAnimation"   "ACT_DOTA_ATTACK"
-      "AnimationPlaybackRate"  "1"
-      "AnimationIgnoresModelScale" "1"
-      "AbilityManaCost"       "100"
-      "AbilityCooldown"       "50.0"
-  
-      "AbilitySpecial"
-      {
-        "01"
-        {
-          "var_type"      "FIELD_FLOAT"
-          "duration"    "55.0"
-        }
-      }
-  
-      "OnSpellStart"
-      {
-        "SpawnUnit"
-        {
-          "UnitName"    "npc_rexxar_tree_summon"
-          "Target"     "CASTER"
-          "Duration"    "%duration"
-          "UnitCount"    "2"
-          "UnitLimit"    "2"
-          "GrantsGold"  "1"
-          "GrantsXP"    "1"
-          "SpawnRadius"  "450"
-          "OnSpawn"
-          {
-            "ApplyModifier"
-            {
-              "ModifierName"  "modifier_phased"
-              "Target"    "TARGET"
-              "Duration"    "0.05"
-            }
-        
-            //[ACTIONS]
-          }
-        }
-      }
-    }
 	"unlimited_mobility"
 	{
 	  // General

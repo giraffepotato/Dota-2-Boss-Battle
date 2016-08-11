@@ -1,0 +1,126 @@
+"npc_pugna_boss"
+        {
+            // General
+            //-------------------------------------------------------------------------------------------------------------
+            "Model"                     "models/heroes/pugna/pugna.vmdl"      // Model.
+            "BaseClass"                 "npc_dota_creature"
+            "SoundSet"                  "Hero_Pugna"                                                  // Name of sound set.
+            "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+            "IdleSoundLoop"             "Hero_Clinkz.IdleLoop"
+            "Level"                     "40"
+            "ModelScale"                "2.0"
+            "ConsideredHero"            "1"
+            "HasInventory" "1"
+        
+            "precache"
+            {
+                "model" "models/heroes/pugna/pugna.vmdl"
+                "soundfile" "soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
+            }
+            
+            "UseNeutralCreepBehavior"   "0"
+        
+            // Armor
+            //-------------------------------------------------------------------------------------------------------------
+            "ArmorPhysical"             "40"                             // Physical protection.
+            "MagicalResistance"         "40"
+        
+            // Abilities
+            //----------------------------------------------------------------
+            "AbilityLayout"     "6"
+            "Ability1"                  "tormentor_fire"          // Ability 1.
+            "Ability2"                  "tidehunter_kraken_shell"          // Ability 2.
+            "Ability3"                  "dodge_circle"          // Ability 3.
+            "Ability4"                  "warlock_golem_flaming_fists"          // Ability 4.
+            "Ability5"                  "chaos_knight_chaos_strike"          // Ability 5.
+            "Ability6"                  "tidehunter_kraken_shell"          // Ability 6 - Extra.
+            "Ability7"                  ""          // Ability 7 - Extra.
+            "Ability8"                  ""          // Ability 8 - Extra.
+        
+            // Attack
+            //-------------------------------------------------------------------------------------------------------------
+            "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+            "AttackDamageMin"           "700"                                    // Damage range min.
+            "AttackDamageMax"           "1700"                                    // Damage range max.
+            "AttackRate"                "1.35"                                   // Speed of attack.
+            "AttackAnimationPoint"      "0.15"                                  // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"    "900"                                   // Range within a target can be acquired.
+            "AttackRange"               "1600"                                   // Range within a target can be attacked.
+            "ProjectileModel"           "particles/units/heroes/hero_lina/lina_base_attack.vpcf"      // Particle system model for projectile.
+            "ProjectileSpeed"           "1750"                                  // Speed of projectile.
+        
+            // Bounty
+            //----------------------------------------------------------------
+            "BountyXP"                  "40000"     // Experience earn.
+            "BountyGoldMin"             "1000"     // Gold earned min.
+            "BountyGoldMax"             "2000"     // Gold earned max.
+        
+            // Bounds
+            //----------------------------------------------------------------
+            "RingRadius"                "70"
+            "HealthBarOffset"           "490"
+        
+        
+            // Movement
+            //-------------------------------------------------------------------------------------------------------------
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"             "595"
+            "MovementTurnRate"          "1.6"
+        
+            // Status
+            //----------------------------------------------------------------
+            "StatusHealth"              "55000"      // Base health.
+            "StatusHealthRegen"         "15.0"           // Health regeneration rate.
+            "StatusMana"                "45000"      // Base mana.
+            "StatusManaRegen"           "30.0"       // Mana regeneration rate.
+        
+            // Vision
+            //-------------------------------------------------------------------------------------------------------------
+            "VisionDaytimeRange"        "2000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "2000"                                   // Range of vision at night time.
+        
+            // Team
+            //----------------------------------------------------------------
+            "TeamName"                  "DOTA_TEAM_NEUTRALS"                         // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            //"CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+            
+            "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
+            "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_pugna.vsndevts"
+        
+            "AutoAttacksByDefault"          "1"
+        
+            //"vscripts"                    "scripts/vscripts/clinkz_ai.lua"
+        
+            "Creature"
+            {
+                "CanRespawn"                "0"
+                
+                "EquippedItems"
+                {     
+                    "LinkensSphere"     {    "Item"    "item_sphere"             }
+                }
+                "AttachWearables"
+                {
+                    "Wearable1"     {   "ItemDef"       "5422"      }
+                    "Wearable2"     {   "ItemDef"       "5992"      }
+                    "Wearable3"     {   "ItemDef"       "5994"      }
+                    "Wearable4"     {   "ItemDef"       "5996"      }
+                    "Wearable5"     {   "ItemDef"       "6000"      }
+                    "Wearable6"     {   "ItemDef"       "6001"      }
+                }
+                "DefaultState"       "Aggresive"
+                "States"
+                {
+                    "Aggresive"
+                    {
+                        "Name"          "Aggressive"
+                        "Aggression"    "100.0"
+                        "Avoidance"     "0.0"
+                        "Support"       "0.0"
+                        "RoamDistance"  "0.0"
+                    }
+                }
+            }
+        }

@@ -1,0 +1,112 @@
+"bird_flare"
+{
+  // General
+  //-------------------------------------------------------------------------------------------------------------
+  "BaseClass"       "ability_datadriven"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+  "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+  "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
+  "FightRecapLevel"       "1"
+  "AbilityTextureName"      "phoenix_fire_spirits"
+
+  // Casting
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityCastRange"        "1000"
+  "AbilityCastPoint"        "00"
+  
+  // Time   
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityCooldown"       "3.0"
+
+  // Cost
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityManaCost"       "70 70 70 70"
+
+  // Special
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bolt_speed"      "1500"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bolt_vision"     "325"
+    }
+    "03"
+    {
+      "var_type"        "FIELD_FLOAT"
+      "bolt_damage"     "120"
+    }
+    "04"
+    {
+      "var_type"        "FIELD_FLOAT"
+      "int_multiplier"    "1.6"
+    }
+    "05"
+    {
+      "var_type"        "FIELD_FLOAT"
+      "vision_duration"   "13.34"
+    }
+  }
+  
+  // Data driven
+  //-------------------------------------------------------------------------------------------------------------
+  "precache"
+  {
+    "soundfile"         "soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
+    "particle"          "particles/units/heroes/hero_skywrath_mage/skywrath_mage_arcane_bolt_birds.vpcf"
+  }
+  
+  "OnSpellStart"
+  {
+    "FireSound"
+    {
+      "Target"        "CASTER"
+      "EffectName"      "phoenix_phoenix_bird_attack"
+    }
+  
+    "TrackingProjectile"
+    {
+      "Target"        "TARGET"
+      "EffectName"      "particles/units/heroes/hero_skywrath_mage/skywrath_mage_arcane_bolt_birds.vpcf"
+      "Dodgeable"       "0"
+      "ProvidesVision"    "1"
+      "VisionRadius"      "%bolt_vision"
+      "MoveSpeed"       "%bolt_speed"
+    }
+    
+    "FireEffect"
+    {
+      "EffectName"        "particles/units/heroes/hero_beastmaster/beastmaster_call_bird.vpcf"
+      "EffectAttachType"  "follow_origin"
+      "Target"            "CASTER"
+    }
+
+    "RunScript"
+    {
+      "ScriptFile"      "bird_flare.lua"
+      "Function"        "arcane_bolt_init"
+    }
+  }
+  
+  "OnProjectileHitUnit"
+  {
+    "FireSound"
+    {
+      "Target"        "CASTER"
+      "EffectName"      "phoenix_phoenix_bird_attackt"
+    }
+  
+    "RunScript"
+    {
+      "ScriptFile"      "bird_flare.lua"
+      "Function"        "arcane_bolt_hit"
+    }
+  }
+}

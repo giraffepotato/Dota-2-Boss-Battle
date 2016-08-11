@@ -1,0 +1,97 @@
+"enrage_huskar"
+{
+    // General  
+    // ----------------------------------------------------------------------------------------
+    "BaseClass"              "ability_datadriven"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityTextureName"     "huskar_berserkers_blood"
+    "AbilityCastPoint"       "2.5"
+      "AbilityCastAnimation"   "ACT_DOTA_TELEPORT"
+    "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"               "1"
+    "RequiredLevel"          "0"
+    "LevelsBetweenUpgrades"  "1"
+    "precache"
+    {
+      "particle"  "particles/units/heroes/hero_bloodseeker/bloodseeker_bloodritual_impact.vpcf"
+      "particle"  "particles/units/heroes/hero_bloodseeker/gore_wound_arterial_spray_3.vpcf"
+      "particle"  "particles/units/heroes/hero_centaur/centaur_double_edge_bloodspray_src.vpcf"
+      "particle"  "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_blood02.vpcf"
+      "particle"  "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf"
+      "particle"  "particles/units/heroes/hero_ogre_magi/ogre_magi_bloodlust_cast_circle_flash.vpcf"
+      "particle"  "particles/units/heroes/hero_riki/riki_backstab_hit_blood.vpcf"
+      "soundfile" "sounds/weapons/hero/ursa/ursa_enrage.vsnd"
+      "soundfile" "sounds/weapons/hero/bloodseeker/rupture.vsnd"
+    }
+    "AbilityCastPoint"       "0.0"
+    "AbilityCastAnimation"   "ACT_DOTA_FLAIL"
+    "AnimationPlaybackRate"  "0.55"
+    "AnimationIgnoresModelScale" "1"
+
+    // Stats
+    //----------------------------------------------------------------------------------------
+    "AbilityManaCost"         "400"
+    "AbilityCooldown"         "150"
+    
+    "OnSpellStart"
+    {
+      "FireEffect"
+      {
+        "EffectName"        "particles/units/heroes/hero_bloodseeker/gore_wound_arterial_spray_3.vpcf"
+        "EffectAttachType"  "follow_origin"
+        "Target"            "CASTER"
+      }
+      "FireEffect"
+      {
+        "EffectName"        "particles/units/heroes/hero_centaur/centaur_double_edge_bloodspray_src.vpcf"
+        "EffectAttachType"  "follow_origin"
+        "Target"            "CASTER"
+      }
+      "FireEffect"
+      {
+        "EffectName"        "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_blood02.vpcf"
+        "EffectAttachType"  "follow_origin"
+        "Target"            "CASTER"
+      }
+      "FireEffect"
+      {
+        "EffectName"        "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf"
+        "EffectAttachType"  "follow_origin"
+        "Target"            "CASTER"
+      }
+      "FireEffect"
+      {
+        "EffectName"        "particles/units/heroes/hero_ogre_magi/ogre_magi_bloodlust_cast_circle_flash.vpcf"
+        "EffectAttachType"  "follow_origin"
+        "Target"            "CASTER"
+      }
+      "FireEffect"
+      {
+        "EffectName"        "particles/units/heroes/hero_riki/riki_backstab_hit_blood.vpcf"
+        "EffectAttachType"  "follow_origin"
+        "Target"            "CASTER"
+      }
+      "FireSound"
+      {
+        "EffectName"  "Hero_Ursa.Enrage"
+        "Target"     "CASTER"
+      }
+      "FireSound"
+      {
+        "EffectName"  "Hero_Bloodseeker.Rupture"
+        "Target"     "CASTER"
+      }
+      "FireEffect"
+      {
+        "EffectName"        "particles/units/heroes/hero_bloodseeker/bloodseeker_bloodritual_impact.vpcf"
+        "EffectAttachType"  "follow_origin"
+        "Target"            "CASTER"
+      }
+      "RunScript"
+      {
+        "ScriptFile"  "scripts/vscripts/enrage_huskar.lua"
+        "Function"    "summon_huskar"
+      }
+    }
+    
+}

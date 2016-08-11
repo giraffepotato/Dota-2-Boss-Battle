@@ -1,0 +1,56 @@
+"boss_revive_drow"
+{
+    // General  
+    // ----------------------------------------------------------------------------------------
+    "BaseClass"              "ability_datadriven"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityTextureName"     "drow_ranger_trueshot"
+
+    "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"               "1"
+
+    "AbilityCastPoint"       "2.0"
+    "AbilityCastAnimation"   "ACT_DOTA_VICTORY"
+    //"AnimationPlaybackRate"  "1"
+    "AnimationIgnoresModelScale" "1"
+
+    // Stats
+    //----------------------------------------------------------------------------------------
+    "AbilityManaCost"         "0"
+    "AbilityCooldown"         "5.0"
+
+    "precache"
+    {
+      "particle"  "particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_borealis_rope.vpcf"
+      "particle"  "particles/units/heroes/hero_lich/lich_chain_frost_flakes.vpcf"
+      "soundfile" "sounds/weapons/hero/drow_ranger/silence.vsnd"
+    }
+
+    "OnSpellStart"
+    {
+      "FireSound"
+      {
+        "EffectName"  "Hero_DrowRanger.Silence"
+        "Target"     "CASTER"
+      }
+      "FireEffect"
+      {
+        "EffectName"        "particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_borealis_rope.vpcf"
+        "EffectAttachType"  "follow_origin"
+        "Target"            "CASTER"
+      }
+      "FireEffect"
+      {
+        "EffectName"        "particles/units/heroes/hero_lich/lich_chain_frost_flakes.vpcf"
+        "EffectAttachType"  "follow_origin"
+        "Target"            "CASTER"
+      }
+      "RunScript"
+      {
+        "ScriptFile"  "scripts/vscripts/summon_clinkz.lua"
+        "Function"    "summon_clinkz"
+      }
+    }
+
+    // ...
+}

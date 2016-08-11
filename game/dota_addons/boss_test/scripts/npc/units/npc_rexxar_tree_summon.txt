@@ -1,0 +1,104 @@
+"npc_rexxar_tree_summon"
+        {
+            // General
+            //-------------------------------------------------------------------------------------------------------------            "Model"                     "models/heroes/clinkz/clinkz.vmdl"      // Model.
+            "BaseClass"                 "npc_dota_creature"
+            "Level"                     "40"
+            "ModelScale"                "0.75"
+            "ConsideredHero"            "0"
+            "HasInventory"              "0"
+            "Model"                     "models/props_foliage/tree_pine01_8cluster.vmdl"
+        
+            "precache"
+            {
+                "model" "models/props_foliage/tree_pine01_8cluster.vmdl"
+            }
+            
+            "UseNeutralCreepBehavior"   "0"
+        
+            // Armor
+            //-------------------------------------------------------------------------------------------------------------
+            "ArmorPhysical"             "100"                             // Physical protection.
+            "MagicalResistance"         "40"
+        
+            // Abilities
+            //----------------------------------------------------------------
+            "AbilityLayout"     "6"
+            "Ability1"                  "bristleback_bristleback"          // Ability 1.
+            "Ability2"                  "bristleback_quill_spray"          // Ability 2.
+            "Ability3"                  "axe_counter_helix"          // Ability 3.
+            "Ability4"                  "tidehunter_kraken_shell"          // Ability 4.
+            "Ability5"                  "viper_corrosive_skin"          // Ability 5.
+            "Ability6"                  "razor_unstable_current"          // Ability 6 - Extra.
+            "Ability7"                  ""          // Ability 7 - Extra.
+            "Ability8"                  ""          // Ability 8 - Extra.
+        
+            // Attack
+            //-------------------------------------------------------------------------------------------------------------
+            "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"           "00"                                    // Damage range min.
+            "AttackDamageMax"           "600"                                    // Damage range max.
+            "AttackRate"                "1.15"                                   // Speed of attack.
+            "AttackAnimationPoint"      "0.45"                                  // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"    "200"                                   // Range within a target can be acquired.
+            "AttackRange"               "200"                                   // Range within a target can be attacked.
+            //"ProjectileModel"           "particles/units/heroes/hero_furion/furion_wrath_of_nature_trail_leaves.vpcf"      // Particle system model for projectile.
+            //"ProjectileSpeed"           "750"                                  // Speed of projectile.
+        
+            // Bounty
+            //----------------------------------------------------------------
+            "BountyXP"                  "40000"     // Experience earn.
+            "BountyGoldMin"             "1000"     // Gold earned min.
+            "BountyGoldMax"             "2000"     // Gold earned max.
+        
+            // Bounds
+            //----------------------------------------------------------------
+            "RingRadius"                "70"
+            "HealthBarOffset"           "190"
+        
+        
+            // Movement
+            //-------------------------------------------------------------------------------------------------------------
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"             "595"
+            "MovementTurnRate"          "1.6"
+        
+            // Status
+            //----------------------------------------------------------------
+            "StatusHealth"              "10000"      // Base health.
+            "StatusHealthRegen"         "55.0"           // Health regeneration rate.
+            "StatusMana"                "677"      // Base mana.
+            "StatusManaRegen"           "0"       // Mana regeneration rate.
+        
+            // Vision
+            //-------------------------------------------------------------------------------------------------------------
+            "VisionDaytimeRange"        "2000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "20000"                                   // Range of vision at night time.
+        
+            // Team
+            //----------------------------------------------------------------
+            "TeamName"                  "DOTA_TEAM_NEUTRALS"                         // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            //"CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+            
+            "BoundsHullName"            "DOTA_HULL_SIZE_HERO"
+
+            "AutoAttacksByDefault"          "1"
+            "vscripts"                  "big_trees.lua"
+            "Creature"
+            {
+                "DefaultState"       "Aggresive"
+                "States"
+                {
+                    "Aggresive"
+                    {
+                        "Name"          "Aggressive"
+                        "Aggression"    "100.0"
+                        "Avoidance"     "0.0"
+                        "Support"       "0.0"
+                        "RoamDistance"  "0.0"
+                    }
+                }
+            }
+        }

@@ -1,0 +1,128 @@
+"npc_rexxar_boss"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "MinimapIcon"               "minimap_beastmaster"
+        "Model"                     "models/heroes/beastmaster/beastmaster.vmdl"      // Model.
+        "BaseClass"                 "npc_dota_creature"
+        "SoundSet"                  "Hero_Beastmaster"                                                  // Name of sound set.
+        "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
+        "IdleSoundLoop"             "Hero_Beastmaster.IdleLoop"
+        "Level"                     "40"
+        "ModelScale"                "2.4"
+        "ConsideredHero"            "1"
+        "HasInventory" "1"
+    
+        "precache"
+        {
+            "model" "models/heroes/beastmaster/beastmaster.vmdl"
+        }
+        
+        "UseNeutralCreepBehavior"   "0"
+    
+        // Armor
+        //-------------------------------------------------------------------------------------------------------------
+        "ArmorPhysical"             "30"                             // Physical protection.
+        "MagicalResistance"         "50"
+    
+        // Abilities
+        //----------------------------------------------------------------
+        "AbilityLayout"     "6"
+        "Ability1"                  "tentacle_mess"          // Ability 1.
+        "Ability2"                  "beetle_swarm"          // Ability 2.
+        "Ability3"                  "bird_flare"          // Ability 3.
+        "Ability4"                  "unit_spawn_test"          // Ability 4.
+        "Ability5"                  "rexxar_spawn_big_trees"          // Ability 5.
+        "Ability6"                  "troll_warlord_fervor"          // Ability 6 - Extra.
+        //"Ability7"                  ""          // Ability 7 - Extra.
+        //"Ability8"                  ""          // Ability 8 - Extra.
+    
+        // Attack
+        //-------------------------------------------------------------------------------------------------------------
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "500"                                    // Damage range min.
+        "AttackDamageMax"           "800"                                    // Damage range max.
+        "AttackRate"                "1.55"                                   // Speed of attack.
+        "AttackAnimationPoint"      "0.65"                                  // Normalized time in animation cycle to attack.
+        "AttackAcquisitionRange"    "300"                                   // Range within a target can be acquired.
+        "AttackRange"               "150"                                   // Range within a target can be attacked.
+        //"ProjectileModel"           "particles/units/heroes/Hero_Drow/drow_base_attack.vpcf"      // Particle system model for projectile.
+        //"ProjectileSpeed"           "1250"                                  // Speed of projectile.
+        
+        // Bounty
+        //----------------------------------------------------------------
+        "BountyXP"                  "40000"     // Experience earn.
+        "BountyGoldMin"             "1000"     // Gold earned min.
+        "BountyGoldMax"             "2000"     // Gold earned max.
+    
+        // Bounds
+        //----------------------------------------------------------------
+        "RingRadius"                "70"
+        "HealthBarOffset"           "490"
+    
+    
+        // Movement
+        //-------------------------------------------------------------------------------------------------------------
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+        "MovementSpeed"             "0"
+        "MovementTurnRate"          "1.5"
+    
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"              "35000"      // Base health.
+        "StatusHealthRegen"         "5.0"           // Health regeneration rate.
+        "StatusMana"                "15000"      // Base mana.
+        "StatusManaRegen"           "10.0"       // Mana regeneration rate.
+    
+        // Vision
+        //-------------------------------------------------------------------------------------------------------------
+        "VisionDaytimeRange"        "2000"      // Range of vision during day light.
+        "VisionNighttimeRange"      "2000"                                   // Range of vision at night time.
+    
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"                  "DOTA_TEAM_NEUTRALS"                         // Team name.
+        "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+        //"CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+        
+        "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
+        "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_beastmaster.vsndevts"
+    
+        "AutoAttacksByDefault"          "1"
+    
+        "vscripts"                    "scripts/vscripts/rexxar_ai.lua"
+    
+        "Creature"
+        {
+            "CanRespawn"                "0"
+            
+            "EquippedItems"
+            {     
+                "Radiance"           {    "Item"    "item_radiance"           }
+                "CrimsonGuard"       {    "Item"    "item_crimson_guard"      }
+                "VladmirsOffering"   {    "Item"    "item_vladmir"            }
+                "DrumOfEndurance"    {    "Item"    "item_ancient_janggo"     }
+            }
+            "AttachWearables"
+            {
+                "Wearable1"     {   "ItemDef"       "4648"      }
+                "Wearable2"     {   "ItemDef"       "8344"      }
+                "Wearable3"     {   "ItemDef"       "8345"      }
+                "Wearable4"     {   "ItemDef"       "4887"      }
+                "Wearable5"     {   "ItemDef"       "4885"      }
+            }
+            "DefaultState"       "Aggresive"
+            "States"
+            {
+                "Aggresive"
+                {
+                    "Name"          "Aggressive"
+                    "Aggression"    "100.0"
+                    "Avoidance"     "0.0"
+                    "Support"       "0.0"
+                    "RoamDistance"  "0.0"
+                }
+            }
+        }
+    }
