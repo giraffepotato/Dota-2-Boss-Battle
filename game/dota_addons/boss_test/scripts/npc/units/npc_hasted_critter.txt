@@ -1,0 +1,111 @@
+"npc_hasted_critter"
+	    {
+	        // General
+	        //-------------------------------------------------------------------------------------------------------------
+	        "Model"                     "models/heroes/weaver/weaver_bug.vmdl"      // Model.
+	        "BaseClass"                 "npc_dota_creature"                                               // Name of sound set.
+	        "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+	        "IdleSoundLoop"             "Hero_Clinkz.IdleLoop"
+	        "Level"                     "2"
+	        "ModelScale"                "3.0"
+	        "ConsideredHero"            "0"
+	        "HasInventory" "0"
+	    
+	        "precache"
+	        {
+	            "model" "models/heroes/weaver/weaver_bug.vmdl"
+	        }
+	        
+	        "UseNeutralCreepBehavior"   "0"
+	    
+	        // Armor
+	        //-------------------------------------------------------------------------------------------------------------
+	        "ArmorPhysical"             "4"                             // Physical protection.
+	        "MagicalResistance"         "25"
+	    
+	        // Abilities
+	        //----------------------------------------------------------------
+	        "AbilityLayout"     "1"
+	        "Ability1"                  "broodmother_incapacitating_bite"          // Ability 1.
+	        "Ability2"                  ""          // Ability 2.
+	        "Ability3"                  ""          // Ability 3.
+	        "Ability4"                  ""          // Ability 4.
+	        "Ability5"                  ""          // Ability 5.
+	        "Ability6"                  ""          // Ability 6 - Extra.
+	        "Ability7"                  ""          // Ability 7 - Extra.
+	        "Ability8"                  ""          // Ability 8 - Extra.
+	    
+	        // Attack
+	        //-------------------------------------------------------------------------------------------------------------
+	        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+	        "AttackDamageMin"           "70"                                    // Damage range min.
+	        "AttackDamageMax"           "90"                                    // Damage range max.
+	        "AttackRate"                "1.25"                                   // Speed of attack.
+	        "AttackAnimationPoint"      "0.25"                                  // Normalized time in animation cycle to attack.
+	        "AttackAcquisitionRange"    "900"                                   // Range within a target can be acquired.
+	        "AttackRange"               "160"                                   // Range within a target can be attacked.
+	        //"ProjectileModel"           "particles/units/heroes/hero_clinkz/clinkz_base_attack.vpcf"      // Particle system model for projectile.
+	        //"ProjectileSpeed"           "1750"                                  // Speed of projectile.
+	    
+	        // Bounty
+	        //----------------------------------------------------------------
+	        "BountyXP"                  "75"     // Experience earn.
+	        "BountyGoldMin"             "25"     // Gold earned min.
+	        "BountyGoldMax"             "35"     // Gold earned max.
+	    
+	        // Bounds
+	        //----------------------------------------------------------------
+	        "RingRadius"                "70"
+	        "HealthBarOffset"           "190"
+	    
+	    
+	        // Movement
+	        //-------------------------------------------------------------------------------------------------------------
+	        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+	        "MovementSpeed"             "595"
+	        "MovementTurnRate"          "1.7"
+	    
+	        // Status
+	        //----------------------------------------------------------------
+	        "StatusHealth"              "500"      // Base health.
+	        "StatusHealthRegen"         "1.0"           // Health regeneration rate.
+	        "StatusMana"                "500"      // Base mana.
+	        "StatusManaRegen"           "3.0"       // Mana regeneration rate.
+	    
+	        // Vision
+	        //-------------------------------------------------------------------------------------------------------------
+	        "VisionDaytimeRange"        "2000"      // Range of vision during day light.
+	        "VisionNighttimeRange"      "2000"                                   // Range of vision at night time.
+	    
+	        // Team
+	        //----------------------------------------------------------------
+	        "TeamName"                  "DOTA_TEAM_NEUTRALS"                         // Team name.
+	        "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	        //"CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	        
+	        //"GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+	        //"VoiceFile"                 "soundevents/voscripts/game_sounds_vo_clinkz.vsndevts"
+	    
+	        "AutoAttacksByDefault"          "1"
+	    
+	        //"vscripts"                    "scripts/vscripts/clinkz_ai.lua"
+	    
+	        "Creature"
+	        {
+	            "CanRespawn"                "0"
+	            
+	            "DefaultState"       "Aggresive"
+	            "States"
+	            {
+	                "Aggresive"
+	                {
+	                    "Name"          "Aggressive"
+	                    "Aggression"    "100.0"
+	                    "Avoidance"     "0.0"
+	                    "Support"       "0.0"
+	                    "RoamDistance"  "0.0"
+	                }
+	            }
+	        }
+	    }

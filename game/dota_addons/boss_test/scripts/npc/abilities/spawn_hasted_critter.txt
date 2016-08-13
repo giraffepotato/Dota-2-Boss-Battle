@@ -1,0 +1,62 @@
+"spawn_hasted_critter"
+	{
+	    // General  
+	    // ----------------------------------------------------------------------------------------
+	    "BaseClass"              "ability_datadriven"
+	    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"     "weaver_the_swarm"
+	    "MaxLevel"               "1"
+
+	
+	    // Stats
+	    //----------------------------------------------------------------------------------------
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"        "FIELD_INTEGER"
+	            "tick_interval"   "25.0"
+	        }
+	        "02"
+	        {
+	        	"var_type"			"FIELD_FLOAT"
+	        	"duration"			"45.0"
+	        }
+	    }
+	    "Modifiers"
+	  	{
+	
+	    	"modifier_spawn_hasted_critter"
+	    	{
+	      	"Passive"			"1"
+	      	"IsHidden"        "0"
+	      	"IsBuff"          "1"
+	      	"IsPurgable"    "0"
+	      	"ThinkInterval"  "%tick_interval"
+	      	"OnIntervalThink"
+	            {
+	            "SpawnUnit"
+     				{
+        				"UnitName"    "npc_hasted_critter"
+        				"Target"     "CASTER"
+        				"Duration"    "%duration"
+        				"UnitCount"    "2"
+        				"UnitLimit"    "20"
+        				"GrantsGold"  "1"
+        				"GrantsXP"    "1"
+        				"SpawnRadius"  "100"
+        				"OnSpawn"
+        				{
+          					"ApplyModifier"
+          					{
+            					"ModifierName"  "modifier_phased"
+            					"Target"    "TARGET"
+            					"Duration"    "20.0"
+          					}
+        				}
+	            	}      
+	    		}
+	  		}
+	  	}
+	}

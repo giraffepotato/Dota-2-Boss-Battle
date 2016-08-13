@@ -1,6 +1,6 @@
 "AddonInfo"
 {	
-	"maps"			"boss_battle"
+	"maps"			"boss_battle test_two"
 	"IsPlayable"	"1"
 	"TeamCount"		"1"
 	"template_map"
@@ -8,4 +8,9 @@
 	{
 		"MaxPlayers"		"5"
 	}
+	"test_two"
+	{
+		"MaxPlayers"		"5"
+	}
+
 }
