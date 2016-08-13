@@ -1,10 +1,10 @@
 "DOTAHeroes"
 {
-	"npc_hero_invincible_test_dummy"
+	//"npc_hero_invincible_test_dummy"
       {
         "AbilityLayout"     "6"
             "ModelScale"        "0.8"
-        "override_hero"     "npc_dota_hero_abaddon"
+        //"override_hero"     "npc_dota_hero_abaddon"
         "SoundSet"          "" 
         "Ability1"        "dodge_circle" 
         "Ability2"        "borrowed_time_datadriven" 
