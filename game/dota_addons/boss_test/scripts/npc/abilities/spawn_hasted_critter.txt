@@ -52,7 +52,7 @@
           					{
             					"ModifierName"  "modifier_phased"
             					"Target"    "TARGET"
-            					"Duration"    "20.0"
+            					"Duration"    "1.0"
           					}
         				}
 	            	}      

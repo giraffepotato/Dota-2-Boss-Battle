@@ -4,7 +4,10 @@
 {
   "Version"   "1"
   
-  
+  "abaddon_aphotic_shield"
+  {
+    "AbilityCastPoint"      "0 0 0 0"
+  }
   // -----------------------------------------------------------
   // - UNCOMMENT ANY ITEM YOU DON'T WANT TO APPEAR IN THE SHOP -
   // -----------------------------------------------------------

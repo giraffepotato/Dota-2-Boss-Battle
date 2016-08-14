@@ -11,7 +11,7 @@
 	        "Ability3"        "deal_damage_ability" 
 	        "Ability4"        "unlimited_mobility"
 	        "Ability5"        "unit_spawn_test"
-	        "Ability6"        "bat_blast"
+	        "Ability6"        "abaddon_aphotic_shield"
 	        "Ability7"        ""
 	        "Ability8"        ""
 	        "Ability9"        ""

@@ -43,15 +43,15 @@ DISABLE_GOLD_SOUNDS = false             -- Should we disable the gold sound when
 END_GAME_ON_KILLS = false                -- Should the game end after a certain number of kills?
 KILLS_TO_END_GAME_FOR_TEAM = 50         -- How many kills for a team should signify an end of game?
 
-USE_CUSTOM_HERO_LEVELS = false         -- Should we allow heroes to have custom levels?
+USE_CUSTOM_HERO_LEVELS = true         -- Should we allow heroes to have custom levels?
 MAX_LEVEL = 45                          -- What level should we let heroes get to?
-USE_CUSTOM_XP_VALUES = false            -- Should we use custom XP values to level up heroes, or the default Dota numbers?
+USE_CUSTOM_XP_VALUES = true            -- Should we use custom XP values to level up heroes, or the default Dota numbers?
 
---[[XP_PER_LEVEL_TABLE = {}
+XP_PER_LEVEL_TABLE = {}
 XP_PER_LEVEL_TABLE[1] = 1
 for i=2,MAX_LEVEL do
   XP_PER_LEVEL_TABLE[i] = 1
-end ]]
+end 
 
 ENABLE_FIRST_BLOOD = true               -- Should we enable first blood for the first kill in this game?
 HIDE_KILL_BANNERS = false               -- Should we hide the kill banners that show when a player is killed?
@@ -65,12 +65,12 @@ FIXED_RESPAWN_TIME = 3                 -- What time should we use for a fixed re
 FOUNTAIN_CONSTANT_MANA_REGEN = -1       -- What should we use for the constant fountain mana regen?  Use -1 to keep the default dota behavior.
 FOUNTAIN_PERCENTAGE_MANA_REGEN = -1     -- What should we use for the percentage fountain mana regen?  Use -1 to keep the default dota behavior.
 FOUNTAIN_PERCENTAGE_HEALTH_REGEN = -1   -- What should we use for the percentage fountain health regen?  Use -1 to keep the default dota behavior.
-MAXIMUM_ATTACK_SPEED = 99999              -- What should we use for the maximum attack speed?
+MAXIMUM_ATTACK_SPEED = 9999999              -- What should we use for the maximum attack speed?
 MINIMUM_ATTACK_SPEED = 1               -- What should we use for the minimum attack speed?
 
 GAME_END_DELAY = -1                     -- How long should we wait after the game winner is set to display the victory banner and End Screen?  Use -1 to keep the default (about 10 seconds)
 VICTORY_MESSAGE_DURATION = 3            -- How long should we wait after the victory message displays to show the End Screen?  Use 
-STARTING_GOLD = 1000                     -- How much starting gold should we give to each player?
+STARTING_GOLD = 99999                     -- How much starting gold should we give to each player?
 DISABLE_DAY_NIGHT_CYCLE = false         -- Should we disable the day night cycle from naturally occurring? (Manual adjustment still possible)
 DISABLE_KILLING_SPREE_ANNOUNCER = false -- Shuold we disable the killing spree announcer?
 DISABLE_STICKY_ITEM = false             -- Should we disable the sticky item button in the quick buy area?

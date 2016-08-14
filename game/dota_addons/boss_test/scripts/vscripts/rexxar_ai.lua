@@ -14,7 +14,7 @@ local index = thisEntity:GetEntityIndex()
 local healthRemaining = thisEntity:GetHealth() / thisEntity:GetMaxHealth() 
 	
 	if (ABILITY_tentacle_mess_spell:IsFullyCastable()) and (tentacles == "no") then
-		local units = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, thisEntity:GetAbsOrigin(), nil, 800, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false )
+		local units = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, thisEntity:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false )
 		if units ~= nil then
 			if #units >= 1 then
 				thisEntity:CastAbilityToggle(ABILITY_tentacle_mess_spell, index)
@@ -26,7 +26,7 @@ local healthRemaining = thisEntity:GetHealth() / thisEntity:GetMaxHealth()
 	
 	if ABILITY_beetle_swarm_spell:IsFullyCastable() then
 		print("beetle castable")
-		local units = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, thisEntity:GetAbsOrigin(), nil, 800, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false )
+		local units = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, thisEntity:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false )
 		if units ~= nil then
 			if #units >= 1 then
 				thisEntity:CastAbilityNoTarget(ABILITY_beetle_swarm_spell, index)
@@ -46,7 +46,7 @@ local healthRemaining = thisEntity:GetHealth() / thisEntity:GetMaxHealth()
 	end	
 
 	if ABILITY_unit_spawn_spell:IsFullyCastable() then
-		local units = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, thisEntity:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false )
+		local units = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, thisEntity:GetAbsOrigin(), nil, 1500, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false )
 		print("spawn small trees castable "..#units)
 		if units ~= nil then
 			if #units >= 2 then
@@ -56,7 +56,7 @@ local healthRemaining = thisEntity:GetHealth() / thisEntity:GetMaxHealth()
 	end
 
 	if ABILITY_big_trees_spell:IsFullyCastable() then
-		local units = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, thisEntity:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false )
+		local units = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, thisEntity:GetAbsOrigin(), nil, 1500, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false )
 		print("big trees castable "..#units)
 		if units ~= nil then
 			if #units >= 2 then
