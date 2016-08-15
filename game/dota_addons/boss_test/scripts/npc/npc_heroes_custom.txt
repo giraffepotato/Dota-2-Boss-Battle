@@ -156,7 +156,7 @@
 		        //"AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
 		        //"AttackDamageMin"     "5000"                   // Damage range min.
 		        //"AttackDamageMax"     "5000"                   // Damage range max.
-		        //"AttackRate"                "1.25"                                   // Speed of attack.
+		        "AttackRate"                "1.9"                                   // Speed of attack.
 		        "AttackAnimationPoint"      "0.8"
 		        //"AttackRange"           "600"
 		        //"ProjectileModel"       "particles/units/unit_greevil/greevil_blackhole.vpcf"
@@ -189,67 +189,4 @@
 		        //"VisionDaytimeRange"    "28000"                  // Range of vision at night time.
 		        //"VisionNighttimeRange"    "28000"                  // Range of vision at night time.
 		      }
-	"npc_hero_invincible_test_dummy"
-	      {
-	        "AbilityLayout"     "6"
-	        "ModelScale"        "0.8"
-	        "override_hero"     "npc_dota_hero_abaddon"
-	        "SoundSet"          "" 
-	        "Ability1"        "undying_decay_custom" 
-	        "Ability2"        "borrowed_time_datadriven" 
-	        "Ability3"        "deal_damage_ability" 
-	        "Ability4"        "unlimited_mobility"
-	        "Ability5"        "unit_spawn_test"
-	        "Ability6"        "slark_steal_dmg"
-	        "Ability7"        ""
-	        "Ability8"        ""
-	        "Ability9"        ""
-	        "Ability10"       ""
-	        "Ability11"       ""
-	        "Ability12"       ""
-	        "Ability13"       ""
-	        "Ability14"       ""
-	        "Ability15"       ""
-	        "Ability16"       ""
-	        "Model"           "models/heroes/nevermore/nevermore.vmdl"
-	        "Level"           "1"
-	        "ArmorPhysical"       "0"                 // Physical protection.
-	        "MagicalResistance"       "0"                 // Magical protection (percentage).
-	    
-	        "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
-	        "AttackDamageMin"     "0"                   // Damage range min.
-	        "AttackDamageMax"     "0"                   // Damage range max.
-	        "AttackRate"                "1.00"                                   // Speed of attack.
-	        "AttackAnimationPoint"      "0.05"
-	        "AttackRange"           "600"
-	        "ProjectileModel"       "particles/units/unit_greevil/greevil_blackhole.vpcf"
-	        "ProjectileSpeed"       "700"
-	    
-	        //"AttributePrimary"      "DOTA_ATTRIBUTE_INTELLECT"
-	        "AttributeBaseStrength"   "0"                   // Base strength
-	        "AttributeStrengthGain"   "0"                   // Strength bonus per level.
-	        "AttributeBaseIntelligence" "0"                   // Base intelligence
-	        "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
-	        "AttributeBaseAgility"    "0"                   // Base agility
-	        "AttributeAgilityGain"    "0"                   // Agility bonus per level.
-	    
-	        "BountyXP"          "0"                 // Experience earn.
-	        "BountyGoldMin"       "0"                   // Gold earned min.
-	        "BountyGoldMax"       "0"                   // Gold earned max.
-	    
-	        //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
-	        //"RingRadius"        "70"
-	    
-	        "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
-	        "MovementSpeed"       "660"                 // Speed.
-	        "MovementTurnRate"      "1.0"                 // Turning rate.
-	    
-	        "StatusHealth"        "355700"                 // Base health.
-	        "StatusHealthRegen"     "0.0"                 // Health regeneration rate.
-	        "StatusMana"        "7500"                   // Base mana.
-	        "StatusManaRegen"     "100.0"                 // Mana regeneration rate.
-	    
-	        "VisionDaytimeRange"    "28000"                  // Range of vision at night time.
-	        "VisionNighttimeRange"    "28000"                  // Range of vision at night time.
-	      }
 }

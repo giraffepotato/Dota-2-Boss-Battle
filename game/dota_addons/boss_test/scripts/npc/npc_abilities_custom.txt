@@ -2252,17 +2252,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"agi_gain"				"3"
+				"agi_gain"				"2"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stat_loss"				"-3"
+				"stat_loss"				"-2"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"30 40 50 60"
+				"duration"				"20 30 40 50"
 			}
 		}
 		

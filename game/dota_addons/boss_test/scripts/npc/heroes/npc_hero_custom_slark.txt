@@ -28,7 +28,7 @@
 	        //"AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
 	        //"AttackDamageMin"     "5000"                   // Damage range min.
 	        //"AttackDamageMax"     "5000"                   // Damage range max.
-	        //"AttackRate"                "1.25"                                   // Speed of attack.
+	        "AttackRate"                "1.9"                                   // Speed of attack.
 	        "AttackAnimationPoint"      "0.8"
 	        //"AttackRange"           "600"
 	        //"ProjectileModel"       "particles/units/unit_greevil/greevil_blackhole.vpcf"
