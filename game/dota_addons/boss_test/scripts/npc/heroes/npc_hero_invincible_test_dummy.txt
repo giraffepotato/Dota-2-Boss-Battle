@@ -8,7 +8,7 @@
         "Ability2"        "borrowed_time_datadriven" 
         "Ability3"        "deal_damage_ability" 
         "Ability4"        "unlimited_mobility"
-        "Ability5"        "custom_illum"
+        "Ability5"        "abaddon_frostmourne"
         "Ability6"        "slark_steal_dmg"
         "Ability7"        "attribute_bonus"
         "Ability8"        ""

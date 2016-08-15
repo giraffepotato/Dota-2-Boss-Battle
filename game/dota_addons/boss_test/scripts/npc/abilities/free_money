@@ -1,0 +1,64 @@
+"free_money"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityTextureName"			"crystal_maiden_brilliance_aura"
+
+	"precache"
+	{
+		"particle"  "particles/econ/items/techies/techies_arcana/techies_taunt.vpcf"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"mana_regen"		"100 500 900 1200"
+		}
+		// Extra variables
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"global_radius"		"1900"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"Modifiers"
+	{
+		"modifier_brilliance_aura_caster_datadriven"
+		{
+			"Passive"				"1"
+			"IsPurgable"			"0"
+			"IsHidden"				"1"
+			"Aura"					"modifier_brilliance_aura_effect_datadriven"
+			"Aura_Radius"			"%global_radius"
+			"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+		}
+		
+		"modifier_brilliance_aura_effect_datadriven"
+		{
+			"ThinkInterval" "10"
+
+            "OnIntervalThink"
+            {
+                "GrantXPGold"
+                {
+                    "Target"        "CASTER"
+                    "XPAmount"      "3"
+                    "SplitEvenly"   "0"
+                    "GoldAmount"    "9999"
+                    "ReliableGold"  "1"
+                }
+            }
+		}
+	}
+}

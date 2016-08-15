@@ -4,6 +4,519 @@
 {
   "Version"   "1"
 
+  "item_infused_raindrop"
+  {
+    "BaseClass"           "item_infused_raindrop"
+    "ItemCost"            "0"
+    "ItemStockMax" "1" 
+    "ItemStockTime" "1"
+    "ItemStockInitial" "10"
+  }
+
+  "item_flying_courier"
+  {
+    "BaseClass"           "item_flying_courier"
+    "ItemCost"            "0"
+    "ItemStockMax" "1" 
+    "ItemStockTime" "1"
+    "ItemStockInitial" "1"
+  }
+
+  "item_smoke_of_deceit"
+  {
+    "BaseClass"           "item_smoke_of_deceit"
+    "ItemCost"            "0"
+  }
+
+  "item_wind_lace"
+  {
+    "BaseClass"           "item_wind_lace"
+    "ItemCost"            "0"
+  }
+
+  "item_tome_of_knowledge"
+  {
+    "BaseClass"           "item_tome_of_knowledge"
+    "ItemCost"            "0"
+  }
+
+  "item_abyssal_blade"
+  {
+    "BaseClass"           "item_abyssal_blade"
+    "ItemCost"            "0"
+  }
+
+  "item_aether_lens"
+  {
+    "BaseClass"           "item_aether_lens"
+    "ItemCost"            "0"
+  }
+
+  "item_ultimate_scepter"
+  {
+    "BaseClass"           "item_ultimate_scepter"
+    "ItemCost"            "0"
+  }
+
+  "item_armlet"
+  {
+    "BaseClass"           "item_armlet"
+    "ItemCost"            "0"
+  }
+
+  "item_assault"
+  {
+    "BaseClass"           "item_assault"
+    "ItemCost"            "0"
+  }
+
+  "item_bfury"
+  {
+    "BaseClass"           "item_bfury"
+    "ItemCost"            "0"
+  }
+
+  "item_black_king_bar"
+  {
+    "BaseClass"           "item_black_king_bar"
+    "ItemCost"            "0"
+  }
+
+  "item_bloodstone"
+  {
+    "BaseClass"           "item_bloodstone"
+    "ItemCost"            "0"
+  }
+
+  "item_bloodthorn"
+  {
+    "BaseClass"           "item_bloodthorn"
+    "ItemCost"            "0"
+  }
+
+  "item_travel_boots_2"
+  {
+    "BaseClass"           "item_travel_boots_2"
+    "ItemCost"            "0"
+  }
+
+  "item_butterfly"
+  {
+    "BaseClass"           "item_butterfly"
+    "ItemCost"            "0"
+  }
+
+  "item_buckler"
+  {
+    "BaseClass"           "item_buckler"
+    "ItemCost"            "999"
+  }
+
+  "item_crimson_guard"
+  {
+    "BaseClass"           "item_crimson_guard"
+    "ItemCost"            "0"
+  }
+
+  "item_greater_crit"
+  {
+    "BaseClass"           "item_greater_crit"
+    "ItemCost"            "0"
+  }
+
+  "item_dagon_5"
+  {
+    "BaseClass"           "item_dagon_5"
+    "ItemCost"            "0"
+  }
+
+  "item_desolator"
+  {
+    "BaseClass"           "item_desolator"
+    "ItemCost"            "0"
+  }
+
+  "item_diffusal_blade_2"
+  {
+    "BaseClass"           "item_diffusal_blade_2"
+    "ItemCost"            "0"
+  }
+
+  "item_hurricane_pike"
+  {
+    "BaseClass"           "item_hurricane_pike"
+    "ItemCost"            "0"
+  }
+
+  "item_ancient_janggo"
+  {
+    "BaseClass"           "item_ancient_janggo"
+    "ItemCost"            "0"
+  }
+
+  "item_echo_sabre"
+  {
+    "BaseClass"           "item_echo_sabre"
+    "ItemCost"            "0"
+  }
+
+  "item_ethereal_blade"
+  {
+    "BaseClass"           "item_ethereal_blade"
+    "ItemCost"            "0"
+  }
+
+  "item_cyclone"
+  {
+    "BaseClass"           "item_cyclone"
+    "ItemCost"            "0"
+  }
+
+  "item_skadi"
+  {
+    "BaseClass"           "item_skadi"
+    "ItemCost"            "0"
+  }
+
+  "item_glimmer_cape"
+  {
+    "BaseClass"           "item_glimmer_cape"
+    "ItemCost"            "0"
+  }
+
+  "item_guardian_greaves"
+  {
+    "BaseClass"           "item_guardian_greaves"
+    "ItemCost"            "0"
+  }
+
+  "item_hand_of_midas"
+  {
+    "BaseClass"           "item_hand_of_midas"
+    "ItemCost"            "0"
+  }
+
+  "item_heart"
+  {
+    "BaseClass"           "item_heart"
+    "ItemCost"            "0"
+  }
+
+  "item_helm_of_the_dominator"
+  {
+    "BaseClass"           "item_helm_of_the_dominator"
+    "ItemCost"            "0"
+  }
+
+  "item_iron_talon"
+  {
+    "BaseClass"           "item_iron_talon"
+    "ItemCost"            "0"
+  }
+
+  "item_sphere"
+  {
+    "BaseClass"           "item_sphere"
+    "ItemCost"            "0"
+  }
+
+  "item_lotus_orb"
+  {
+    "BaseClass"           "item_lotus_orb"
+    "ItemCost"            "0"
+  }
+
+  "item_mjollnir"
+  {
+    "BaseClass"           "item_mjollnir"
+    "ItemCost"            "0"
+  }
+
+  "item_monkey_king_bar"
+  {
+    "BaseClass"           "item_monkey_king_bar"
+    "ItemCost"            "0"
+  }
+
+  "item_mask_of_madness"
+  {
+    "BaseClass"           "item_mask_of_madness"
+    "ItemCost"            "0"
+  }
+
+  "item_moon_shard"
+  {
+    "BaseClass"           "item_moon_shard"
+    "ItemCost"            "0"
+  }
+
+  "item_necronomicon_3"
+  {
+    "BaseClass"           "item_necronomicon_3"
+    "ItemCost"            "0"
+  }
+
+  "item_ward_dispenser"
+  {
+    "BaseClass"           "item_ward_dispenser"
+    "ItemCost"            "0"
+  }
+
+  "item_octarine_core"
+  {
+    "BaseClass"           "item_octarine_core"
+    "ItemCost"            "0"
+  }
+
+  "item_phase_boots"
+  {
+    "BaseClass"           "item_phase_boots"
+    "ItemCost"            "0"
+  }
+
+  "item_pipe"
+  {
+    "BaseClass"           "item_pipe"
+    "ItemCost"            "0"
+  }
+
+  "item_poor_mans_shield"
+  {
+    "BaseClass"           "item_poor_mans_shield"
+    "ItemCost"            "0"
+  }
+
+  "item_power_treads"
+  {
+    "BaseClass"           "item_power_treads"
+    "ItemCost"            "0"
+  }
+
+  "item_radiance"
+  {
+    "BaseClass"           "item_radiance"
+    "ItemCost"            "0"
+  }
+
+  "item_rapier"
+  {
+    "BaseClass"           "item_rapier"
+    "ItemCost"            "0"
+  }
+
+  "item_refresher"
+  {
+    "BaseClass"           "item_refresher"
+    "ItemCost"            "0"
+  }
+
+  "item_ring_of_aquila"
+  {
+    "BaseClass"           "item_ring_of_aquila"
+    "ItemCost"            "0"
+  }
+
+  "item_rod_of_atos"
+  {
+    "BaseClass"           "item_rod_of_atos"
+    "ItemCost"            "0"
+  }
+
+  "item_sange_and_yasha"
+  {
+    "BaseClass"           "item_sange_and_yasha"
+    "ItemCost"            "0"
+  }
+
+  "item_satanic"
+  {
+    "BaseClass"           "item_satanic"
+    "ItemCost"            "0"
+  }
+
+  "item_sheepstick"
+  {
+    "BaseClass"           "item_sheepstick"
+    "ItemCost"            "0"
+  }
+
+  "item_shivas_guard"
+  {
+    "BaseClass"           "item_shivas_guard"
+    "ItemCost"            "0"
+  }
+
+  "item_silver_edge"
+  {
+    "BaseClass"           "item_silver_edge"
+    "ItemCost"            "0"
+  }
+
+  "item_solar_crest"
+  {
+    "BaseClass"           "item_solar_crest"
+    "ItemCost"            "0"
+  }
+
+  "item_tranquil_boots"
+  {
+    "BaseClass"           "item_tranquil_boots"
+    "ItemCost"            "0"
+  }
+
+  "item_power_treads"
+  {
+    "BaseClass"           "item_power_treads"
+    "ItemCost"            "0"
+  }
+
+  "item_urn_of_shadows"
+  {
+    "BaseClass"           "item_urn_of_shadows"
+    "ItemCost"            "0"
+  }
+
+  "item_veil_of_discord"
+  {
+    "BaseClass"           "item_veil_of_discord"
+    "ItemCost"            "0"
+  }
+
+  "item_vladmir"
+  {
+    "BaseClass"           "item_vladmir"
+    "ItemCost"            "0"
+  }
+
+  "item_tpscroll"
+  {
+    "BaseClass"           "item_tpscroll"
+    "ItemCost"            "0"
+  }
+
+  "item_quelling_blade"
+  {
+    "BaseClass"           "item_quelling_blade"
+    "ItemCost"            "0"
+  }
+
+  "item_ghost"
+  {
+    "BaseClass"           "item_ghost"
+    "ItemCost"            "0"
+  }
+
+  "item_enchanted_mango"
+  {
+    "BaseClass"           "item_enchanted_mango"
+    "ItemCost"            "0"
+  }
+
+  "item_bottle"
+  {
+    "BaseClass"           "item_bottle"
+    "ItemCost"            "0"
+  }
+
+  "item_boots"
+  {
+    "BaseClass"           "item_boots"
+    "ItemCost"            "0"
+  }
+
+  "item_courier"
+  {
+    "BaseClass"           "item_courier"
+    "ItemCost"            "0"
+  }
+
+  "item_blink"
+  {
+    "BaseClass"           "item_blink"
+    "ItemCost"            "0"
+  }
+
+  "abaddon_frostmourne"
+  {
+    "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"            "FIELD_FLOAT"
+      "debuff_duration"       "2.5"
+    }
+    "02"
+    {
+      "var_type"            "FIELD_FLOAT"
+      "buff_duration"         "4.5"
+    }
+    "03"
+    {
+      "var_type"            "FIELD_INTEGER"
+      "slow_pct"            "-5 -10 -15 -20"
+    }
+    "04"
+    {
+      "var_type"            "FIELD_INTEGER"
+      "attack_slow_tooltip"     "-15 -20 -35 -40"
+    }
+    "05"
+    {
+      "var_type"            "FIELD_INTEGER"
+      "move_speed_pct"        "45"
+    }
+    "06"
+    {
+      "var_type"            "FIELD_INTEGER"
+      "attack_speed"          "40 50 60 70"
+    }
+  }
+  }
+
+  "abaddon_death_coil"
+  {
+    "CastFilterRejectCaster"    "0"
+
+  // Casting
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityCastRange"        "1000"
+  "AbilityCastPoint"        "0.0 0.0 0.0 0.0"
+  
+  // Time   
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityCooldown"       "2.0 2.0 2.0 2.0"
+
+  // Cost
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityManaCost"       "80 40 20 10"
+
+  // Special
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "projectile_speed"    "1250"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_FLOAT"
+      "self_damage"     "150 100 50 0"
+    }
+    "03"
+    {
+      "var_type"        "FIELD_FLOAT"
+      "target_damage"     "500 850 900 1050"
+    }
+    "04"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "heal_amount"     "500 850 900 1050"
+    }
+  }
+  }
+
   "nyx_assassin_vendetta"
   {
     "BaseClass"           "nyx_assassin_vendetta"
