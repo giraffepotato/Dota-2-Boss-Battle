@@ -28,7 +28,7 @@
         // Abilities
         //----------------------------------------------------------------
         "AbilityLayout"     "6"
-        "Ability1"                  "sniper_headshot"          // Ability 1.
+        "Ability1"                  "barebones_empty1"          // Ability 1.
         "Ability2"                  "boss_revive_drow"          // Ability 2.
         "Ability3"                  "nevermore_dark_lord"          // Ability 3.
         "Ability4"                  "tidehunter_kraken_shell"          // Ability 4.
@@ -40,9 +40,9 @@
         // Attack
         //-------------------------------------------------------------------------------------------------------------
         "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
-        "AttackDamageMin"           "500"                                    // Damage range min.
+        "AttackDamageMin"           "100"                                    // Damage range min.
         "AttackDamageMax"           "500"                                    // Damage range max.
-        "AttackRate"                "1.05"                                   // Speed of attack.
+        "AttackRate"                "1.25"                                   // Speed of attack.
         "AttackAnimationPoint"      "0.90"                                  // Normalized time in animation cycle to attack.
         "AttackAcquisitionRange"    "900"                                   // Range within a target can be acquired.
         "AttackRange"               "1000"                                   // Range within a target can be attacked.

@@ -12,11 +12,11 @@
            
             // Abilities
             //----------------------------------------------------------------
-            "AbilityLayout"         "4"
+            "AbilityLayout"         "3"
             "Ability1"              "huskar_burning_spear"
             "Ability2"              "dazzle_shallow_grave"
             "Ability3"              "huskar_berserkers_blood"
-            "Ability4"              "brewmaster_earth_spell_immunity"
+            //"Ability4"              "brewmaster_earth_spell_immunity"
             //"Ability5"              "skeleton_king_reincarnation"
             "vscripts"              "scripts/vscripts/summoned_huskar.lua"
            
