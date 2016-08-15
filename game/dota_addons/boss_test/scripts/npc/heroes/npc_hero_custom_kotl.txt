@@ -10,7 +10,7 @@
 	        //"Ability4"        "unlimited_mobility"
 	        //"Ability5"        "abaddon_aphotic_shield"
 	        //"Ability6"        "keeper_of_the_light_illuminate"
-	        "Ability7"        ""
+	        "Ability7"        "attribute_bonus"
 	        "Ability8"        ""
 	        "Ability9"        ""
 	        "Ability10"       ""
@@ -50,14 +50,14 @@
 	        //"RingRadius"        "70"
 	    
 	        //"MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
-	        //"MovementSpeed"       "660"                 // Speed.
-	        //"MovementTurnRate"      "1.0"                 // Turning rate.
+	        "MovementSpeed"       "360"                 // Speed.
+	        "MovementTurnRate"      "1.8"                 // Turning rate.
 	    
 	        //"StatusHealth"        "355700"                 // Base health.
 	        //"StatusHealthRegen"     "0.0"                 // Health regeneration rate.
 	        //"StatusMana"        "7500"                   // Base mana.
 	        //"StatusManaRegen"     "100.0"                 // Mana regeneration rate.
 	    
-	        //"VisionDaytimeRange"    "28000"                  // Range of vision at night time.
-	        //"VisionNighttimeRange"    "28000"                  // Range of vision at night time.
+	        "VisionDaytimeRange"    "2000"                  // Range of vision at night time.
+	        "VisionNighttimeRange"    "800"                  // Range of vision at night time.
 	      }

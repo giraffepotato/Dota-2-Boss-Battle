@@ -7,7 +7,7 @@
   "nyx_assassin_vendetta"
   {
     "BaseClass"           "nyx_assassin_vendetta"
-    "AbilityCooldown"     "5.0"
+    "AbilityCooldown"     "0.0"
   }
 
   "gyrocopter_call_down"
@@ -29,12 +29,12 @@
     "03"
     {
       "var_type"          "FIELD_INTEGER"
-      "damage_first"        "500 750 1250"
+      "damage_first"        "1500 1750 2250"
     }
     "04"
     {
       "var_type"          "FIELD_INTEGER"
-      "damage_second"       "250 350 450"
+      "damage_second"       "250 650 750"
     }
     "05"
     {
@@ -44,7 +44,7 @@
     "06"
     {
       "var_type"          "FIELD_FLOAT"
-      "slow_second"       "-90"
+      "slow_second"       "-190"
     }
     "07"
     {
@@ -77,20 +77,20 @@
   "nevermore_requiem"
   {
     "BaseClass"             "nevermore_requiem"
-    "AbilityCooldown"      "35 30 25 20"
+    "AbilityCooldown"      "25 20 15 10"
   }
 
   "rubick_fade_bolt"
   {
     "BaseClass"           "rubick_fade_bolt"
-    "AbilityDamage"      "300 400 500 600"
+    "AbilityDamage"      "1300 1400 15001 600"
     "AbilityCooldown"    "5.0"
     "AbilitySpecial"
     {
       "01"
       {
         "var_type"          "FIELD_INTEGER"
-        "damage"          "300 400 500 600"
+        "damage"          "660 770 880 990"
       }
       "02"
       {
@@ -100,7 +100,7 @@
       "03"
       {
         "var_type"            "FIELD_INTEGER"
-        "hero_attack_damage_reduction"  "60 70 80 90"
+        "hero_attack_damage_reduction"  "660 770 880 990"
       }
       "04"
       {
@@ -110,7 +110,7 @@
       "05"
       {
         "var_type"          "FIELD_FLOAT"
-        "duration"          "10.0 10.0 10.0 10.0"
+        "duration"          "40.0 40.0 40.0 40.0"
       }
       "06"
       {
@@ -120,7 +120,7 @@
       "07"
       {
         "var_type"          "FIELD_FLOAT"
-        "jump_delay"        "0.15 0.15 0.15 0.15"
+        "jump_delay"        "0.01 0.01 0.01 0.01"
       }
     }
   }

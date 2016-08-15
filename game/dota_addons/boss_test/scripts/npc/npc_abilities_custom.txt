@@ -921,7 +921,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_per_second"		"100.0 200.0 300.0 400.0"
+				"damage_per_second"		"500.0 550.0 600.0 666.0"
 			}
 			"02"
 			{
