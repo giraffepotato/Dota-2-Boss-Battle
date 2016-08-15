@@ -1,8 +1,8 @@
-//"npc_hero_invincible_test_dummy"
+"npc_hero_invincible_test_dummy"
       {
         "AbilityLayout"     "6"
         "ModelScale"        "0.8"
-        //"override_hero"     "npc_dota_hero_abaddon"
+        "override_hero"     "npc_dota_hero_abaddon"
         "SoundSet"          "" 
         "Ability1"        "undying_decay_custom" 
         "Ability2"        "borrowed_time_datadriven" 
@@ -26,10 +26,10 @@
         "MagicalResistance"       "0"                 // Magical protection (percentage).
     
         "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
-        "AttackDamageMin"     "5000"                   // Damage range min.
-        "AttackDamageMax"     "5000"                   // Damage range max.
-        "AttackRate"                "1.25"                                   // Speed of attack.
-        "AttackAnimationPoint"      "0.55"
+        "AttackDamageMin"     "0"                   // Damage range min.
+        "AttackDamageMax"     "0"                   // Damage range max.
+        "AttackRate"                "1.00"                                   // Speed of attack.
+        "AttackAnimationPoint"      "0.05"
         "AttackRange"           "600"
         "ProjectileModel"       "particles/units/unit_greevil/greevil_blackhole.vpcf"
         "ProjectileSpeed"       "700"
