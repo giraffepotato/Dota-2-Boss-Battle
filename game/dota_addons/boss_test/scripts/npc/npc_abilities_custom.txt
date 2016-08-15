@@ -877,6 +877,214 @@
 	    //-------------------------------------------------------------------------------------------------------------
 	    "AbilityManaCost"       "0 0 0 0"
 	  }
+	"custom_illum"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"keeper_of_the_light_illuminate"
+	
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+			"particle"			"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_illuminate.vpcf"
+			"particle"			"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_illuminate_charge.vpcf"
+			"particle"  		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_illuminate_impact.vpcf"
+		}
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1800"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5.0 5.0 5.0 5.0"
+		"AbilityChannelTime"			"5.0 6.0 7.0 8.0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150 160 170 180"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_per_second"		"100.0 200.0 300.0 400.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"350 350 350 350"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1550"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"speed"					"1050.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_channel_time"		"5.0 6.0 7.0 8.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_radius"			"800 800 800 800"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"vision_duration"		"3.34 3.34 3.34 3.34"
+			}
+			"08"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"channel_vision_radius"	"350"
+			}
+			"09"
+			{	
+				"var_type"					"FIELD_FLOAT"
+				"channel_vision_interval"	"0.5"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"channel_vision_duration"	"10.34"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"channel_vision_step"		"150"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_KeeperOfTheLight.Illuminate.Charge"
+				"Target" 		"CASTER"
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"	"custom_illum.lua"
+				"Function"		"IlluminateStart"
+				"sub_ability_name"	"illuminate_end_datadriven"
+			}
+	
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_illuminate_vision_field_timer_datadriven"
+				"Target" 		"CASTER"
+			}				
+		}
+	
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"custom_illum.lua"
+				"Function"		"LevelUpAbility"
+				"ability_name"	"illuminate_end_datadriven"
+			}
+		}
+	
+		"OnChannelFinish"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_KeeperOfTheLight.Illuminate.Discharge"
+				"Target" 		"CASTER"
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"	"custom_illum.lua"
+				"Function"		"IlluminateEnd"
+				"projectile_name"			"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_illuminate.vpcf"
+			}
+	
+			"RunScript"
+			{
+				"ScriptFile"	"custom_illum.lua"
+				"Function"		"IlluminateSwapEnd"
+				"sub_ability_name"	"illuminate_end_datadriven"
+			}
+	
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_illuminate_vision_field_timer_datadriven"
+				"Target" 		"CASTER"
+			}		
+		}
+	
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"FireSound"
+			{
+				"EffectName"	"Hero_KeeperOfTheLight.Illuminate.Target"
+				"Target" 		"TARGET"
+			}
+			
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_illuminate_impact.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target"            "TARGET"
+			}
+	
+			"RunScript"
+			{
+				"ScriptFile"	"custom_illum.lua"
+				"Function"		"IlluminateProjectileHit"
+			}		
+		}
+		
+		
+		
+		"Modifiers"
+		{
+			"modifier_illuminate_vision_field_timer_datadriven"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+	
+				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_illuminate_charge.vpcf"
+				"EffectAttachType"	"attach_attack1"
+		
+				"ThinkInterval"  "%channel_vision_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"custom_illums.lua"
+						"Function"		"IlluminateVisionFields"
+					}				
+				}			
+			}		
+		}	
+	}
 	"dazzle_summon_spike"
 	{
 	    // General  
@@ -1696,6 +1904,239 @@
 	        }
 	      }
 	    }
+	"rhasta_uberwards"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"shadow_shaman_mass_serpent_ward"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"550"
+		"AbilityCastPoint"				"0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50.0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200 250 300"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"ward_count"		"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"full_splash_radius"	"50 75 85"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mid_splash_radius"		"75 100 110"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_splash_radius"		"150 200 220"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_min"			"77 92 113"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_max"			"89 101 124"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"45.0 45.0 45.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_min_scepter"	"114 160 187"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_max_scepter"	"135 189 221"
+			}
+	
+			// Extra
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ward_1_count"			"20 0 0"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ward_2_count"			"0 20 0"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ward_3_count"			"0 0 20"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_full"			"100"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_medium"			"40"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_small"			"20"
+			}
+	
+		}
+	
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_shadowshaman/shadow_shaman_ward_base_attack.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+		}
+	
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_ShadowShaman.SerpentWard"
+				"Target"			"CASTER"
+			}
+	
+			"SpawnUnit"
+			{
+				"UnitName"			"npc_dota_shadow_shaman_ward_1"
+				"Target"			"POINT"
+				"UnitCount"			"%ward_1_count"
+				"Duration"			"%duration"
+				"SpawnRadius"		"?10 100"
+				"GrantsGold"		"1"
+				"GrantsXP"			"1"
+	
+				"OnSpawn"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_phased"
+						"Target"		"TARGET"
+						"Duration"		"0.03"
+					}
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_serpent_ward"
+						"Target" 		"TARGET"
+						"Duration"		"%duration"
+					}
+				}
+			}	
+	
+			"SpawnUnit"
+			{
+				"UnitName"			"npc_dota_shadow_shaman_ward_2"
+				"Target"			"POINT"
+				"UnitCount"			"%ward_2_count"
+				"Duration"			"%duration"
+				"SpawnRadius"		"?10 100"
+				"GrantsGold"		"1"
+				"GrantsXP"			"1"
+	
+				"OnSpawn"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_phased"
+						"Target"		"TARGET"
+						"Duration"		"0.03"
+					}
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_serpent_ward"
+						"Target" 		"TARGET"
+						"Duration"		"%duration"
+					}
+				}
+			}	
+	
+			"SpawnUnit"
+			{
+				"UnitName"			"npc_dota_shadow_shaman_ward_3"
+				"Target"			"POINT"
+				"UnitCount"			"%ward_3_count"
+				"Duration"			"%duration"
+				"SpawnRadius"		"?10 100"
+				"GrantsGold"		"1"
+				"GrantsXP"			"1"
+	
+				"OnSpawn"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_phased"
+						"Target"		"TARGET"
+						"Duration"		"0.03"
+					}
+	
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_serpent_ward"
+						"Target" 		"TARGET"
+						"Duration"		"%duration"
+					}
+				}
+			}
+		}
+	
+		"Modifiers"
+		{
+			// modifier_shadow_shaman_serpent_ward is the Built-In, to give green damage to the wards
+			"modifier_serpent_ward"
+			{
+				"IsHidden"			"1"
+	
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_shadow_shaman/mass_serpent_ward.lua"
+						"Function"		"SetWardDamage"
+					}
+				}
+	
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_shadow_shaman/mass_serpent_ward.lua"
+						"Function"		"DealSplashDamage"
+					}
+				}
+			}
+		}
+	}
 	"shadow_wave_datadriven"
 	{
 	  // General
@@ -1794,6 +2235,88 @@
 	      "damage_particle"   "particles/units/heroes/hero_dazzle/dazzle_shadow_wave_impact_damage.vpcf"
 	    }
 	  }
+	}
+	"slark_steal_dmg"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName" 			"slark_essence_shift"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agi_gain"				"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_loss"				"-5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"30 60 120 240"
+			}
+		}
+		
+		
+		"Modifiers"
+		{
+			"modifier_slark_essence_shift_datadriven"  //This modifier is always on Slark and simply triggers a script when an autoattack lands on an enemy.
+			{
+				"Passive"   "1"
+				"IsHidden"  "1"
+				
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_slark_essence_shift_datadriven_debuff"
+						"Target" 		"TARGET"
+						"Duration"		"%duration"
+					}
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_slark_essence_shift_datadriven_buff"
+						"Target" 		"ATTACKER"
+						"Duration"		"%duration"
+					}
+				}
+			}
+			"modifier_slark_essence_shift_datadriven_buff"
+			{
+				"Duration"				"%duration"
+				"Passive"				"0"
+				"IsHidden"  			"0"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%agi_gain"
+				}
+				
+			}
+			"modifier_slark_essence_shift_datadriven_debuff"
+			{
+				"Duration"				"%duration"
+				"Passive"				"0"
+				"IsHidden"  			"0"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"		"%stat_loss"
+				}
+				
+			}
+		}
 	}
 	"spawn_hasted_critter"
 		{
@@ -2423,6 +2946,61 @@
 	      "Damage"  "%AbilityDamage"
 	    }
 	  }
+	}
+	"undying_decay_custom"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		
+		"AbilityCastRange"				"625"
+		"AbilityCastPoint"				"0.45 0.45 0.45 0.45"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"undying_decay"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"10.0 8.0 6.0 4.0"
+		"AbilityDuration"				"21.0 24.0 27.0 30.0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"70 90 110 130"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"decay_damage"					"20 60 100 140"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"325"
+			}			
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"decay_duration"				"40.0"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"str_steal"						"4"
+			}	
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"str_scale_up"					"2"
+			}					
+		}
 	}
 	"unit_spawn_test"
 	  {

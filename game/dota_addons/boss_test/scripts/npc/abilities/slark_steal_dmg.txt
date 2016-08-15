@@ -1,0 +1,82 @@
+"slark_steal_dmg"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName" 			"slark_essence_shift"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"agi_gain"				"3"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"stat_loss"				"-5"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"30 60 120 240"
+		}
+	}
+	
+	
+	"Modifiers"
+	{
+		"modifier_slark_essence_shift_datadriven"  //This modifier is always on Slark and simply triggers a script when an autoattack lands on an enemy.
+		{
+			"Passive"   "1"
+			"IsHidden"  "1"
+			
+			"OnAttackLanded"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_slark_essence_shift_datadriven_debuff"
+					"Target" 		"TARGET"
+					"Duration"		"%duration"
+				}
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_slark_essence_shift_datadriven_buff"
+					"Target" 		"ATTACKER"
+					"Duration"		"%duration"
+				}
+			}
+		}
+		"modifier_slark_essence_shift_datadriven_buff"
+		{
+			"Duration"				"%duration"
+			"Passive"				"0"
+			"IsHidden"  			"0"
+			"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%agi_gain"
+			}
+			
+		}
+		"modifier_slark_essence_shift_datadriven_debuff"
+		{
+			"Duration"				"%duration"
+			"Passive"				"0"
+			"IsHidden"  			"0"
+			"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"		"%stat_loss"
+			}
+			
+		}
+	}
+}
