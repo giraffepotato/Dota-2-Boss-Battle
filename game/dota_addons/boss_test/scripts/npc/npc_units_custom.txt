@@ -745,10 +745,10 @@
 	            // General
 	            //----------------------------------------------------------------
 	            "BaseClass"             "npc_dota_creature"
-	            "Model"                 "models/heroes/windrunner/windrunner.vmdl"
-	            "ModelScale"            "3.8"
+	            "Model"                 "models/heroes/obsidian_destroyer/obsidian_destroyer_fxdeath_v2.vmdl"
+	            "ModelScale"            "1.0"
 	            "Level"                 "19"
-	            "HealthBarOffset"       "640"
+	            "HealthBarOffset"       "330"
 	            "HasInventory"          "1"
 	            "ConsideredHero"        "0"
 	           
@@ -760,7 +760,7 @@
 	            "Ability3"              "alchemist_chemical_rage"
 	            "Ability4"              "brewmaster_earth_spell_immunity"
 	            //"Ability5"              "skeleton_king_reincarnation"
-	            "vscripts"              "scripts/vscripts/control_me.lua"
+	            //"vscripts"              "scripts/vscripts/control_me.lua"
 	           
 	            // Armor
 	            //----------------------------------------------------------------
@@ -769,7 +769,7 @@
 	    
 	            // Attack
 	            //----------------------------------------------------------------
-	            "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
+	            "AttackCapabilities"    "DOTA_UNIT_CAP_NONE_ATTACK"
 	            "AttackDamageMin"           "2250"                                    // Damage range min.
 	            "AttackDamageMax"           "3300"                                    // Damage range max.
 	            "AttackRate"                "1.85"                                   // Speed of attack.
@@ -798,7 +798,7 @@
 	            // Status
 	            //----------------------------------------------------------------
 	            "StatusHealth"          "20000"
-	            "StatusHealthRegen"     "5.0"
+	            "StatusHealthRegen"     "50"
 	            "StatusMana"            "1500"
 	            "StatusManaRegen"       "0"
 	           

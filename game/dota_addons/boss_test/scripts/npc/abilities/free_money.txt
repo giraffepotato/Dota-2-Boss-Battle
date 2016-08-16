@@ -5,11 +5,11 @@
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-	"AbilityTextureName"			"crystal_maiden_brilliance_aura"
+	"AbilityTextureName"			"SKELETOR"
 
 	"precache"
 	{
-		"particle"  "particles/econ/items/techies/techies_arcana/techies_taunt.vpcf"
+		"particle"  "particles/econ/events/coal/coal_projectile_explosion.vpcf"
 	}
 	
 	// Special
@@ -46,16 +46,18 @@
 		
 		"modifier_brilliance_aura_effect_datadriven"
 		{
-			"ThinkInterval" "10"
+			"EffectName"		"particles/econ/events/coal/coal_projectile_explosion.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"ThinkInterval" "0.5"
 
             "OnIntervalThink"
             {
                 "GrantXPGold"
                 {
-                    "Target"        "CASTER"
+                    "Target"        "TARGET"
                     "XPAmount"      "3"
                     "SplitEvenly"   "0"
-                    "GoldAmount"    "9999"
+                    "GoldAmount"    "1000"
                     "ReliableGold"  "1"
                 }
             }

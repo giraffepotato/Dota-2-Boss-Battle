@@ -4,6 +4,256 @@
 {
   "Version"   "1"
 
+  "tiny_grow"
+  {
+    "BaseClass"         "tiny_grow"
+    "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "bonus_damage"        "150 200 250"
+    }
+    "02"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "bonus_attack_speed"    "-120 -135 -150"
+    }
+    "03"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "bonus_movement_speed"    "120 140 160"
+    }
+    "04"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "grow_bonus_damage_pct"   "135 150 165"
+    }
+    "05"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "bonus_range_scepter"   "207"
+    }
+    "06"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "bonus_cleave_radius_scepter" "500"
+    }
+    "07"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "bonus_cleave_damage_scepter" "150"
+    }
+    "08"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "bonus_building_damage_scepter" "175"
+    }
+    "09"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "grow_bonus_damage_pct_scepter"   "150 165 180"
+    }
+
+  }
+  }
+
+  "tiny_toss"
+  {
+    "BaseClass"           "tiny_toss"
+    "AbilityDamage"     "600 700 800 900"
+    "AbilityCooldown"   "10 8 6 5"
+    "AbilityManaCost"   "90 90 90 90"
+  }
+
+  "tiny_avalanche"
+  {
+    "BaseClass"           "tiny_avalanche"
+    "AbilityCooldown"       "17.0 17.0 17.0 17.0"
+  "AbilityDuration"       "12.0 12.0 12.0 12.0"
+
+  // Damage.
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityDamage"         "425 475 525 575"
+
+  // Cost
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityManaCost"       "90 90 90 90"
+
+  // Special
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "radius"          "300 325 350 375"
+    }
+    "02"
+    {
+      "var_type"          "FIELD_FLOAT"
+      "tick_interval"       "0.25 0.25 0.25 0.25"
+    }
+    "03"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "num_ticks"         "4 4 4 4"
+    }
+    "04"
+    {
+      "var_type"          "FIELD_FLOAT"
+      "stun_duration"       "1.0"
+    }
+    "05"
+    {
+      "var_type"          "FIELD_FLOAT"
+      "projectile_duration"   "0.5"
+    }
+  }
+  }
+
+  "pudge_dismember"
+  {
+    "BaseClass"           "pudge_dismember"
+    "AbilityCastRange"    "450"
+    "AbilityDuration"     "60"
+    "AbilityCooldown"     "2.0"
+    "AbilityManaCost"     "50"
+  }
+  "axe_culling_blade"
+  {
+    "BaseClass"           "axe_culling_blade"
+    "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "kill_threshold"      "900 1100 1300"
+    }
+    "02"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "damage"          "900 1100 1300"
+    }
+  }
+  }
+
+  "axe_counter_helix"
+  {
+    "BaseClass"           "axe_counter_helix"
+    "AbilityDamage"       "500 500 500 500"
+  }
+
+  "axe_berserkers_call"
+  {
+    "BaseClass"         "axe_berserkers_call"
+    "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "radius"        "500"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_armor"     "140"
+    }
+    "03"
+    {
+      "var_type"        "FIELD_FLOAT"
+      "duration"        "2.0 2.4 2.8 3.2"
+    } 
+  }
+  }
+
+  "sven_gods_strength"
+  {
+    "BaseClass"       "sven_gods_strength"
+    "AbilityManaCost"   "25 25 25"
+    "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"      "FIELD_INTEGER"
+      "gods_strength_damage"    "150 200 275"   
+    }
+  }
+  }
+
+  "earthshaker_enchant_totem"
+  {
+    "BaseClass"         "earthshaker_enchant_totem"
+    "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "totem_damage_percentage" "400 500 600 700"
+    }
+  }
+  }
+
+  "earthshaker_aftershock"
+  {
+    "BaseClass"          "earthshaker_aftershock"
+    "AbilityDuration"       "1.5 2.0 2.0 2.0"
+    "AbilityCooldown"       "10"
+
+  // Damage.
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityDamage"         "300 350 400 450"
+  
+  // Stats
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilityModifierSupportBonus" "100"
+
+  // Special
+  //-------------------------------------------------------------------------------------------------------------
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "aftershock_range"      "900"
+    }
+    "02"
+    {
+      "var_type"          "FIELD_FLOAT"
+      "tooltip_duration"      "1.5 2.0 2.0 2.0"
+    }
+  }
+  }
+
+  "earthshaker_fissure"
+  {
+    "BaseClass"           "earthshaker_fissure"
+    "AbilityDamage"       "450 500 550 750"
+    "AbilityDuration"     "3.5 3.5 3.5 3.5"
+    "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "fissure_range"       "2350"
+    }
+    "02"
+    {
+      "var_type"          "FIELD_FLOAT"
+      "fissure_duration"      "60.0"
+    }
+    "03"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "fissure_radius"        "225"
+    }
+    "04"
+    {
+      "var_type"          "FIELD_FLOAT"
+      "stun_duration"       "3.5 3.5 3.5 3.5"
+    }
+  }
+  }
   "item_infused_raindrop"
   {
     "BaseClass"           "item_infused_raindrop"
