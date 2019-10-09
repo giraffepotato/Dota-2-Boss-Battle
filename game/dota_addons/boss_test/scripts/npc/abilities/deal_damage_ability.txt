@@ -1,0 +1,48 @@
+"deal_damage_ability"
+{
+    // General  
+    // ----------------------------------------------------------------------------------------
+    "BaseClass"              "ability_datadriven"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityTextureName"     "lina_laguna_blade"
+    "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
+    "AbilityUnitTargetTeam"  "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "AbilityUnitTargetType"  "DOTA_UNIT_TARGET_ALL"
+    "AbilityUnitTargetFlags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    "AbilityUnitDamageType"  "DAMAGE_TYPE_PURE"
+    "MaxLevel"               "1"
+    "RequiredLevel"          "0"
+    "LevelsBetweenUpgrades"  "1"
+    "AbilityDamage"          "1000"
+    "AbilityCastPoint"       "0.0"
+    "AbilityCastAnimation"   "ACT_DOTA_FLAIL"
+    "AnimationPlaybackRate"  "0.75"
+    "AnimationIgnoresModelScale" "0"
+    "AbilityUnitDamageType"  "DAMAGE_TYPE_PURE"
+    "SpellImmunityType"      "SPELL_IMMUNITY_ENEMIES_YES"
+
+    // Stats
+    //----------------------------------------------------------------------------------------
+    "AbilityManaCost"         "0 0 0 0"
+    "AbilityCooldown"         "0.00000000001"
+
+    //"AbilitySpecial"
+    //{
+    // "01"
+    // {
+    //   "var_type"      "FIELD_INTEGER"
+    //    "damage"      "1000"
+    // }
+    //}
+
+    "OnSpellStart"
+    {
+      "Damage"
+            {
+              "Target"    "TARGET"
+              "Type"      "DAMAGE_TYPE_PURE"
+              "Damage"    "%AbilityDamage"
+              "Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+            }
+    }
+}

@@ -1,0 +1,68 @@
+"npc_dazzle_boss_spike_summon"
+{
+        // General
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/creeps/neutral_creeps/n_creep_ogre_lrg/n_creep_ogre_lrg.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "2"
+        "HealthBarOffset"       "340"
+        "HasInventory"          "0"
+       
+        // Abilities
+        //----------------------------------------------------------------
+        "AbilityLayout"         "2"
+        "Ability1"              "armor_aura"
+            "Ability2"              "delete_spike"
+       
+        // Armor
+        //----------------------------------------------------------------
+        "ArmorPhysical"         "-20"
+        "MagicalResistance"     "15"
+
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"    "DOTA_UNIT_CAP_NO_ATTACK"
+       
+        // Bounty
+        //----------------------------------------------------------------
+        "BountyGoldMin"         "50.0"
+        "BountyGoldMax"         "125.0"
+       
+        // Bounds
+        //----------------------------------------------------------------
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "120"
+       
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_NONE"
+        "MovementSpeed"         "0.0"
+        "MovementTurnRate"      "0.6"
+       
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"          "4800"
+        "StatusHealthRegen"     "2.0"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+       
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+       
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+       
+        // Creature Data
+        //----------------------------------------------------------------
+        "Creature"
+        {
+                "DisableClumpingBehavior"       "1"
+        }
+}

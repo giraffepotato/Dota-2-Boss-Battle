@@ -1,0 +1,197 @@
+﻿"lang"
+{
+	"Language"		"English"
+	"Tokens"
+	{		
+		"game_mode_15"				"Boss Battle"
+		"addon_game_name"			"Boss Battle"
+		
+		//"DOTA_Basics"							"ABILITIES"
+		//"DOTA_Upgrades"							"ITEMS"
+		//"DOTA_Shop_Category_Basics"				"ABILITIES"
+		//"DOTA_Shop_Category_Upgrades"			"ITEMS"
+		
+		//--------------------
+		//Abilities
+		//--------------------
+		"DOTA_Tooltip_ability_example_ability"										"Detonation"
+		"DOTA_Tooltip_ability_example_ability_Description"				"Detonator channels a charge and releases an explosion around the caster if the channel is successful, dealing damage and knocking back all enemies in range of the explosion"
+		"DOTA_Tooltip_ability_example_ability_Lore"								""
+		"DOTA_Tooltip_ability_example_ability_duration"							"DURATION:"
+    "DOTA_Tooltip_ability_example_ability_radius"							"RADIUS:"
+    "DOTA_Tooltip_ability_example_ability_distance"							"KNOCKBACK DISTANCE:"
+    "DOTA_Tooltip_ability_example_ability_height"							"KNOCKBACK HEIGHT:"
+		
+		
+		//------------------------
+		// Items
+		//------------------------
+		"DOTA_Tooltip_ability_item_example_item"										"Shield Blaster"
+		"DOTA_Tooltip_ability_item_example_item_Description"							"Gives the caster a 50% damage reduction for 4 seconds while firing a projectile that deals damage 125 PURE damage to any enemy it hits."
+		"DOTA_Tooltip_ability_item_example_item_Lore"								""
+		"DOTA_Tooltip_ability_item_example_item_duration"							"DURATION:"
+    "DOTA_Tooltip_ability_item_example_item_damage_reduction"							"DAMAGE REDUCTION:"
+    "DOTA_Tooltip_ability_item_example_item_radius"							"PROJECTILE RADIUS:"
+    "DOTA_Tooltip_ability_item_example_item_speed"							"PROJECTILE SPEED:"
+    "DOTA_Tooltip_ability_item_example_item_distance"							"DISTANCE:"
+    "DOTA_Tooltip_ability_item_example_item_damage"							"DAMAGE:"
+			// DOTA 2 MODKIT GENERATED TOOLTIPS FOR: boss_test
+		// Keys already defined in addon_english.txt are not listed, nor are Modifiers with the property "IsHidden" "1".
+
+		// ******************** HEROES ********************
+		"npc_dota_hero_abaddon"                                                           "Npc Hero Invincible test Dummy"
+
+		// ******************** UNITS ********************
+		"npc_dazzle_boss_huskar_summon"                                                   "Dazzle Boss Huskar Summon"
+		"npc_dazzle_boss"                                                                 "Dazzle Boss"
+		"npc_dazzle_boss_spike_summon"                                                    "Dazzle Boss Spike Summon"
+		"npc_dummy_unit"                                                                  "Dummy Unit"
+		"npc_storm_spirit_boss"                                                           "Storm Spirit Boss"
+		"npc_hero_invincible test_dummy"                                                  "Hero Invincible test Dummy"
+
+		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_modifier_armor_aura_buff"                                           "Armor Aura Buff"
+		"DOTA_Tooltip_modifier_armor_aura_buff_Description"                               "Stacks armor over time"
+
+		"DOTA_Tooltip_modifier_poison_touch_debuff_datadriven"                            "Poison Touch Debuff Datadriven"
+		"DOTA_Tooltip_modifier_poison_touch_debuff_datadriven_Description"                "Slowed"
+
+		"DOTA_Tooltip_heal_percentage"                                                    "Heal Percentage"
+		"DOTA_Tooltip_heal_percentage_Description"                                        "7.5%"
+
+		"DOTA_Tooltip_modifier_borrowed_time"                                             "Borrowed Time"
+		"DOTA_Tooltip_modifier_borrowed_time_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_overload_passive_datadriven"                               "Overload Passive Datadriven"
+		"DOTA_Tooltip_modifier_overload_passive_datadriven_Description"                   "Does damage in AoE and slows AS and MS"
+
+		"DOTA_Tooltip_modifier_overload_debuff_datadriven"                                "Overload Debuff Datadriven"
+		"DOTA_Tooltip_modifier_overload_debuff_datadriven_Description"                    "AS and MS slow"
+
+		"DOTA_Tooltip_modifier_static_remnant_dummy_datadriven"                           "Static Remnant Dummy Datadriven"
+		"DOTA_Tooltip_modifier_static_remnant_dummy_datadriven_Description"               ""
+
+		"DOTA_Tooltip_modifier_static_remnant_dummy_freeze_datadriven"                    "Static Remnant Dummy Freeze Datadriven"
+		"DOTA_Tooltip_modifier_static_remnant_dummy_freeze_datadriven_Description"        ""
+
+		"DOTA_Tooltip_modifier_channel_start"                                             "Channel Start"
+		"DOTA_Tooltip_modifier_channel_start_Description"                                 ""
+
+
+		// ******************** ITEM MODIFIERS ********************
+
+		// ******************** ABILITIES ********************
+		"DOTA_Tooltip_ability_enrage_huskar"                                              "Enrage Huskar"
+		"DOTA_Tooltip_ability_enrage_huskar_Description"                                  "Dazzle summons Huskar"
+
+		"DOTA_Tooltip_ability_armor_aura"                                                 "Armor Aura"
+		"DOTA_Tooltip_ability_armor_aura_Description"                                     "Stacking Armor Buff"
+		"DOTA_Tooltip_ability_armor_aura_armor_per_sec"                                   "ARMOR PER 4 TICK 0.7:"
+		"DOTA_Tooltip_ability_armor_aura_radius"                                          "RADIUS:"
+		"DOTA_Tooltip_ability_armor_aura_tick_interval"                                   "TICK INTERVAL: 4.25"
+
+		"DOTA_Tooltip_ability_dazzle_summon_spike"                                        "Dazzle Summon Spike"
+		"DOTA_Tooltip_ability_dazzle_summon_spike_Description"                            "Summons a spike with an armor aura"
+		"DOTA_Tooltip_ability_dazzle_summon_spike_duration"                               "DURATION: Infinite"
+
+		"DOTA_Tooltip_ability_poison_touch_datadriven"                                    "Poison Touch Datadriven"
+		"DOTA_Tooltip_ability_poison_touch_datadriven_Description"                        "Dazzle does a DoT, MS slow and then a stun"
+		"DOTA_Tooltip_ability_poison_touch_datadriven_set_time"                           "DAMAGE TIME: 15"
+		"DOTA_Tooltip_ability_poison_touch_datadriven_slow_1"                             "SLOW 1: -33"
+		"DOTA_Tooltip_ability_poison_touch_datadriven_slow_2"                             "SLOW 2: -66"
+		"DOTA_Tooltip_ability_poison_touch_datadriven_slow_3"                             "SLOW 3: -100"
+		"DOTA_Tooltip_ability_poison_touch_datadriven_projectile_speed"                   "PROJECTILE SPEED: 1300"
+		//"DOTA_Tooltip_ability_poison_touch_datadriven_should_stun"                        "SHOULD STUN:"
+		"DOTA_Tooltip_ability_poison_touch_datadriven_stun_duration"                      "STUN DURATION: 3.0"
+		//"DOTA_Tooltip_ability_poison_touch_datadriven_duration_tooltip"                   "DURATION TOOLTIP:"
+		"DOTA_Tooltip_ability_poison_touch_datadriven_slow_1_duration"                    "SLOW 1 DURATION: 9"
+		"DOTA_Tooltip_ability_poison_touch_datadriven_slow_2_duration"                    "SLOW 2 DURATION: 12"
+		"DOTA_Tooltip_ability_poison_touch_datadriven_slow_3_duration"                    "SLOW 3 DURATION: 15"
+		"DOTA_Tooltip_ability_poison_touch_datadriven_damage_duration"                    "DAMAGE DURATION: 15"
+		"DOTA_Tooltip_ability_poison_touch_datadriven_tick_interval"                      "TICK INTERVAL: 0.8"
+
+		"DOTA_Tooltip_ability_shadow_wave_datadriven"                                     "Shadow Wave Datadriven"
+		"DOTA_Tooltip_ability_shadow_wave_datadriven_Description"                         "Healing that bounces, then does damage based on # of units healed"
+		"DOTA_Tooltip_ability_shadow_wave_datadriven_bounce_radius"                       "BOUNCE RADIUS: 675"
+		"DOTA_Tooltip_ability_shadow_wave_datadriven_damage_radius"                       "DAMAGE RADIUS: 285"
+		"DOTA_Tooltip_ability_shadow_wave_datadriven_max_targets"                         "MAX TARGETS: 25"
+		//"DOTA_Tooltip_ability_shadow_wave_datadriven_tooltip_max_targets_inc_dazzle"      "TOOLTIP MAX TARGETS INC DAZZLE:"
+		"DOTA_Tooltip_ability_shadow_wave_datadriven_damage"                              "DAMAGE: 240"
+
+		"DOTA_Tooltip_ability_deal_damage_ability"                                        "Deal Damage Ability"
+		"DOTA_Tooltip_ability_deal_damage_ability_Description"                            ""
+
+		"DOTA_Tooltip_ability_enrage_heal"                                                "Enrage Heal"
+		"DOTA_Tooltip_ability_enrage_heal_Description"                                    ""
+		"DOTA_Tooltip_ability_enrage_heal_healing"                                        "HEALING:"
+		"DOTA_Tooltip_ability_enrage_heal_duration"                                       "DURATION:"
+		"DOTA_Tooltip_ability_enrage_heal_mana_regen"                                     "MANA REGEN:"
+		"DOTA_Tooltip_ability_enrage_heal_resistance_physical"                            "RESISTANCE PHYSICAL:"
+		"DOTA_Tooltip_ability_enrage_heal_resistance_magical"                             "RESISTANCE MAGICAL:"
+
+		"DOTA_Tooltip_ability_find_units_test_ability"                                    "Find Units Test Ability"
+		"DOTA_Tooltip_ability_find_units_test_ability_Description"                        ""
+
+		"DOTA_Tooltip_ability_borrowed_time_datadriven"                                   "Borrowed Time Datadriven"
+		"DOTA_Tooltip_ability_borrowed_time_datadriven_Description"                       ""
+		"DOTA_Tooltip_ability_borrowed_time_datadriven_hp_threshold"                      "HP THRESHOLD:"
+		"DOTA_Tooltip_ability_borrowed_time_datadriven_duration"                          "DURATION:"
+		"DOTA_Tooltip_ability_borrowed_time_datadriven_duration_scepter"                  "DURATION SCEPTER:"
+		"DOTA_Tooltip_ability_borrowed_time_datadriven_redirect"                          "REDIRECT:"
+		"DOTA_Tooltip_ability_borrowed_time_datadriven_redirect_range_tooltip_scepter"    "REDIRECT RANGE TOOLTIP SCEPTER:"
+
+		"DOTA_Tooltip_ability_storm_spirit_overload_datadriven"                           "Storm Spirit Overload Datadriven"
+		"DOTA_Tooltip_ability_storm_spirit_overload_datadriven_Description"               ""
+		"DOTA_Tooltip_ability_storm_spirit_overload_datadriven_overload_aoe"              "OVERLOAD AOE:"
+		"DOTA_Tooltip_ability_storm_spirit_overload_datadriven_overload_move_slow"        "OVERLOAD MOVE SLOW:"
+		"DOTA_Tooltip_ability_storm_spirit_overload_datadriven_overload_attack_slow"      "OVERLOAD ATTACK SLOW:"
+		"DOTA_Tooltip_ability_storm_spirit_overload_datadriven_tooltip_duration"          "TOOLTIP DURATION:"
+
+		"DOTA_Tooltip_ability_storm_spirit_overload_datadriven"                           "Storm Spirit Overload Datadriven"
+		"DOTA_Tooltip_ability_storm_spirit_overload_datadriven_Description"               ""
+		"DOTA_Tooltip_ability_storm_spirit_overload_datadriven_overload_aoe"              "OVERLOAD AOE:"
+		"DOTA_Tooltip_ability_storm_spirit_overload_datadriven_overload_move_slow"        "OVERLOAD MOVE SLOW:"
+		"DOTA_Tooltip_ability_storm_spirit_overload_datadriven_overload_attack_slow"      "OVERLOAD ATTACK SLOW:"
+		"DOTA_Tooltip_ability_storm_spirit_overload_datadriven_tooltip_duration"          "TOOLTIP DURATION:"
+
+		"DOTA_Tooltip_ability_storm_spirit_static_remnant_datadriven"                     "Storm Spirit Static Remnant Datadriven"
+		"DOTA_Tooltip_ability_storm_spirit_static_remnant_datadriven_Description"         ""
+		"DOTA_Tooltip_ability_storm_spirit_static_remnant_datadriven_static_remnant_radius"		"STATIC REMNANT RADIUS:"
+		"DOTA_Tooltip_ability_storm_spirit_static_remnant_datadriven_static_remnant_damage_radius"		"STATIC REMNANT DAMAGE RADIUS:"
+		"DOTA_Tooltip_ability_storm_spirit_static_remnant_datadriven_static_remnant_delay"		"STATIC REMNANT DELAY:"
+		"DOTA_Tooltip_ability_storm_spirit_static_remnant_datadriven_static_remnant_damage"		"STATIC REMNANT DAMAGE:"
+
+		"DOTA_Tooltip_ability_containers_lua_targeting"                                   "Containers Lua Targeting"
+		"DOTA_Tooltip_ability_containers_lua_targeting_Description"                       ""
+
+		"DOTA_Tooltip_ability_containers_lua_targeting_tree"                              "Containers Lua Targeting Tree"
+		"DOTA_Tooltip_ability_containers_lua_targeting_tree_Description"                  ""
+
+		"DOTA_Tooltip_ability_example_ability_damage"                                     "DAMAGE:"
+
+		"DOTA_Tooltip_ability_dummy_unit"                                                 "Dummy Unit"
+		"DOTA_Tooltip_ability_dummy_unit_Description"                                     ""
+
+		"DOTA_Tooltip_ability_barebones_empty1"                                           "Barebones Empty1"
+		"DOTA_Tooltip_ability_barebones_empty1_Description"                               ""
+
+		"DOTA_Tooltip_ability_barebones_empty2"                                           "Barebones Empty2"
+		"DOTA_Tooltip_ability_barebones_empty2_Description"                               ""
+
+		"DOTA_Tooltip_ability_barebones_empty3"                                           "Barebones Empty3"
+		"DOTA_Tooltip_ability_barebones_empty3_Description"                               ""
+
+		"DOTA_Tooltip_ability_barebones_empty4"                                           "Barebones Empty4"
+		"DOTA_Tooltip_ability_barebones_empty4_Description"                               ""
+
+		"DOTA_Tooltip_ability_barebones_empty5"                                           "Barebones Empty5"
+		"DOTA_Tooltip_ability_barebones_empty5_Description"                               ""
+
+		"DOTA_Tooltip_ability_barebones_empty6"                                           "Barebones Empty6"
+		"DOTA_Tooltip_ability_barebones_empty6_Description"                               ""
+
+
+		// ******************** ITEMS ********************
+
+	}
+}

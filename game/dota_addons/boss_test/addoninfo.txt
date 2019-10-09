@@ -1,0 +1,11 @@
+"AddonInfo"
+{	
+	"maps"			"boss_battle"
+	"IsPlayable"	"1"
+	"TeamCount"		"1"
+	"template_map"
+	"boss_battle"
+	{
+		"MaxPlayers"		"5"
+	}
+}
